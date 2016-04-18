@@ -1,0 +1,994 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1046612B1C06585800A2A03C /* UniversalFrameworkMASUI */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1046612C1C06585800A2A03C /* Build configuration list for PBXAggregateTarget "UniversalFrameworkMASUI" */;
+			buildPhases = (
+				1046612F1C06586400A2A03C /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalFrameworkMASUI;
+			productName = UniversalFramework;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		10246A951CB987F900C0A70A /* MASUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10246A8B1CB9779E00C0A70A /* MASUIResources.bundle */; };
+		10246AA01CBAA2A400C0A70A /* caLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CD0E1C08F9E100B8B961 /* caLogo.png */; };
+		10246AA11CBAA2A400C0A70A /* enterprise_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE21C08F9AB00B8B961 /* enterprise_disable.png */; };
+		10246AA21CBAA2A400C0A70A /* enterprise_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE31C08F9AB00B8B961 /* enterprise_disable@2x.png */; };
+		10246AA31CBAA2A400C0A70A /* enterprise.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE41C08F9AB00B8B961 /* enterprise.png */; };
+		10246AA41CBAA2A400C0A70A /* enterprise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE51C08F9AB00B8B961 /* enterprise@2x.png */; };
+		10246AA51CBAA2A400C0A70A /* facebook_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE61C08F9AB00B8B961 /* facebook_disable.png */; };
+		10246AA61CBAA2A400C0A70A /* facebook_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE71C08F9AB00B8B961 /* facebook_disable@2x.png */; };
+		10246AA71CBAA2A400C0A70A /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE81C08F9AB00B8B961 /* facebook.png */; };
+		10246AA81CBAA2A400C0A70A /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE91C08F9AB00B8B961 /* facebook@2x.png */; };
+		10246AA91CBAA2A400C0A70A /* google_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEA1C08F9AB00B8B961 /* google_disable.png */; };
+		10246AAA1CBAA2A400C0A70A /* google_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEB1C08F9AB00B8B961 /* google_disable@2x.png */; };
+		10246AAB1CBAA2A400C0A70A /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEC1C08F9AB00B8B961 /* google.png */; };
+		10246AAC1CBAA2A400C0A70A /* google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCED1C08F9AB00B8B961 /* google@2x.png */; };
+		10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEE1C08F9AB00B8B961 /* grey_button.png */; };
+		10246AAE1CBAA2A400C0A70A /* linkedin_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEF1C08F9AB00B8B961 /* linkedin_disable.png */; };
+		10246AAF1CBAA2A400C0A70A /* linkedin_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF01C08F9AB00B8B961 /* linkedin_disable@2x.png */; };
+		10246AB01CBAA2A400C0A70A /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF11C08F9AB00B8B961 /* linkedin.png */; };
+		10246AB11CBAA2A400C0A70A /* linkedin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF21C08F9AB00B8B961 /* linkedin@2x.png */; };
+		10246AB21CBAA2A400C0A70A /* salesforce_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF41C08F9AB00B8B961 /* salesforce_disable.png */; };
+		10246AB31CBAA2A400C0A70A /* salesforce_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF51C08F9AB00B8B961 /* salesforce_disable@2x.png */; };
+		10246AB41CBAA2A400C0A70A /* salesforce.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF61C08F9AB00B8B961 /* salesforce.png */; };
+		10246AB51CBAA2A400C0A70A /* salesforce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF71C08F9AB00B8B961 /* salesforce@2x.png */; };
+		10246AB61CBAA2C600C0A70A /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
+		10246AB71CBAA2C600C0A70A /* MASLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */; };
+		10246AB81CBAA2C600C0A70A /* MASAuthenticationProviderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A488CD901C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib */; };
+		104661151C06581500A2A03C /* MASUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 104661141C06581500A2A03C /* MASUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1046611C1C06581500A2A03C /* MASUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104661111C06581500A2A03C /* MASUI.framework */; };
+		104661211C06581500A2A03C /* MASUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 104661201C06581500A2A03C /* MASUITests.m */; };
+		A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */ = {isa = PBXBuildFile; fileRef = A44EDAB81C06EF5600873659 /* MASUIService.h */; };
+		A44EDABB1C06EF5600873659 /* MASUIService.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EDAB91C06EF5600873659 /* MASUIService.m */; };
+		A488CCCA1C08D87800B8B961 /* MAS+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CCC81C08D87800B8B961 /* MAS+UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A488CCCB1C08D87800B8B961 /* MAS+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CCC91C08D87800B8B961 /* MAS+UI.m */; };
+		A488CCD41C08DAEF00B8B961 /* MASLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CCD21C08DAEF00B8B961 /* MASLoginViewController.h */; };
+		A488CCD51C08DAEF00B8B961 /* MASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CCD31C08DAEF00B8B961 /* MASLoginViewController.m */; };
+		A488CCD71C08DBDD00B8B961 /* MASLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */; };
+		A488CCF81C08F9AB00B8B961 /* enterprise_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE21C08F9AB00B8B961 /* enterprise_disable.png */; };
+		A488CCF91C08F9AB00B8B961 /* enterprise_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE31C08F9AB00B8B961 /* enterprise_disable@2x.png */; };
+		A488CCFA1C08F9AB00B8B961 /* enterprise.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE41C08F9AB00B8B961 /* enterprise.png */; };
+		A488CCFB1C08F9AB00B8B961 /* enterprise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE51C08F9AB00B8B961 /* enterprise@2x.png */; };
+		A488CCFC1C08F9AB00B8B961 /* facebook_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE61C08F9AB00B8B961 /* facebook_disable.png */; };
+		A488CCFD1C08F9AB00B8B961 /* facebook_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE71C08F9AB00B8B961 /* facebook_disable@2x.png */; };
+		A488CCFE1C08F9AB00B8B961 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE81C08F9AB00B8B961 /* facebook.png */; };
+		A488CCFF1C08F9AB00B8B961 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCE91C08F9AB00B8B961 /* facebook@2x.png */; };
+		A488CD001C08F9AB00B8B961 /* google_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEA1C08F9AB00B8B961 /* google_disable.png */; };
+		A488CD011C08F9AB00B8B961 /* google_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEB1C08F9AB00B8B961 /* google_disable@2x.png */; };
+		A488CD021C08F9AB00B8B961 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEC1C08F9AB00B8B961 /* google.png */; };
+		A488CD031C08F9AB00B8B961 /* google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCED1C08F9AB00B8B961 /* google@2x.png */; };
+		A488CD041C08F9AB00B8B961 /* grey_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEE1C08F9AB00B8B961 /* grey_button.png */; };
+		A488CD051C08F9AB00B8B961 /* linkedin_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEF1C08F9AB00B8B961 /* linkedin_disable.png */; };
+		A488CD061C08F9AB00B8B961 /* linkedin_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF01C08F9AB00B8B961 /* linkedin_disable@2x.png */; };
+		A488CD071C08F9AB00B8B961 /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF11C08F9AB00B8B961 /* linkedin.png */; };
+		A488CD081C08F9AB00B8B961 /* linkedin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF21C08F9AB00B8B961 /* linkedin@2x.png */; };
+		A488CD0A1C08F9AB00B8B961 /* salesforce_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF41C08F9AB00B8B961 /* salesforce_disable.png */; };
+		A488CD0B1C08F9AB00B8B961 /* salesforce_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF51C08F9AB00B8B961 /* salesforce_disable@2x.png */; };
+		A488CD0C1C08F9AB00B8B961 /* salesforce.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF61C08F9AB00B8B961 /* salesforce.png */; };
+		A488CD0D1C08F9AB00B8B961 /* salesforce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCF71C08F9AB00B8B961 /* salesforce@2x.png */; };
+		A488CD0F1C08F9E100B8B961 /* caLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CD0E1C08F9E100B8B961 /* caLogo.png */; };
+		A488CD911C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A488CD901C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib */; };
+		A488CD941C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CD921C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h */; };
+		A488CD951C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CD931C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m */; };
+		A488CD981C0972C900B8B961 /* MASCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CD961C0972C900B8B961 /* MASCollectionViewCell.h */; };
+		A488CD991C0972C900B8B961 /* MASCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CD971C0972C900B8B961 /* MASCollectionViewCell.m */; };
+		A488CD9C1C0972FD00B8B961 /* MASViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CD9A1C0972FD00B8B961 /* MASViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A488CD9D1C0972FD00B8B961 /* MASViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CD9B1C0972FD00B8B961 /* MASViewController.m */; };
+		A488CDA81C09778100B8B961 /* NSBundle+MASUI.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CDA61C09778100B8B961 /* NSBundle+MASUI.h */; };
+		A488CDA91C09778100B8B961 /* NSBundle+MASUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CDA71C09778100B8B961 /* NSBundle+MASUI.m */; };
+		A488CDD41C0A149C00B8B961 /* UIImage+MASUI.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CDD21C0A149C00B8B961 /* UIImage+MASUI.h */; };
+		A488CDD51C0A149C00B8B961 /* UIImage+MASUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CDD31C0A149C00B8B961 /* UIImage+MASUI.m */; };
+		A488CDDC1C0A178C00B8B961 /* UIAlertController+MASUI.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CDDA1C0A178C00B8B961 /* UIAlertController+MASUI.h */; };
+		A488CDDD1C0A178C00B8B961 /* UIAlertController+MASUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CDDB1C0A178C00B8B961 /* UIAlertController+MASUI.m */; };
+		A488CE241C0A758100B8B961 /* MASTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CE221C0A758100B8B961 /* MASTableViewCell.h */; };
+		A488CE251C0A758100B8B961 /* MASTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE231C0A758100B8B961 /* MASTableViewCell.m */; };
+		A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */; };
+		A488CE361C0A82F300B8B961 /* MASICenterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */; };
+		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
+		CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
+		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10246A961CB9895B00C0A70A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 104661081C06581500A2A03C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10246A8A1CB9779E00C0A70A;
+			remoteInfo = MASUIResources;
+		};
+		10246ABF1CBAA82600C0A70A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1059D3701B61AA3700223267;
+			remoteInfo = MASFoundation;
+		};
+		10246AC11CBAA82600C0A70A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1059D37B1B61AA3800223267;
+			remoteInfo = MASFoundationTests;
+		};
+		10246AC31CBAA83C00C0A70A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1059D36F1B61AA3700223267;
+			remoteInfo = MASFoundation;
+		};
+		1046611D1C06581500A2A03C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 104661081C06581500A2A03C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 104661101C06581500A2A03C;
+			remoteInfo = MASUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10246A8B1CB9779E00C0A70A /* MASUIResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MASUIResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		10246A8D1CB9779F00C0A70A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASFoundation.xcodeproj; path = ../MASFoundation/MASFoundation.xcodeproj; sourceTree = "<group>"; };
+		104661111C06581500A2A03C /* MASUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MASUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		104661141C06581500A2A03C /* MASUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASUI.h; sourceTree = "<group>"; };
+		104661161C06581500A2A03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1046611B1C06581500A2A03C /* MASUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MASUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		104661201C06581500A2A03C /* MASUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASUITests.m; sourceTree = "<group>"; };
+		104661221C06581500A2A03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A401657C1C3203A6008B09DE /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		A401657E1C3203CE008B09DE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A44EDAB81C06EF5600873659 /* MASUIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUIService.h; sourceTree = "<group>"; };
+		A44EDAB91C06EF5600873659 /* MASUIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASUIService.m; sourceTree = "<group>"; };
+		A44EDACD1C0798AD00873659 /* MASUI_PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASUI_PrefixHeader.pch; sourceTree = "<group>"; };
+		A488CCC81C08D87800B8B961 /* MAS+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MAS+UI.h"; sourceTree = "<group>"; };
+		A488CCC91C08D87800B8B961 /* MAS+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MAS+UI.m"; sourceTree = "<group>"; };
+		A488CCD21C08DAEF00B8B961 /* MASLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginViewController.h; sourceTree = "<group>"; };
+		A488CCD31C08DAEF00B8B961 /* MASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginViewController.m; sourceTree = "<group>"; };
+		A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginViewController.xib; sourceTree = "<group>"; };
+		A488CCE21C08F9AB00B8B961 /* enterprise_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enterprise_disable.png; sourceTree = "<group>"; };
+		A488CCE31C08F9AB00B8B961 /* enterprise_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enterprise_disable@2x.png"; sourceTree = "<group>"; };
+		A488CCE41C08F9AB00B8B961 /* enterprise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enterprise.png; sourceTree = "<group>"; };
+		A488CCE51C08F9AB00B8B961 /* enterprise@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enterprise@2x.png"; sourceTree = "<group>"; };
+		A488CCE61C08F9AB00B8B961 /* facebook_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_disable.png; sourceTree = "<group>"; };
+		A488CCE71C08F9AB00B8B961 /* facebook_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook_disable@2x.png"; sourceTree = "<group>"; };
+		A488CCE81C08F9AB00B8B961 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		A488CCE91C08F9AB00B8B961 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
+		A488CCEA1C08F9AB00B8B961 /* google_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_disable.png; sourceTree = "<group>"; };
+		A488CCEB1C08F9AB00B8B961 /* google_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google_disable@2x.png"; sourceTree = "<group>"; };
+		A488CCEC1C08F9AB00B8B961 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		A488CCED1C08F9AB00B8B961 /* google@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google@2x.png"; sourceTree = "<group>"; };
+		A488CCEE1C08F9AB00B8B961 /* grey_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_button.png; sourceTree = "<group>"; };
+		A488CCEF1C08F9AB00B8B961 /* linkedin_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin_disable.png; sourceTree = "<group>"; };
+		A488CCF01C08F9AB00B8B961 /* linkedin_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linkedin_disable@2x.png"; sourceTree = "<group>"; };
+		A488CCF11C08F9AB00B8B961 /* linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin.png; sourceTree = "<group>"; };
+		A488CCF21C08F9AB00B8B961 /* linkedin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linkedin@2x.png"; sourceTree = "<group>"; };
+		A488CCF41C08F9AB00B8B961 /* salesforce_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = salesforce_disable.png; sourceTree = "<group>"; };
+		A488CCF51C08F9AB00B8B961 /* salesforce_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "salesforce_disable@2x.png"; sourceTree = "<group>"; };
+		A488CCF61C08F9AB00B8B961 /* salesforce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = salesforce.png; sourceTree = "<group>"; };
+		A488CCF71C08F9AB00B8B961 /* salesforce@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "salesforce@2x.png"; sourceTree = "<group>"; };
+		A488CD0E1C08F9E100B8B961 /* caLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caLogo.png; sourceTree = "<group>"; };
+		A488CD901C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASAuthenticationProviderCollectionViewCell.xib; sourceTree = "<group>"; };
+		A488CD921C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASAuthenticationProviderCollectionViewCell.h; sourceTree = "<group>"; };
+		A488CD931C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASAuthenticationProviderCollectionViewCell.m; sourceTree = "<group>"; };
+		A488CD961C0972C900B8B961 /* MASCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCollectionViewCell.h; sourceTree = "<group>"; };
+		A488CD971C0972C900B8B961 /* MASCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCollectionViewCell.m; sourceTree = "<group>"; };
+		A488CD9A1C0972FD00B8B961 /* MASViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewController.h; sourceTree = "<group>"; };
+		A488CD9B1C0972FD00B8B961 /* MASViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewController.m; sourceTree = "<group>"; };
+		A488CDA61C09778100B8B961 /* NSBundle+MASUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+MASUI.h"; sourceTree = "<group>"; };
+		A488CDA71C09778100B8B961 /* NSBundle+MASUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+MASUI.m"; sourceTree = "<group>"; };
+		A488CDD21C0A149C00B8B961 /* UIImage+MASUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MASUI.h"; sourceTree = "<group>"; };
+		A488CDD31C0A149C00B8B961 /* UIImage+MASUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MASUI.m"; sourceTree = "<group>"; };
+		A488CDDA1C0A178C00B8B961 /* UIAlertController+MASUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+MASUI.h"; sourceTree = "<group>"; };
+		A488CDDB1C0A178C00B8B961 /* UIAlertController+MASUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+MASUI.m"; sourceTree = "<group>"; };
+		A488CE221C0A758100B8B961 /* MASTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASTableViewCell.h; path = login/MASTableViewCell.h; sourceTree = "<group>"; };
+		A488CE231C0A758100B8B961 /* MASTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASTableViewCell.m; path = login/MASTableViewCell.m; sourceTree = "<group>"; };
+		A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASICenterFlowLayout.h; sourceTree = "<group>"; };
+		A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASICenterFlowLayout.m; sourceTree = "<group>"; };
+		CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginWebViewController.m; sourceTree = "<group>"; };
+		CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginWebViewController.xib; sourceTree = "<group>"; };
+		CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginWebViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10246A881CB9779E00C0A70A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1046610D1C06581500A2A03C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		104661181C06581500A2A03C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1046611C1C06581500A2A03C /* MASUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10246A8C1CB9779F00C0A70A /* MASUIResources */ = {
+			isa = PBXGroup;
+			children = (
+				10246A8D1CB9779F00C0A70A /* Info.plist */,
+			);
+			path = MASUIResources;
+			sourceTree = "<group>";
+		};
+		10246ABA1CBAA82600C0A70A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10246AC01CBAA82600C0A70A /* MASFoundation.framework */,
+				10246AC21CBAA82600C0A70A /* MASFoundationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		104661071C06581500A2A03C = {
+			isa = PBXGroup;
+			children = (
+				10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */,
+				104661131C06581500A2A03C /* MASUI */,
+				1046611F1C06581500A2A03C /* MASUITests */,
+				10246A8C1CB9779F00C0A70A /* MASUIResources */,
+				104661121C06581500A2A03C /* Products */,
+				A488CE191C0A26A300B8B961 /* Vendors */,
+				A401657C1C3203A6008B09DE /* LICENSE.md */,
+				A401657E1C3203CE008B09DE /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		104661121C06581500A2A03C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				104661111C06581500A2A03C /* MASUI.framework */,
+				1046611B1C06581500A2A03C /* MASUITests.xctest */,
+				10246A8B1CB9779E00C0A70A /* MASUIResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		104661131C06581500A2A03C /* MASUI */ = {
+			isa = PBXGroup;
+			children = (
+				104661141C06581500A2A03C /* MASUI.h */,
+				A44EDAB31C06EEE100873659 /* Classes */,
+				A488CCE01C08E27D00B8B961 /* Resources */,
+				A44EDACC1C07988700873659 /* Supporting Files */,
+			);
+			path = MASUI;
+			sourceTree = "<group>";
+		};
+		1046611F1C06581500A2A03C /* MASUITests */ = {
+			isa = PBXGroup;
+			children = (
+				104661201C06581500A2A03C /* MASUITests.m */,
+				104661221C06581500A2A03C /* Info.plist */,
+			);
+			path = MASUITests;
+			sourceTree = "<group>";
+		};
+		A44EDAB31C06EEE100873659 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A488CCC81C08D87800B8B961 /* MAS+UI.h */,
+				A488CCC91C08D87800B8B961 /* MAS+UI.m */,
+				A44EDAB41C06EEE100873659 /* _private_ */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A44EDAB41C06EEE100873659 /* _private_ */ = {
+			isa = PBXGroup;
+			children = (
+				A44EDAE91C07E39600873659 /* categories */,
+				A44EDAB51C06EEE100873659 /* services */,
+				A488CCD01C08DAD000B8B961 /* ui */,
+			);
+			path = _private_;
+			sourceTree = "<group>";
+		};
+		A44EDAB51C06EEE100873659 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				A44EDAB81C06EF5600873659 /* MASUIService.h */,
+				A44EDAB91C06EF5600873659 /* MASUIService.m */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		A44EDACC1C07988700873659 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				104661161C06581500A2A03C /* Info.plist */,
+				A44EDACD1C0798AD00873659 /* MASUI_PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A44EDAE91C07E39600873659 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				A488CDA61C09778100B8B961 /* NSBundle+MASUI.h */,
+				A488CDA71C09778100B8B961 /* NSBundle+MASUI.m */,
+				A488CDDA1C0A178C00B8B961 /* UIAlertController+MASUI.h */,
+				A488CDDB1C0A178C00B8B961 /* UIAlertController+MASUI.m */,
+				A488CDD21C0A149C00B8B961 /* UIImage+MASUI.h */,
+				A488CDD31C0A149C00B8B961 /* UIImage+MASUI.m */,
+			);
+			path = categories;
+			sourceTree = "<group>";
+		};
+		A488CCD01C08DAD000B8B961 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				A488CD961C0972C900B8B961 /* MASCollectionViewCell.h */,
+				A488CD971C0972C900B8B961 /* MASCollectionViewCell.m */,
+				A488CE221C0A758100B8B961 /* MASTableViewCell.h */,
+				A488CE231C0A758100B8B961 /* MASTableViewCell.m */,
+				A488CD9A1C0972FD00B8B961 /* MASViewController.h */,
+				A488CD9B1C0972FD00B8B961 /* MASViewController.m */,
+				A488CCD11C08DAD000B8B961 /* login */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		A488CCD11C08DAD000B8B961 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */,
+				CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */,
+				CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */,
+				A488CCD21C08DAEF00B8B961 /* MASLoginViewController.h */,
+				A488CCD31C08DAEF00B8B961 /* MASLoginViewController.m */,
+				A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */,
+				A488CD921C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h */,
+				A488CD931C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m */,
+				A488CD901C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		A488CCE01C08E27D00B8B961 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A488CCE11C08E27D00B8B961 /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A488CCE11C08E27D00B8B961 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A488CD0E1C08F9E100B8B961 /* caLogo.png */,
+				A488CCE21C08F9AB00B8B961 /* enterprise_disable.png */,
+				A488CCE31C08F9AB00B8B961 /* enterprise_disable@2x.png */,
+				A488CCE41C08F9AB00B8B961 /* enterprise.png */,
+				A488CCE51C08F9AB00B8B961 /* enterprise@2x.png */,
+				A488CCE61C08F9AB00B8B961 /* facebook_disable.png */,
+				A488CCE71C08F9AB00B8B961 /* facebook_disable@2x.png */,
+				A488CCE81C08F9AB00B8B961 /* facebook.png */,
+				A488CCE91C08F9AB00B8B961 /* facebook@2x.png */,
+				A488CCEA1C08F9AB00B8B961 /* google_disable.png */,
+				A488CCEB1C08F9AB00B8B961 /* google_disable@2x.png */,
+				A488CCEC1C08F9AB00B8B961 /* google.png */,
+				A488CCED1C08F9AB00B8B961 /* google@2x.png */,
+				A488CCEE1C08F9AB00B8B961 /* grey_button.png */,
+				A488CCEF1C08F9AB00B8B961 /* linkedin_disable.png */,
+				A488CCF01C08F9AB00B8B961 /* linkedin_disable@2x.png */,
+				A488CCF11C08F9AB00B8B961 /* linkedin.png */,
+				A488CCF21C08F9AB00B8B961 /* linkedin@2x.png */,
+				A488CCF41C08F9AB00B8B961 /* salesforce_disable.png */,
+				A488CCF51C08F9AB00B8B961 /* salesforce_disable@2x.png */,
+				A488CCF61C08F9AB00B8B961 /* salesforce.png */,
+				A488CCF71C08F9AB00B8B961 /* salesforce@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		A488CE191C0A26A300B8B961 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				A488CE321C0A82F300B8B961 /* MASICenterFlowLayout */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		A488CE321C0A82F300B8B961 /* MASICenterFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */,
+				A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */,
+			);
+			path = MASICenterFlowLayout;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1046610E1C06581500A2A03C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A488CCCA1C08D87800B8B961 /* MAS+UI.h in Headers */,
+				A488CD9C1C0972FD00B8B961 /* MASViewController.h in Headers */,
+				A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */,
+				A488CDA81C09778100B8B961 /* NSBundle+MASUI.h in Headers */,
+				CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */,
+				104661151C06581500A2A03C /* MASUI.h in Headers */,
+				A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */,
+				A488CDDC1C0A178C00B8B961 /* UIAlertController+MASUI.h in Headers */,
+				A488CDD41C0A149C00B8B961 /* UIImage+MASUI.h in Headers */,
+				A488CE241C0A758100B8B961 /* MASTableViewCell.h in Headers */,
+				A488CD941C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h in Headers */,
+				A488CCD41C08DAEF00B8B961 /* MASLoginViewController.h in Headers */,
+				A488CD981C0972C900B8B961 /* MASCollectionViewCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		10246A8A1CB9779E00C0A70A /* MASUIResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10246A921CB9779F00C0A70A /* Build configuration list for PBXNativeTarget "MASUIResources" */;
+			buildPhases = (
+				10246A871CB9779E00C0A70A /* Sources */,
+				10246A881CB9779E00C0A70A /* Frameworks */,
+				10246A891CB9779E00C0A70A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MASUIResources;
+			productName = MASUIResources;
+			productReference = 10246A8B1CB9779E00C0A70A /* MASUIResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		104661101C06581500A2A03C /* MASUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 104661251C06581500A2A03C /* Build configuration list for PBXNativeTarget "MASUI" */;
+			buildPhases = (
+				1046610C1C06581500A2A03C /* Sources */,
+				1046610D1C06581500A2A03C /* Frameworks */,
+				1046610E1C06581500A2A03C /* Headers */,
+				1046610F1C06581500A2A03C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10246AC41CBAA83C00C0A70A /* PBXTargetDependency */,
+				10246A971CB9895B00C0A70A /* PBXTargetDependency */,
+			);
+			name = MASUI;
+			productName = MASUI;
+			productReference = 104661111C06581500A2A03C /* MASUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1046611A1C06581500A2A03C /* MASUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 104661281C06581500A2A03C /* Build configuration list for PBXNativeTarget "MASUITests" */;
+			buildPhases = (
+				104661171C06581500A2A03C /* Sources */,
+				104661181C06581500A2A03C /* Frameworks */,
+				104661191C06581500A2A03C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1046611E1C06581500A2A03C /* PBXTargetDependency */,
+			);
+			name = MASUITests;
+			productName = MASUITests;
+			productReference = 1046611B1C06581500A2A03C /* MASUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		104661081C06581500A2A03C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "CA Technologies";
+				TargetAttributes = {
+					10246A8A1CB9779E00C0A70A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					104661101C06581500A2A03C = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					1046611A1C06581500A2A03C = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					1046612B1C06585800A2A03C = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 1046610B1C06581500A2A03C /* Build configuration list for PBXProject "MASUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 104661071C06581500A2A03C;
+			productRefGroup = 104661121C06581500A2A03C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 10246ABA1CBAA82600C0A70A /* Products */;
+					ProjectRef = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				104661101C06581500A2A03C /* MASUI */,
+				1046611A1C06581500A2A03C /* MASUITests */,
+				1046612B1C06585800A2A03C /* UniversalFrameworkMASUI */,
+				10246A8A1CB9779E00C0A70A /* MASUIResources */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		10246AC01CBAA82600C0A70A /* MASFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MASFoundation.framework;
+			remoteRef = 10246ABF1CBAA82600C0A70A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		10246AC21CBAA82600C0A70A /* MASFoundationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MASFoundationTests.xctest;
+			remoteRef = 10246AC11CBAA82600C0A70A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10246A891CB9779E00C0A70A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10246AB61CBAA2C600C0A70A /* MASLoginWebViewController.xib in Resources */,
+				10246AB71CBAA2C600C0A70A /* MASLoginViewController.xib in Resources */,
+				10246AB81CBAA2C600C0A70A /* MASAuthenticationProviderCollectionViewCell.xib in Resources */,
+				10246AA01CBAA2A400C0A70A /* caLogo.png in Resources */,
+				10246AA11CBAA2A400C0A70A /* enterprise_disable.png in Resources */,
+				10246AA21CBAA2A400C0A70A /* enterprise_disable@2x.png in Resources */,
+				10246AA31CBAA2A400C0A70A /* enterprise.png in Resources */,
+				10246AA41CBAA2A400C0A70A /* enterprise@2x.png in Resources */,
+				10246AA51CBAA2A400C0A70A /* facebook_disable.png in Resources */,
+				10246AA61CBAA2A400C0A70A /* facebook_disable@2x.png in Resources */,
+				10246AA71CBAA2A400C0A70A /* facebook.png in Resources */,
+				10246AA81CBAA2A400C0A70A /* facebook@2x.png in Resources */,
+				10246AA91CBAA2A400C0A70A /* google_disable.png in Resources */,
+				10246AAA1CBAA2A400C0A70A /* google_disable@2x.png in Resources */,
+				10246AAB1CBAA2A400C0A70A /* google.png in Resources */,
+				10246AAC1CBAA2A400C0A70A /* google@2x.png in Resources */,
+				10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */,
+				10246AAE1CBAA2A400C0A70A /* linkedin_disable.png in Resources */,
+				10246AAF1CBAA2A400C0A70A /* linkedin_disable@2x.png in Resources */,
+				10246AB01CBAA2A400C0A70A /* linkedin.png in Resources */,
+				10246AB11CBAA2A400C0A70A /* linkedin@2x.png in Resources */,
+				10246AB21CBAA2A400C0A70A /* salesforce_disable.png in Resources */,
+				10246AB31CBAA2A400C0A70A /* salesforce_disable@2x.png in Resources */,
+				10246AB41CBAA2A400C0A70A /* salesforce.png in Resources */,
+				10246AB51CBAA2A400C0A70A /* salesforce@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1046610F1C06581500A2A03C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10246A951CB987F900C0A70A /* MASUIResources.bundle in Resources */,
+				CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */,
+				A488CD0C1C08F9AB00B8B961 /* salesforce.png in Resources */,
+				A488CCFD1C08F9AB00B8B961 /* facebook_disable@2x.png in Resources */,
+				A488CCFE1C08F9AB00B8B961 /* facebook.png in Resources */,
+				A488CD911C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib in Resources */,
+				A488CCF91C08F9AB00B8B961 /* enterprise_disable@2x.png in Resources */,
+				A488CCD71C08DBDD00B8B961 /* MASLoginViewController.xib in Resources */,
+				A488CD0B1C08F9AB00B8B961 /* salesforce_disable@2x.png in Resources */,
+				A488CD051C08F9AB00B8B961 /* linkedin_disable.png in Resources */,
+				A488CD061C08F9AB00B8B961 /* linkedin_disable@2x.png in Resources */,
+				A488CD081C08F9AB00B8B961 /* linkedin@2x.png in Resources */,
+				A488CD0A1C08F9AB00B8B961 /* salesforce_disable.png in Resources */,
+				A488CCFF1C08F9AB00B8B961 /* facebook@2x.png in Resources */,
+				A488CD011C08F9AB00B8B961 /* google_disable@2x.png in Resources */,
+				A488CD031C08F9AB00B8B961 /* google@2x.png in Resources */,
+				A488CD0F1C08F9E100B8B961 /* caLogo.png in Resources */,
+				A488CD001C08F9AB00B8B961 /* google_disable.png in Resources */,
+				A488CCFA1C08F9AB00B8B961 /* enterprise.png in Resources */,
+				A488CCFB1C08F9AB00B8B961 /* enterprise@2x.png in Resources */,
+				A488CD0D1C08F9AB00B8B961 /* salesforce@2x.png in Resources */,
+				A488CD041C08F9AB00B8B961 /* grey_button.png in Resources */,
+				A488CCFC1C08F9AB00B8B961 /* facebook_disable.png in Resources */,
+				A488CD021C08F9AB00B8B961 /* google.png in Resources */,
+				A488CD071C08F9AB00B8B961 /* linkedin.png in Resources */,
+				A488CCF81C08F9AB00B8B961 /* enterprise_disable.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		104661191C06581500A2A03C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1046612F1C06586400A2A03C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\n#---------------\n#Framework Name\n#---------------\n\nFRAMEWORK_NAME=MASUI\n\n\n#---------------\n#SDK Directory\n#---------------\n\nSDK_DIR=../iOS_SDK\n\n\n#-----------------------\n#CleanUp Build Cache\n#-----------------------\n\nxcodebuild -project $PROJECT_NAME.xcodeproj -configuration Debug -alltargets clean\nxcodebuild -project $PROJECT_NAME.xcodeproj -configuration Release -alltargets clean\n\n\n#-----------------------\n#CleanUp Previous Builds\n#-----------------------\n\n# Remove the framework from the Project Folder\nrm -Rf \"${PROJECT_DIR}/${FRAMEWORK_NAME}.framework\"\n\n# Remove Build folder from DerivedData\nrm -Rf \"${BUILD_DIR}\"\n\n\n#-----------------------\n#Creating New Builds\n#-----------------------\n\n# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nARCHIVE_OUTPUTFOLDER=${BUILD_DIR}/../Intermediates/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/UninstalledProducts/iphoneos\n\n# Archive framework for iPhoneOS with BitCode enabled\n#xcodebuild -scheme $PROJECT_NAME  -configuration Release archive\n\nxcodebuild OTHER_CFLAGS=\"-fembed-bitcode\" -scheme $PROJECT_NAME  -configuration Release archive CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\" -archivePath \"${BUILD_DIR}\"\n\n# Build framework for iPhoneOS\n#xcodebuild -target ${FRAMEWORK_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\"\n\n# Build framework for iPhoneSimulator\nxcodebuild -target ${FRAMEWORK_NAME} -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\"\n\n\n#-----------------------\n#Creating Universal Framework\n#-----------------------\n\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n\n# Build the universal library\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}\" \"${ARCHIVE_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Copy the .framework folder of iphoneos\ncp -R \"${ARCHIVE_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Delete the library for iphoneos\nrm \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Move the Universal Library into our framework\nmv \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}\" \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/\"\n\n# Remove the _CodeSignature from the UniversalFramework\nrm -Rf \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/_CodeSignature\"\n\n# Copy the framework\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework\" \"${SDK_DIR}\"\n\n# Move the bundle out of the framework file\nmv \"${SDK_DIR}/${FRAMEWORK_NAME}.framework/MASUIResources.bundle\" \"${SDK_DIR}\"\n\n\n#-----------------------\n#Deleting Build Folder\n#-----------------------\n\n# Remove build folder from the Project Folder\nrm -Rf \"${PROJECT_DIR}/build\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10246A871CB9779E00C0A70A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1046610C1C06581500A2A03C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A488CDA91C09778100B8B961 /* NSBundle+MASUI.m in Sources */,
+				A488CCD51C08DAEF00B8B961 /* MASLoginViewController.m in Sources */,
+				A488CD9D1C0972FD00B8B961 /* MASViewController.m in Sources */,
+				A488CDDD1C0A178C00B8B961 /* UIAlertController+MASUI.m in Sources */,
+				A488CD991C0972C900B8B961 /* MASCollectionViewCell.m in Sources */,
+				A488CD951C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m in Sources */,
+				A488CE361C0A82F300B8B961 /* MASICenterFlowLayout.m in Sources */,
+				A44EDABB1C06EF5600873659 /* MASUIService.m in Sources */,
+				A488CDD51C0A149C00B8B961 /* UIImage+MASUI.m in Sources */,
+				CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */,
+				A488CCCB1C08D87800B8B961 /* MAS+UI.m in Sources */,
+				A488CE251C0A758100B8B961 /* MASTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		104661171C06581500A2A03C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				104661211C06581500A2A03C /* MASUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10246A971CB9895B00C0A70A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10246A8A1CB9779E00C0A70A /* MASUIResources */;
+			targetProxy = 10246A961CB9895B00C0A70A /* PBXContainerItemProxy */;
+		};
+		10246AC41CBAA83C00C0A70A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASFoundation;
+			targetProxy = 10246AC31CBAA83C00C0A70A /* PBXContainerItemProxy */;
+		};
+		1046611E1C06581500A2A03C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 104661101C06581500A2A03C /* MASUI */;
+			targetProxy = 1046611D1C06581500A2A03C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10246A8E1CB9779F00C0A70A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = NO;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MASUIResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUIResources;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		10246A8F1CB9779F00C0A70A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = NO;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MASUIResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUIResources;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		104661231C06581500A2A03C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		104661241C06581500A2A03C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		104661261C06581500A2A03C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MASUI/MASUI_PrefixHeader.pch;
+				INFOPLIST_FILE = MASUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		104661271C06581500A2A03C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MASUI/MASUI_PrefixHeader.pch;
+				INFOPLIST_FILE = MASUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		104661291C06581500A2A03C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MASUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1046612A1C06581500A2A03C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MASUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1046612D1C06585800A2A03C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1046612E1C06585800A2A03C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10246A921CB9779F00C0A70A /* Build configuration list for PBXNativeTarget "MASUIResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10246A8E1CB9779F00C0A70A /* Debug */,
+				10246A8F1CB9779F00C0A70A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1046610B1C06581500A2A03C /* Build configuration list for PBXProject "MASUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				104661231C06581500A2A03C /* Debug */,
+				104661241C06581500A2A03C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		104661251C06581500A2A03C /* Build configuration list for PBXNativeTarget "MASUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				104661261C06581500A2A03C /* Debug */,
+				104661271C06581500A2A03C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		104661281C06581500A2A03C /* Build configuration list for PBXNativeTarget "MASUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				104661291C06581500A2A03C /* Debug */,
+				1046612A1C06581500A2A03C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1046612C1C06585800A2A03C /* Build configuration list for PBXAggregateTarget "UniversalFrameworkMASUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1046612D1C06585800A2A03C /* Debug */,
+				1046612E1C06585800A2A03C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 104661081C06581500A2A03C /* Project object */;
+}
