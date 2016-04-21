@@ -3,15 +3,14 @@
 ## Overview
 MAS UI is the core iOS UI framework for [CA Mobile API Gateway][mag] and [CA Mobile App Services][mas.ca.com]. 
 
-## MAS SDK Frameworks
+## Features
 
-The MAS SDK includes the following frameworks:
+The MASUI framework comes with the following features:
 
-- MASFoundation
-- MASConnecta
-- MASIdentityManagement
-- MASStorage
-- MASUI
+- Default log-in dialog
+    + Built-in QR Code registration/authentication
+    + Built-in BLE registration/authentication
+    + Built-in social network (Google, Facebook, Salesforce, and LinkedIn) registration/authentication
 
 ## Get Started
 
