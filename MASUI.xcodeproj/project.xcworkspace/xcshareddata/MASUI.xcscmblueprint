@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EB0127CF295BBD45DEDC95B0F3217A369DDEAF9C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "569BE486C635318F0F9CA133A1F6B7D5F6DF1F77" : 0,
+    "EB0127CF295BBD45DEDC95B0F3217A369DDEAF9C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0E95D4A5-7091-4E20-80E9-395887E952AE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "569BE486C635318F0F9CA133A1F6B7D5F6DF1F77" : "MASFoundation\/",
+    "EB0127CF295BBD45DEDC95B0F3217A369DDEAF9C" : "MASUI\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MASUI",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MASUI.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CAAPIM\/iOS-MAS-Foundation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "569BE486C635318F0F9CA133A1F6B7D5F6DF1F77"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CAAPIM\/iOS-MAS-UI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB0127CF295BBD45DEDC95B0F3217A369DDEAF9C"
+    }
+  ]
+}
