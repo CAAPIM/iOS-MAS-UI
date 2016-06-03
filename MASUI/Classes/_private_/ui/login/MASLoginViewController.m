@@ -34,7 +34,7 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIImageView *qrCodeView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, strong) MASSessionSharingQRCode *qrCode;
+@property (nonatomic, strong) MASProximityLoginQRCode *qrCode;
 
 @end
 
@@ -54,11 +54,11 @@
         [self.passwordField setDelegate:self];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAuthorizationCodeFromSessionSharing:)
-                                                     name:MASDeviceDidReceiveAuthorizationCodeFromSessionSharingNotification
+                                                     name:MASDeviceDidReceiveAuthorizationCodeFromProximityLoginNotification
                                                    object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeQRCode:)
-                                                     name:MASSessionSharingQRCodeDidStopDisplayingQRCodeImage
+                                                     name:MASProximityLoginQRCodeDidStopDisplayingQRCodeImage
                                                    object:nil];
     }
     
@@ -102,9 +102,9 @@
         
         if (_qrCode == nil)
         {
-            _qrCode = [[MASSessionSharingQRCode alloc] initWithAuthenticationProvider:_qrCodeProvider];
+            _qrCode = [[MASProximityLoginQRCode alloc] initWithAuthenticationProvider:_qrCodeProvider];
             
-            UIImage *qrCodeImage = [_qrCode startDisplayingQRCodeImageForSessionSharing];
+            UIImage *qrCodeImage = [_qrCode startDisplayingQRCodeImageForProximityLogin];
             [_qrCodeView setImage:qrCodeImage];
         }
     }
@@ -131,7 +131,7 @@
     if ([[MASDevice currentDevice] isBeingAuthorized])
     {
         
-        NSError *error = [NSError errorWithDomain:MASFoundationErrorDomainLocal code:MASFoundationErrorCodeSessionSharingAuthorizationInProgress userInfo:@{NSLocalizedDescriptionKey : @"Authorization is currently in progress through session sharing."}];
+        NSError *error = [NSError errorWithDomain:MASFoundationErrorDomainLocal code:MASFoundationErrorCodeProximityLoginAuthorizationInProgress userInfo:@{NSLocalizedDescriptionKey : @"Authorization is currently in progress through session sharing."}];
         [UIAlertController popupErrorAlert:error inViewController:self];
     }
     
@@ -186,7 +186,7 @@
             //
             // Stop QR Code session sharing
             //
-            [_qrCode stopDisplayingQRCodeImageForSessionSharing];
+            [_qrCode stopDisplayingQRCodeImageForProximityLogin];
         
             //
             // Dsmiss the view controller
@@ -217,7 +217,7 @@
     //
     // Stop QR Code session sharing
     //
-    [_qrCode stopDisplayingQRCodeImageForSessionSharing];
+    [_qrCode stopDisplayingQRCodeImageForProximityLogin];
     
     //
     // Start activity indicator
