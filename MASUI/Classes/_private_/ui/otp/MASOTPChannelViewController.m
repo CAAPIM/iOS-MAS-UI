@@ -111,7 +111,7 @@
     }
     else {
      
-        cell.textLabel.text = [_supportedChannels objectAtIndex:0];
+        cell.textLabel.text = [_supportedChannels objectAtIndex:indexPath.row];
         cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
     }
     
