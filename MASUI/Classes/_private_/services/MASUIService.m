@@ -11,6 +11,8 @@
 #import "MASUIService.h"
 
 #import "MASLoginViewController.h"
+#import "MASOTPChannelViewController.h"
+#import "MASOTPViewController.h"
 #import "NSBundle+MASUI.h"
 #import "UIAlertController+MASUI.h"
 #import "UIImage+MASUI.h"
@@ -21,6 +23,8 @@
 # pragma mark - Properties
 
 @property (nonatomic, strong, readonly) MASLoginViewController *loginViewController;
+@property (nonatomic, strong, readonly) MASOTPViewController *otpViewController;
+@property (nonatomic, strong, readonly) MASOTPChannelViewController *channelViewController;
 
 @end
 
@@ -28,6 +32,7 @@
 @implementation MASUIService
 
 static BOOL _willHandleAuthentication_ = YES;
+static BOOL _willHandleOTPAuthentication_ = YES;
 
 
 # pragma mark - Shared Service
@@ -75,6 +80,18 @@ static BOOL _willHandleAuthentication_ = YES;
 + (void)setWillHandleAuthentication:(BOOL)handle
 {
     _willHandleAuthentication_ = handle;
+}
+
+
++ (BOOL)willHandleOTPAuthentication
+{
+    return _willHandleOTPAuthentication_;
+}
+
+
++ (void)setWillHandleOTPAuthentication:(BOOL)handle
+{
+    _willHandleOTPAuthentication_ = handle;
 }
 
 
@@ -139,6 +156,98 @@ static BOOL _willHandleAuthentication_ = YES;
     }
     
     DLog(@"\n\nWarning you have called this method when a login view controller is already visible\n\n");
+}
+
+
+//
+// Hidden: handle otp credentials flow
+//
+
+- (void)__masRequestsOTPCredentialsWithOTPCredentialsBlock__:(MASOTPFetchCredentialsBlock)otpCredentialsBlock error:(NSError *)otpError
+{
+    //DLog(@"\n\ncalled with otp fetch block: %@ and otpError:%@\n\n", otpCredentialsBlock, otpError);
+    
+    if(!self.otpViewController)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Init with the nib file from the bundle
+                           //
+                           //NSBundle *bundle = [NSBundle bundleForClass:[self class]]; //Used for dynamic framework
+                           
+                           NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
+                           
+                           _otpViewController = [[MASOTPViewController alloc] initWithNibName:@"MASOTPViewController" bundle:bundle];
+                           
+                           _otpViewController.otpError = otpError;
+                           
+                           _otpViewController.otpCredentialsBlock = otpCredentialsBlock;
+                           
+                           //
+                           // Show the controller
+                           //
+                           __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_otpViewController];
+                           
+                           [[UIAlertController rootViewController] presentViewController:navigationController
+                                                                                animated:YES
+                                                                              completion:^
+                            {
+                                _otpViewController = nil;
+                                navigationController = nil;
+                            }];
+                           
+                           return;
+                       });
+    }
+    
+    DLog(@"\n\nWarning you have called this method when a otp view controller is already visible\n\n");
+}
+
+
+//
+// Hidden: handle otp channels flow
+//
+
+- (void)__masRequestsOTPChannelsWithOTPGenerationBlock__:(MASOTPGenerationBlock)otpGenerationBlock supportedChannels:(NSArray *)supportedChannels
+{
+    //DLog(@"\n\ncalled with otp generation block: %@ and supported channels : %@\n\n", otpGenerationBlock, supportedChannels);
+    
+    if(!self.channelViewController)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Init with the nib file from the bundle
+                           //
+                           //NSBundle *bundle = [NSBundle bundleForClass:[self class]]; //Used for dynamic framework
+                           
+                           NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
+                           
+                           _channelViewController = [[MASOTPChannelViewController alloc] initWithNibName:@"MASOTPChannelViewController" bundle:bundle];
+                           
+                           _channelViewController.otpGenerationBlock = otpGenerationBlock;
+                           
+                           _channelViewController.supportedChannels = supportedChannels;
+                           
+                           //
+                           // Show the controller
+                           //
+                           __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_channelViewController];
+                           
+                           [[UIAlertController rootViewController] presentViewController:navigationController
+                                                                                animated:YES
+                                                                              completion:^
+                            {
+                                _channelViewController = nil;
+                                navigationController = nil;
+                            }];
+                           
+                           return;
+                       });
+    }
+    
+    DLog(@"\n\nWarning you have called this method when a channel view controller is already visible\n\n");
 }
 
 @end

@@ -38,4 +38,21 @@
  */
 + (void)setWillHandleAuthentication:(BOOL)handle;
 
+
+/**
+ * Detect if handling of OTP authentication UI is enabled.
+ *
+ * @return Returns YES if enabled, NO if not.  The default is YES.
+ */
++ (BOOL)willHandleOTPAuthentication;
+
+
+/**
+ * Set the handling state of the OTP authentication UI by this framework.
+ *
+ * @param handle YES if you want the framework to enable it, NO if not.
+ *     YES is the default.
+ */
++ (void)setWillHandleOTPAuthentication:(BOOL)handle;
+
 @end

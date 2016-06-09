@@ -96,6 +96,14 @@
 		A488CE251C0A758100B8B961 /* MASTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE231C0A758100B8B961 /* MASTableViewCell.m */; };
 		A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */; };
 		A488CE361C0A82F300B8B961 /* MASICenterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */; };
+		A858C6581D0961FC001FB9AD /* MASOTPChannelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A858C6521D0961FC001FB9AD /* MASOTPChannelViewController.h */; };
+		A858C6591D0961FC001FB9AD /* MASOTPChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A858C6531D0961FC001FB9AD /* MASOTPChannelViewController.m */; };
+		A858C65B1D0961FC001FB9AD /* MASOTPChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A858C6541D0961FC001FB9AD /* MASOTPChannelViewController.xib */; };
+		A858C65C1D0961FC001FB9AD /* MASOTPChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A858C6541D0961FC001FB9AD /* MASOTPChannelViewController.xib */; };
+		A858C65D1D0961FC001FB9AD /* MASOTPViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A858C6551D0961FC001FB9AD /* MASOTPViewController.h */; };
+		A858C65E1D0961FC001FB9AD /* MASOTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A858C6561D0961FC001FB9AD /* MASOTPViewController.m */; };
+		A858C6601D0961FC001FB9AD /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A858C6571D0961FC001FB9AD /* MASOTPViewController.xib */; };
+		A858C6611D0961FC001FB9AD /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A858C6571D0961FC001FB9AD /* MASOTPViewController.xib */; };
 		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
 		CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
 		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; };
@@ -109,27 +117,6 @@
 			remoteGlobalIDString = 10246A8A1CB9779E00C0A70A;
 			remoteInfo = MASUIResources;
 		};
-		10246ABF1CBAA82600C0A70A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1059D3701B61AA3700223267;
-			remoteInfo = MASFoundation;
-		};
-		10246AC11CBAA82600C0A70A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1059D37B1B61AA3800223267;
-			remoteInfo = MASFoundationTests;
-		};
-		10246AC31CBAA83C00C0A70A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1059D36F1B61AA3700223267;
-			remoteInfo = MASFoundation;
-		};
 		1046611D1C06581500A2A03C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 104661081C06581500A2A03C /* Project object */;
@@ -137,12 +124,25 @@
 			remoteGlobalIDString = 104661101C06581500A2A03C;
 			remoteInfo = MASUI;
 		};
+		A86585281D0988AE00FA9E2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A86585221D0988AE00FA9E2A /* MASFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1059D3701B61AA3700223267;
+			remoteInfo = MASFoundation;
+		};
+		A865852A1D0988AE00FA9E2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A86585221D0988AE00FA9E2A /* MASFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1059D37B1B61AA3800223267;
+			remoteInfo = MASFoundationTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		10246A8B1CB9779E00C0A70A /* MASUIResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MASUIResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		10246A8D1CB9779F00C0A70A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASFoundation.xcodeproj; path = ../MASFoundation/MASFoundation.xcodeproj; sourceTree = "<group>"; };
 		104661111C06581500A2A03C /* MASUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MASUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		104661141C06581500A2A03C /* MASUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASUI.h; sourceTree = "<group>"; };
 		104661161C06581500A2A03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -198,6 +198,13 @@
 		A488CE231C0A758100B8B961 /* MASTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASTableViewCell.m; path = login/MASTableViewCell.m; sourceTree = "<group>"; };
 		A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASICenterFlowLayout.h; sourceTree = "<group>"; };
 		A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASICenterFlowLayout.m; sourceTree = "<group>"; };
+		A858C6521D0961FC001FB9AD /* MASOTPChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASOTPChannelViewController.h; sourceTree = "<group>"; };
+		A858C6531D0961FC001FB9AD /* MASOTPChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASOTPChannelViewController.m; sourceTree = "<group>"; };
+		A858C6541D0961FC001FB9AD /* MASOTPChannelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASOTPChannelViewController.xib; sourceTree = "<group>"; };
+		A858C6551D0961FC001FB9AD /* MASOTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASOTPViewController.h; sourceTree = "<group>"; };
+		A858C6561D0961FC001FB9AD /* MASOTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASOTPViewController.m; sourceTree = "<group>"; };
+		A858C6571D0961FC001FB9AD /* MASOTPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASOTPViewController.xib; sourceTree = "<group>"; };
+		A86585221D0988AE00FA9E2A /* MASFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASFoundation.xcodeproj; path = "../iOS-MAS-Foundation/MASFoundation.xcodeproj"; sourceTree = "<group>"; };
 		CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginWebViewController.m; sourceTree = "<group>"; };
 		CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginWebViewController.xib; sourceTree = "<group>"; };
 		CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginWebViewController.h; sourceTree = "<group>"; };
@@ -237,19 +244,10 @@
 			path = MASUIResources;
 			sourceTree = "<group>";
 		};
-		10246ABA1CBAA82600C0A70A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				10246AC01CBAA82600C0A70A /* MASFoundation.framework */,
-				10246AC21CBAA82600C0A70A /* MASFoundationTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		104661071C06581500A2A03C = {
 			isa = PBXGroup;
 			children = (
-				10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */,
+				A86585221D0988AE00FA9E2A /* MASFoundation.xcodeproj */,
 				104661131C06581500A2A03C /* MASUI */,
 				1046611F1C06581500A2A03C /* MASUITests */,
 				10246A8C1CB9779F00C0A70A /* MASUIResources */,
@@ -351,6 +349,7 @@
 				A488CD9A1C0972FD00B8B961 /* MASViewController.h */,
 				A488CD9B1C0972FD00B8B961 /* MASViewController.m */,
 				A488CCD11C08DAD000B8B961 /* login */,
+				A858C6511D0961FC001FB9AD /* otp */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -425,6 +424,28 @@
 			path = MASICenterFlowLayout;
 			sourceTree = "<group>";
 		};
+		A858C6511D0961FC001FB9AD /* otp */ = {
+			isa = PBXGroup;
+			children = (
+				A858C6521D0961FC001FB9AD /* MASOTPChannelViewController.h */,
+				A858C6531D0961FC001FB9AD /* MASOTPChannelViewController.m */,
+				A858C6541D0961FC001FB9AD /* MASOTPChannelViewController.xib */,
+				A858C6551D0961FC001FB9AD /* MASOTPViewController.h */,
+				A858C6561D0961FC001FB9AD /* MASOTPViewController.m */,
+				A858C6571D0961FC001FB9AD /* MASOTPViewController.xib */,
+			);
+			path = otp;
+			sourceTree = "<group>";
+		};
+		A86585231D0988AE00FA9E2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A86585291D0988AE00FA9E2A /* MASFoundation.framework */,
+				A865852B1D0988AE00FA9E2A /* MASFoundationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -433,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A488CCCA1C08D87800B8B961 /* MAS+UI.h in Headers */,
+				A858C65D1D0961FC001FB9AD /* MASOTPViewController.h in Headers */,
 				A488CD9C1C0972FD00B8B961 /* MASViewController.h in Headers */,
 				A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */,
 				A488CDA81C09778100B8B961 /* NSBundle+MASUI.h in Headers */,
@@ -445,6 +467,7 @@
 				A488CD941C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h in Headers */,
 				A488CCD41C08DAEF00B8B961 /* MASLoginViewController.h in Headers */,
 				A488CD981C0972C900B8B961 /* MASCollectionViewCell.h in Headers */,
+				A858C6581D0961FC001FB9AD /* MASOTPChannelViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +503,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				10246AC41CBAA83C00C0A70A /* PBXTargetDependency */,
 				10246A971CB9895B00C0A70A /* PBXTargetDependency */,
 			);
 			name = MASUI;
@@ -541,8 +563,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 10246ABA1CBAA82600C0A70A /* Products */;
-					ProjectRef = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
+					ProductGroup = A86585231D0988AE00FA9E2A /* Products */;
+					ProjectRef = A86585221D0988AE00FA9E2A /* MASFoundation.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -556,18 +578,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		10246AC01CBAA82600C0A70A /* MASFoundation.framework */ = {
+		A86585291D0988AE00FA9E2A /* MASFoundation.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = MASFoundation.framework;
-			remoteRef = 10246ABF1CBAA82600C0A70A /* PBXContainerItemProxy */;
+			remoteRef = A86585281D0988AE00FA9E2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		10246AC21CBAA82600C0A70A /* MASFoundationTests.xctest */ = {
+		A865852B1D0988AE00FA9E2A /* MASFoundationTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = MASFoundationTests.xctest;
-			remoteRef = 10246AC11CBAA82600C0A70A /* PBXContainerItemProxy */;
+			remoteRef = A865852A1D0988AE00FA9E2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -594,6 +616,7 @@
 				10246AAB1CBAA2A400C0A70A /* google.png in Resources */,
 				10246AAC1CBAA2A400C0A70A /* google@2x.png in Resources */,
 				10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */,
+				A858C6611D0961FC001FB9AD /* MASOTPViewController.xib in Resources */,
 				10246AAE1CBAA2A400C0A70A /* linkedin_disable.png in Resources */,
 				10246AAF1CBAA2A400C0A70A /* linkedin_disable@2x.png in Resources */,
 				10246AB01CBAA2A400C0A70A /* linkedin.png in Resources */,
@@ -601,6 +624,7 @@
 				10246AB21CBAA2A400C0A70A /* salesforce_disable.png in Resources */,
 				10246AB31CBAA2A400C0A70A /* salesforce_disable@2x.png in Resources */,
 				10246AB41CBAA2A400C0A70A /* salesforce.png in Resources */,
+				A858C65C1D0961FC001FB9AD /* MASOTPChannelViewController.xib in Resources */,
 				10246AB51CBAA2A400C0A70A /* salesforce@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +649,7 @@
 				A488CCFF1C08F9AB00B8B961 /* facebook@2x.png in Resources */,
 				A488CD011C08F9AB00B8B961 /* google_disable@2x.png in Resources */,
 				A488CD031C08F9AB00B8B961 /* google@2x.png in Resources */,
+				A858C6601D0961FC001FB9AD /* MASOTPViewController.xib in Resources */,
 				A488CD0F1C08F9E100B8B961 /* caLogo.png in Resources */,
 				A488CD001C08F9AB00B8B961 /* google_disable.png in Resources */,
 				A488CCFA1C08F9AB00B8B961 /* enterprise.png in Resources */,
@@ -633,6 +658,7 @@
 				A488CD041C08F9AB00B8B961 /* grey_button.png in Resources */,
 				A488CCFC1C08F9AB00B8B961 /* facebook_disable.png in Resources */,
 				A488CD021C08F9AB00B8B961 /* google.png in Resources */,
+				A858C65B1D0961FC001FB9AD /* MASOTPChannelViewController.xib in Resources */,
 				A488CD071C08F9AB00B8B961 /* linkedin.png in Resources */,
 				A488CCF81C08F9AB00B8B961 /* enterprise_disable.png in Resources */,
 			);
@@ -675,9 +701,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A858C65E1D0961FC001FB9AD /* MASOTPViewController.m in Sources */,
 				A488CDA91C09778100B8B961 /* NSBundle+MASUI.m in Sources */,
 				A488CCD51C08DAEF00B8B961 /* MASLoginViewController.m in Sources */,
 				A488CD9D1C0972FD00B8B961 /* MASViewController.m in Sources */,
+				A858C6591D0961FC001FB9AD /* MASOTPChannelViewController.m in Sources */,
 				A488CDDD1C0A178C00B8B961 /* UIAlertController+MASUI.m in Sources */,
 				A488CD991C0972C900B8B961 /* MASCollectionViewCell.m in Sources */,
 				A488CD951C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m in Sources */,
@@ -705,11 +733,6 @@
 			isa = PBXTargetDependency;
 			target = 10246A8A1CB9779E00C0A70A /* MASUIResources */;
 			targetProxy = 10246A961CB9895B00C0A70A /* PBXContainerItemProxy */;
-		};
-		10246AC41CBAA83C00C0A70A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MASFoundation;
-			targetProxy = 10246AC31CBAA83C00C0A70A /* PBXContainerItemProxy */;
 		};
 		1046611E1C06581500A2A03C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
