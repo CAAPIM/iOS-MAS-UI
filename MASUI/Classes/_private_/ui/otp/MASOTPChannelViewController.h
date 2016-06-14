@@ -36,6 +36,4 @@
  */
 @property (nonatomic, strong) NSArray *supportedChannels;
 
-
-
 @end

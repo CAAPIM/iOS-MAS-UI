@@ -11,7 +11,6 @@
 #import <MASUI/MASUI.h>
 
 
-
 /**
  *  MASOTPViewController - ViewController class to handle One Time Password fetch.
  */
@@ -35,7 +34,5 @@
  *  NSError object to provide OTP error details. 
  */
 @property (nonatomic, copy) NSError *otpError;
-
-
 
 @end

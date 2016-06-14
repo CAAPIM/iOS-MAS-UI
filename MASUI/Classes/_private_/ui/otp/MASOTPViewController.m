@@ -45,12 +45,10 @@
  */
 @property (nonatomic, weak) IBOutlet UIButton *sendBtn;
 
-
 @end
 
 
 @implementation MASOTPViewController
-
 
 # pragma mark - Lifecycle
 
@@ -152,6 +150,5 @@
         });
     });
 }
-
 
 @end

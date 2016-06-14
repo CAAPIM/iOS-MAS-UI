@@ -16,7 +16,6 @@
 @interface MASOTPChannelViewController ()
     <UITableViewDataSource, UITableViewDelegate>
 
-
 # pragma mark - IBOutlets
 
 /**
@@ -36,12 +35,10 @@
  */
 @property (nonatomic, weak) IBOutlet UIButton *sendBtn;
 
-
 @end
 
 
 @implementation MASOTPChannelViewController
-
 
 # pragma mark - Lifecycle
 
@@ -132,7 +129,7 @@
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Select OTP Channel";
+    return @"Select OTP Delivery Channel";
 }
 
 
@@ -201,6 +198,5 @@
         });
     }
 }
-
 
 @end

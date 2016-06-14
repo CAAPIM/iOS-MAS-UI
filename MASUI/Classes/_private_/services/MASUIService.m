@@ -23,7 +23,17 @@
 # pragma mark - Properties
 
 @property (nonatomic, strong, readonly) MASLoginViewController *loginViewController;
+
+
+/**
+ *  OTP Credentials View Controller
+ */
 @property (nonatomic, strong, readonly) MASOTPViewController *otpViewController;
+
+
+/**
+ *  OTP Delivery Channels View Controller
+ */
 @property (nonatomic, strong, readonly) MASOTPChannelViewController *channelViewController;
 
 @end
@@ -181,7 +191,6 @@ static BOOL _willHandleOTPAuthentication_ = YES;
                            _otpViewController = [[MASOTPViewController alloc] initWithNibName:@"MASOTPViewController" bundle:bundle];
                            
                            _otpViewController.otpError = otpError;
-                           
                            _otpViewController.otpCredentialsBlock = otpCredentialsBlock;
                            
                            //
@@ -226,8 +235,7 @@ static BOOL _willHandleOTPAuthentication_ = YES;
                            
                            _channelViewController = [[MASOTPChannelViewController alloc] initWithNibName:@"MASOTPChannelViewController" bundle:bundle];
                            
-                           _channelViewController.otpGenerationBlock = otpGenerationBlock;
-                           
+                           _channelViewController.otpGenerationBlock = otpGenerationBlock;                           
                            _channelViewController.supportedChannels = supportedChannels;
                            
                            //
