@@ -96,8 +96,14 @@
  */
 - (IBAction)onSendSelected:(id)sender
 {
+    //
+    // Make sure user has entered OTP.
+    //
+    NSString *oneTimePassword = _oneTimePasswordField.text;
+    NSCharacterSet *whiteSpaces = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    oneTimePassword = [oneTimePassword stringByTrimmingCharactersInSet:whiteSpaces];
     
-    if (!_oneTimePasswordField.text.length)
+    if (!oneTimePassword.length)
     {
         return;
     }
