@@ -29,4 +29,16 @@
     [MASUIService setWillHandleAuthentication:handle];
 }
 
+
++ (BOOL)willHandleOTPAuthentication
+{
+    return [MASUIService willHandleOTPAuthentication];
+}
+
+
++ (void)setWillHandleOTPAuthentication:(BOOL)handle
+{
+    [MASUIService setWillHandleOTPAuthentication:handle];
+}
+
 @end

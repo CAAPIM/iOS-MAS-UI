@@ -96,6 +96,14 @@
 		A488CE251C0A758100B8B961 /* MASTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE231C0A758100B8B961 /* MASTableViewCell.m */; };
 		A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */; };
 		A488CE361C0A82F300B8B961 /* MASICenterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */; };
+		A85F61241D0A94310014739E /* MASOTPChannelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A85F611E1D0A94310014739E /* MASOTPChannelViewController.h */; };
+		A85F61251D0A94310014739E /* MASOTPChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F611F1D0A94310014739E /* MASOTPChannelViewController.m */; };
+		A85F61271D0A94310014739E /* MASOTPChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61201D0A94310014739E /* MASOTPChannelViewController.xib */; };
+		A85F61281D0A94310014739E /* MASOTPChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61201D0A94310014739E /* MASOTPChannelViewController.xib */; };
+		A85F61291D0A94310014739E /* MASOTPViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A85F61211D0A94310014739E /* MASOTPViewController.h */; };
+		A85F612A1D0A94310014739E /* MASOTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F61221D0A94310014739E /* MASOTPViewController.m */; };
+		A85F612C1D0A94310014739E /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61231D0A94310014739E /* MASOTPViewController.xib */; };
+		A85F612D1D0A94310014739E /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61231D0A94310014739E /* MASOTPViewController.xib */; };
 		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
 		CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
 		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; };
@@ -198,6 +206,12 @@
 		A488CE231C0A758100B8B961 /* MASTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASTableViewCell.m; path = login/MASTableViewCell.m; sourceTree = "<group>"; };
 		A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASICenterFlowLayout.h; sourceTree = "<group>"; };
 		A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASICenterFlowLayout.m; sourceTree = "<group>"; };
+		A85F611E1D0A94310014739E /* MASOTPChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASOTPChannelViewController.h; sourceTree = "<group>"; };
+		A85F611F1D0A94310014739E /* MASOTPChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASOTPChannelViewController.m; sourceTree = "<group>"; };
+		A85F61201D0A94310014739E /* MASOTPChannelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASOTPChannelViewController.xib; sourceTree = "<group>"; };
+		A85F61211D0A94310014739E /* MASOTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASOTPViewController.h; sourceTree = "<group>"; };
+		A85F61221D0A94310014739E /* MASOTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASOTPViewController.m; sourceTree = "<group>"; };
+		A85F61231D0A94310014739E /* MASOTPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASOTPViewController.xib; sourceTree = "<group>"; };
 		CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginWebViewController.m; sourceTree = "<group>"; };
 		CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginWebViewController.xib; sourceTree = "<group>"; };
 		CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginWebViewController.h; sourceTree = "<group>"; };
@@ -351,6 +365,7 @@
 				A488CD9A1C0972FD00B8B961 /* MASViewController.h */,
 				A488CD9B1C0972FD00B8B961 /* MASViewController.m */,
 				A488CCD11C08DAD000B8B961 /* login */,
+				A85F611D1D0A94310014739E /* otp */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -425,6 +440,19 @@
 			path = MASICenterFlowLayout;
 			sourceTree = "<group>";
 		};
+		A85F611D1D0A94310014739E /* otp */ = {
+			isa = PBXGroup;
+			children = (
+				A85F611E1D0A94310014739E /* MASOTPChannelViewController.h */,
+				A85F611F1D0A94310014739E /* MASOTPChannelViewController.m */,
+				A85F61201D0A94310014739E /* MASOTPChannelViewController.xib */,
+				A85F61211D0A94310014739E /* MASOTPViewController.h */,
+				A85F61221D0A94310014739E /* MASOTPViewController.m */,
+				A85F61231D0A94310014739E /* MASOTPViewController.xib */,
+			);
+			path = otp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -433,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A488CCCA1C08D87800B8B961 /* MAS+UI.h in Headers */,
+				A85F61291D0A94310014739E /* MASOTPViewController.h in Headers */,
 				A488CD9C1C0972FD00B8B961 /* MASViewController.h in Headers */,
 				A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */,
 				A488CDA81C09778100B8B961 /* NSBundle+MASUI.h in Headers */,
@@ -445,6 +474,7 @@
 				A488CD941C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h in Headers */,
 				A488CCD41C08DAEF00B8B961 /* MASLoginViewController.h in Headers */,
 				A488CD981C0972C900B8B961 /* MASCollectionViewCell.h in Headers */,
+				A85F61241D0A94310014739E /* MASOTPChannelViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +624,7 @@
 				10246AAB1CBAA2A400C0A70A /* google.png in Resources */,
 				10246AAC1CBAA2A400C0A70A /* google@2x.png in Resources */,
 				10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */,
+				A85F612D1D0A94310014739E /* MASOTPViewController.xib in Resources */,
 				10246AAE1CBAA2A400C0A70A /* linkedin_disable.png in Resources */,
 				10246AAF1CBAA2A400C0A70A /* linkedin_disable@2x.png in Resources */,
 				10246AB01CBAA2A400C0A70A /* linkedin.png in Resources */,
@@ -601,6 +632,7 @@
 				10246AB21CBAA2A400C0A70A /* salesforce_disable.png in Resources */,
 				10246AB31CBAA2A400C0A70A /* salesforce_disable@2x.png in Resources */,
 				10246AB41CBAA2A400C0A70A /* salesforce.png in Resources */,
+				A85F61281D0A94310014739E /* MASOTPChannelViewController.xib in Resources */,
 				10246AB51CBAA2A400C0A70A /* salesforce@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +657,7 @@
 				A488CCFF1C08F9AB00B8B961 /* facebook@2x.png in Resources */,
 				A488CD011C08F9AB00B8B961 /* google_disable@2x.png in Resources */,
 				A488CD031C08F9AB00B8B961 /* google@2x.png in Resources */,
+				A85F612C1D0A94310014739E /* MASOTPViewController.xib in Resources */,
 				A488CD0F1C08F9E100B8B961 /* caLogo.png in Resources */,
 				A488CD001C08F9AB00B8B961 /* google_disable.png in Resources */,
 				A488CCFA1C08F9AB00B8B961 /* enterprise.png in Resources */,
@@ -633,6 +666,7 @@
 				A488CD041C08F9AB00B8B961 /* grey_button.png in Resources */,
 				A488CCFC1C08F9AB00B8B961 /* facebook_disable.png in Resources */,
 				A488CD021C08F9AB00B8B961 /* google.png in Resources */,
+				A85F61271D0A94310014739E /* MASOTPChannelViewController.xib in Resources */,
 				A488CD071C08F9AB00B8B961 /* linkedin.png in Resources */,
 				A488CCF81C08F9AB00B8B961 /* enterprise_disable.png in Resources */,
 			);
@@ -675,9 +709,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85F612A1D0A94310014739E /* MASOTPViewController.m in Sources */,
 				A488CDA91C09778100B8B961 /* NSBundle+MASUI.m in Sources */,
 				A488CCD51C08DAEF00B8B961 /* MASLoginViewController.m in Sources */,
 				A488CD9D1C0972FD00B8B961 /* MASViewController.m in Sources */,
+				A85F61251D0A94310014739E /* MASOTPChannelViewController.m in Sources */,
 				A488CDDD1C0A178C00B8B961 /* UIAlertController+MASUI.m in Sources */,
 				A488CD991C0972C900B8B961 /* MASCollectionViewCell.m in Sources */,
 				A488CD951C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m in Sources */,

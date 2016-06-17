@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MASOTPViewController">
+            <connections>
+                <outlet property="activityIndicator" destination="Vue-kE-qS2" id="NAH-TG-Crf"/>
+                <outlet property="messageLabel" destination="dWY-cs-8CC" id="k2v-BU-S9m"/>
+                <outlet property="oneTimePasswordField" destination="QnA-2q-JUp" id="XxC-QN-cMd"/>
+                <outlet property="sendBtn" destination="6hU-9A-mBe" id="DDJ-E3-vDy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jux-Do-Cxk">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="One Time Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnA-2q-JUp">
+                            <rect key="frame" x="184" y="185" width="231" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="231" id="3Vc-Ml-qbU"/>
+                                <constraint firstAttribute="height" constant="30" id="YQD-YT-ZKw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hU-9A-mBe" userLabel="SendButton">
+                            <rect key="frame" x="202" y="259" width="194" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="7fX-m8-jsm"/>
+                                <constraint firstAttribute="width" constant="194" id="ZDR-mo-05N"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <size key="titleShadowOffset" width="0.0" height="1"/>
+                            <state key="normal" title="Submit" backgroundImage="grey_button.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onSendSelected:" destination="-1" eventType="touchUpInside" id="nph-9X-Ase"/>
+                            </connections>
+                        </button>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" image="caLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZEw-fJ-KBE">
+                            <rect key="frame" x="262" y="40" width="75" height="67"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="67" id="AwB-Q4-H4r"/>
+                                <constraint firstAttribute="width" constant="75" id="E4s-LV-ypU"/>
+                            </constraints>
+                        </imageView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Vue-kE-qS2">
+                            <rect key="frame" x="254" y="221" width="92" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="7bw-fL-Pz7"/>
+                                <constraint firstAttribute="width" constant="92" id="AHs-9C-ocX"/>
+                            </constraints>
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the OTP." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWY-cs-8CC">
+                            <rect key="frame" x="131" y="137" width="338" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="338" id="pJm-qN-zOa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="6hU-9A-mBe" secondAttribute="bottom" constant="248" id="6nu-7r-Uaa"/>
+                        <constraint firstAttribute="trailing" secondItem="QnA-2q-JUp" secondAttribute="trailing" constant="185" id="AHX-e5-67d"/>
+                        <constraint firstItem="6hU-9A-mBe" firstAttribute="top" secondItem="QnA-2q-JUp" secondAttribute="bottom" constant="44" id="AY5-ee-60P"/>
+                        <constraint firstItem="QnA-2q-JUp" firstAttribute="centerX" secondItem="Jux-Do-Cxk" secondAttribute="centerX" id="LQ0-pd-Iws"/>
+                        <constraint firstItem="6hU-9A-mBe" firstAttribute="top" secondItem="Vue-kE-qS2" secondAttribute="bottom" constant="1" id="QiI-jN-O4C"/>
+                        <constraint firstItem="dWY-cs-8CC" firstAttribute="top" secondItem="ZEw-fJ-KBE" secondAttribute="bottom" constant="30" id="bK5-Su-5dw"/>
+                        <constraint firstItem="6hU-9A-mBe" firstAttribute="centerX" secondItem="Jux-Do-Cxk" secondAttribute="centerX" constant="-1" id="beZ-Sd-yD7"/>
+                        <constraint firstItem="QnA-2q-JUp" firstAttribute="top" secondItem="dWY-cs-8CC" secondAttribute="bottom" constant="8" symbolic="YES" id="der-ms-et2"/>
+                        <constraint firstItem="dWY-cs-8CC" firstAttribute="centerX" secondItem="Jux-Do-Cxk" secondAttribute="centerX" id="fTq-ha-wtj"/>
+                        <constraint firstItem="Vue-kE-qS2" firstAttribute="centerX" secondItem="QnA-2q-JUp" secondAttribute="centerX" id="ic2-wW-VeM"/>
+                        <constraint firstItem="QnA-2q-JUp" firstAttribute="top" secondItem="ZEw-fJ-KBE" secondAttribute="bottom" constant="78" id="pNw-G9-etU"/>
+                        <constraint firstItem="ZEw-fJ-KBE" firstAttribute="centerX" secondItem="Jux-Do-Cxk" secondAttribute="centerX" id="q4C-JS-sxP"/>
+                        <constraint firstItem="ZEw-fJ-KBE" firstAttribute="top" secondItem="Jux-Do-Cxk" secondAttribute="top" constant="40" id="wUK-sj-6Ft"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jux-Do-Cxk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WXF-lz-o7p"/>
+                <constraint firstItem="Jux-Do-Cxk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rIn-1z-xv3"/>
+                <constraint firstAttribute="bottom" secondItem="Jux-Do-Cxk" secondAttribute="bottom" id="spC-MJ-fnP"/>
+                <constraint firstAttribute="trailing" secondItem="Jux-Do-Cxk" secondAttribute="trailing" id="tCt-eP-otb"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="caLogo.png" width="86" height="71"/>
+        <image name="grey_button.png" width="240" height="36"/>
+    </resources>
+</document>
