@@ -218,13 +218,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		10246A881CB9779E00C0A70A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1046610D1C06581500A2A03C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,8 +478,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10246A921CB9779F00C0A70A /* Build configuration list for PBXNativeTarget "MASUIResources" */;
 			buildPhases = (
-				10246A871CB9779E00C0A70A /* Sources */,
-				10246A881CB9779E00C0A70A /* Frameworks */,
 				10246A891CB9779E00C0A70A /* Resources */,
 			);
 			buildRules = (
@@ -698,13 +689,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		10246A871CB9779E00C0A70A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1046610C1C06581500A2A03C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,7 +743,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = NO;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MASUIResources/Info.plist;
@@ -777,7 +762,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = NO;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MASUIResources/Info.plist;
