@@ -31,6 +31,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *userNameField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
 @property (nonatomic, weak) IBOutlet UIButton *loginBtn;
+@property (nonatomic, weak) IBOutlet UIButton *cancelBtn;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIImageView *qrCodeView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -121,9 +122,48 @@
 
 # pragma mark - IBActions
 
+- (IBAction)onCancelSelected:(id)sender
+{
+    
+    [self.activityIndicator startAnimating];
+    
+    //
+    // Perform the request
+    //
+    DLog(@"\n\ncalling basic credentials block: %@\n\n", self.basicCredentialsBlock);
+    
+    __block MASLoginViewController *blockSelf = self;
+    
+    self.basicCredentialsBlock(nil, nil, YES,^(BOOL completed, NSError *error) {
+    
+        //
+        // Ensure this code runs in the main UI thread
+        //
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Stop progress animation
+                           //
+                           [blockSelf.activityIndicator stopAnimating];
+                           
+                           //
+                           // Stop QR Code session sharing
+                           //
+                           [_qrCode stopDisplayingQRCodeImageForProximityLogin];
+                           
+                           //
+                           // Dsmiss the view controller
+                           //
+                           [blockSelf dismissViewControllerAnimated:YES completion:nil];
+                       });
+    });
+}
+
+
 - (IBAction)onLoginSelected:(id)sender
 {
     [_loginBtn setEnabled:NO];
+    [_cancelBtn setEnabled:NO];
     
     //
     // Display an error if device is being authorized through other session sharing method.
@@ -179,6 +219,7 @@
                 }
                 
                 [_loginBtn setEnabled:YES];
+                [_cancelBtn setEnabled:YES];
             
                 return;
             }
@@ -353,6 +394,7 @@
     // Update the cell
     //
     [cell updateCellWithAuthenticationProvider:provider availableProvider:self.availableProvider];
+    cell.accessibilityIdentifier = [NSString stringWithFormat:@"masui-sociallogin-%@",provider.identifier];
     
     return cell;
 }

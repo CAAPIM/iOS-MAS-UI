@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MASLoginViewController">
             <connections>
                 <outlet property="activityIndicator" destination="UNj-CY-8xe" id="Q2g-e4-7MV"/>
+                <outlet property="cancelBtn" destination="tas-dN-zD0" id="Gta-Ga-G0f"/>
                 <outlet property="collectionView" destination="gQ9-8k-Jn3" id="bl2-q9-iKM"/>
                 <outlet property="loginBtn" destination="Ot1-fH-gQ0" id="StL-Dr-uWI"/>
                 <outlet property="passwordField" destination="2L8-SH-gqo" id="qU2-SU-xhl"/>
@@ -27,6 +28,7 @@
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCu-g3-fih">
                             <rect key="frame" x="44" y="188" width="231" height="30"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration" identifier="masui-usernameField"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="duz-Q2-PJP"/>
                                 <constraint firstAttribute="width" constant="231" id="pXN-cr-pf1"/>
@@ -40,6 +42,7 @@
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-SH-gqo">
                             <rect key="frame" x="44" y="228" width="231" height="30"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration" identifier="masui-passwordField"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Cy6-cC-ajC"/>
                                 <constraint firstAttribute="width" constant="231" id="JBd-PY-EsL"/>
@@ -59,10 +62,11 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot1-fH-gQ0" userLabel="LoginButton">
-                            <rect key="frame" x="62" y="302" width="194" height="50"/>
+                            <rect key="frame" x="62" y="273" width="194" height="35"/>
+                            <accessibility key="accessibilityConfiguration" identifier="masui-loginBtn"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="194" id="BzR-ky-7OO"/>
-                                <constraint firstAttribute="height" constant="50" id="Fqz-qh-nvD"/>
+                                <constraint firstAttribute="height" constant="35" id="Fqz-qh-nvD"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -108,6 +112,23 @@
                                 <outlet property="delegate" destination="-1" id="NEk-mh-CJO"/>
                             </connections>
                         </collectionView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tas-dN-zD0" userLabel="CancelButton">
+                            <rect key="frame" x="62" y="318" width="194" height="36"/>
+                            <accessibility key="accessibilityConfiguration" identifier="masui-cancelBtn"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="194" id="JIb-MG-Egv"/>
+                                <constraint firstAttribute="height" constant="36" id="Xth-iZ-yFK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <size key="titleShadowOffset" width="0.0" height="1"/>
+                            <state key="normal" title="Cancel" backgroundImage="grey_button.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onCancelSelected:" destination="-1" eventType="touchUpInside" id="5ZH-AS-41s"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="CCu-g3-fih" firstAttribute="top" secondItem="phv-hA-oxT" secondAttribute="bottom" constant="38" id="49i-1S-vZN"/>
@@ -117,13 +138,15 @@
                         <constraint firstAttribute="bottom" secondItem="FSo-bb-bb3" secondAttribute="bottom" constant="21" id="GH8-9k-kge"/>
                         <constraint firstItem="phv-hA-oxT" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="KdJ-YG-DsI"/>
                         <constraint firstItem="CCu-g3-fih" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="PFD-GT-chn"/>
-                        <constraint firstItem="Ot1-fH-gQ0" firstAttribute="top" secondItem="2L8-SH-gqo" secondAttribute="bottom" constant="44" id="QeV-f4-MaB"/>
+                        <constraint firstItem="Ot1-fH-gQ0" firstAttribute="top" secondItem="2L8-SH-gqo" secondAttribute="bottom" constant="15" id="QeV-f4-MaB"/>
                         <constraint firstItem="phv-hA-oxT" firstAttribute="top" secondItem="O8g-Ku-AfT" secondAttribute="top" constant="83" id="VN6-jc-doE"/>
+                        <constraint firstItem="tas-dN-zD0" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" constant="-1" id="WKK-q6-LpO"/>
+                        <constraint firstItem="tas-dN-zD0" firstAttribute="top" secondItem="Ot1-fH-gQ0" secondAttribute="bottom" constant="10" id="Xyq-xw-naK"/>
                         <constraint firstItem="gQ9-8k-Jn3" firstAttribute="trailing" secondItem="O8g-Ku-AfT" secondAttribute="trailingMargin" constant="-2" id="d80-qC-pk0"/>
                         <constraint firstItem="UNj-CY-8xe" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="eri-00-pGt"/>
                         <constraint firstItem="gQ9-8k-Jn3" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="ifv-hI-VHZ"/>
                         <constraint firstItem="UNj-CY-8xe" firstAttribute="centerY" secondItem="O8g-Ku-AfT" secondAttribute="centerY" constant="-53" id="moU-c1-AoJ"/>
-                        <constraint firstItem="gQ9-8k-Jn3" firstAttribute="top" secondItem="Ot1-fH-gQ0" secondAttribute="bottom" constant="24" id="tik-Ox-qsA"/>
+                        <constraint firstItem="gQ9-8k-Jn3" firstAttribute="top" secondItem="Ot1-fH-gQ0" secondAttribute="bottom" constant="68" id="tik-Ox-qsA"/>
                         <constraint firstItem="FSo-bb-bb3" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" constant="-1" id="vNC-1B-FkA"/>
                         <constraint firstItem="2L8-SH-gqo" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="ym6-FN-sKB"/>
                     </constraints>
