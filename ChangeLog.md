@@ -2,7 +2,7 @@
 
 ### Bug fixes
 
-- .
+- Fix the bug where version number and version string were returning incorrect values.
 
 ### New features
 
