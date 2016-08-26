@@ -2,12 +2,11 @@
 
 ### Bug fixes
 
-- 
 - .
 
 ### New features
 
-- LoginViewController exposed to be used for developers at anytime
+- "Cancel" button to cancel the authentication process on default login screen was added.
 
 ### Deprecated methods
 
@@ -18,7 +17,6 @@
 
 ### Bug fixes
 
-- 
 - .
 
 ### New features
