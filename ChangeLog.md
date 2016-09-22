@@ -2,11 +2,11 @@
 
 ### Bug fixes
 
-- Fix the bug where version number and version string were returning incorrect values.
+- Fix the bug where version number and version string were returning incorrect values. [MCT-437]
 
 ### New features
 
-- "Cancel" button to cancel the authentication process on default login screen was added.
+- "Cancel" button to cancel the authentication process on default login screen was added. [MCT-439]
 
 ### Deprecated methods
 
