@@ -533,7 +533,7 @@
 		104661081C06581500A2A03C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "CA Technologies";
 				TargetAttributes = {
 					10246A8A1CB9779E00C0A70A = {
@@ -544,6 +544,7 @@
 					};
 					1046611A1C06581500A2A03C = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 2JJZ96P8P5;
 					};
 					1046612B1C06585800A2A03C = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -869,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "1.2-CR1";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -898,6 +900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "1.2-CR1";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -925,6 +928,7 @@
 		104661291C06581500A2A03C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 2JJZ96P8P5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -939,6 +943,7 @@
 		1046612A1C06581500A2A03C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 2JJZ96P8P5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
