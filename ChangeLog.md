@@ -2,7 +2,7 @@
 
 ### Bug fixes
 
-- Fix the bug where version number and version string were returning incorrect values. [MCT-437]
+- Version number and version string returjed incorrect values. [MCT-437]
 
 ### New features
 
@@ -10,7 +10,7 @@
 
 ### Deprecated methods
 
-- .
+- None.
 
 
 # Version 1.1.00
