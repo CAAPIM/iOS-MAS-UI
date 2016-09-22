@@ -2,7 +2,7 @@
 
 ### Bug fixes
 
-- Version number and version string returjed incorrect values. [MCT-437]
+- Version number and version string returned incorrect values. [MCT-437]
 
 ### New features
 
