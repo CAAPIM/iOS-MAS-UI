@@ -39,7 +39,7 @@
     //
     //  If login view controller is not a subclass of MASBaseLoginViewController, return an error
     //
-    if (![[MASUIService loginViewController] isKindOfClass:[MASBaseLoginViewController class]])
+    if (![MASUIService loginViewController] || ![[MASUIService loginViewController] isKindOfClass:[MASBaseLoginViewController class]])
     {
         //
         //  Construct a NSError object
