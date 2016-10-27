@@ -65,4 +65,13 @@
  */
 - (void)didFinishLoginOnWebView;
 
+
+
+/**
+ Delegation method to handle when the authorization code was received
+
+ @param authorizationCode NSString of authorization code received from the server
+ */
+- (void)didReceiveAuthorizationCode:(NSString *)authorizationCode;
+
 @end

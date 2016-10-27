@@ -176,41 +176,27 @@
     //
     DLog(@"\n\ncalling authorization code block: %@\n\n", self.authorizationCodeBlock);
     
+    if (_delegate && [_delegate respondsToSelector:@selector(didReceiveAuthorizationCode:)])
+    {
+        [_delegate didReceiveAuthorizationCode:code];
+    }
+    
     __block MASLoginWebViewController *blockSelf = self;
     
-    self.authorizationCodeBlock(code, NO, ^(BOOL completed, NSError *error){
+    //
+    // Ensure this code runs in the main UI thread
+    //
+    dispatch_async(dispatch_get_main_queue(), ^{
         
-        DLog(@"\n\nblock callback: %@ or error: %@\n\n", (completed ? @"Yes" : @"No"), [error localizedDescription]);
+        if (_delegate && [_delegate respondsToSelector:@selector(didFinishLoginOnWebView)])
+        {
+            [_delegate didFinishLoginOnWebView];
+        }
         
         //
-        // Ensure this code runs in the main UI thread
+        // Pop the view controller
         //
-        dispatch_async(dispatch_get_main_queue(), ^
-                       {
-                           
-                           //
-                           // Handle the error
-                           //
-                           if(error)
-                           {
-                               //
-                               // Display alert for user
-                               //
-                               [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-                               
-                               return;
-                           }
-                           
-                           if (_delegate && [_delegate respondsToSelector:@selector(didFinishLoginOnWebView)])
-                           {
-                               [_delegate didFinishLoginOnWebView];
-                           }
-                           
-                           //
-                           // Pop the view controller
-                           //
-                           [blockSelf.navigationController popToRootViewControllerAnimated:YES];
-                       });
+        [blockSelf.navigationController popToRootViewControllerAnimated:YES];
     });
 }
 

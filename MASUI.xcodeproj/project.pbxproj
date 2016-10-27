@@ -52,8 +52,6 @@
 		104661211C06581500A2A03C /* MASUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 104661201C06581500A2A03C /* MASUITests.m */; };
 		A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */ = {isa = PBXBuildFile; fileRef = A44EDAB81C06EF5600873659 /* MASUIService.h */; };
 		A44EDABB1C06EF5600873659 /* MASUIService.m in Sources */ = {isa = PBXBuildFile; fileRef = A44EDAB91C06EF5600873659 /* MASUIService.m */; };
-		A488CCCA1C08D87800B8B961 /* MAS+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CCC81C08D87800B8B961 /* MAS+UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A488CCCB1C08D87800B8B961 /* MAS+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CCC91C08D87800B8B961 /* MAS+UI.m */; };
 		A488CCD41C08DAEF00B8B961 /* MASLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CCD21C08DAEF00B8B961 /* MASLoginViewController.h */; };
 		A488CCD51C08DAEF00B8B961 /* MASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CCD31C08DAEF00B8B961 /* MASLoginViewController.m */; };
 		A488CCD71C08DBDD00B8B961 /* MASLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */; };
@@ -106,7 +104,16 @@
 		A85F612D1D0A94310014739E /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61231D0A94310014739E /* MASOTPViewController.xib */; };
 		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
 		CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
-		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; };
+		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBC88F9E1DBE86E2009EE1C6 /* MASBaseLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88F9C1DBE86E2009EE1C6 /* MASBaseLoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBC88F9F1DBE86E2009EE1C6 /* MASBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC88F9D1DBE86E2009EE1C6 /* MASBaseLoginViewController.m */; };
+		CBC88FA31DBFED83009EE1C6 /* MAS+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88FA11DBFED83009EE1C6 /* MAS+UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBC88FA41DBFED83009EE1C6 /* MAS+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC88FA21DBFED83009EE1C6 /* MAS+UI.m */; };
+		CBC88FA71DBFED92009EE1C6 /* MASUser+MASUI.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88FA51DBFED92009EE1C6 /* MASUser+MASUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBC88FA81DBFED92009EE1C6 /* MASUser+MASUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC88FA61DBFED92009EE1C6 /* MASUser+MASUI.m */; };
+		CBC88FAC1DC1308E009EE1C6 /* MASUIConstantPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88FAB1DC12D94009EE1C6 /* MASUIConstantPrivate.h */; };
+		CBC88FAF1DC130FF009EE1C6 /* NSError+MASUIPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88FAD1DC130FF009EE1C6 /* NSError+MASUIPrivate.h */; };
+		CBC88FB01DC130FF009EE1C6 /* NSError+MASUIPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC88FAE1DC130FF009EE1C6 /* NSError+MASUIPrivate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,8 +169,6 @@
 		A44EDAB81C06EF5600873659 /* MASUIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUIService.h; sourceTree = "<group>"; };
 		A44EDAB91C06EF5600873659 /* MASUIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASUIService.m; sourceTree = "<group>"; };
 		A44EDACD1C0798AD00873659 /* MASUI_PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASUI_PrefixHeader.pch; sourceTree = "<group>"; };
-		A488CCC81C08D87800B8B961 /* MAS+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MAS+UI.h"; sourceTree = "<group>"; };
-		A488CCC91C08D87800B8B961 /* MAS+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MAS+UI.m"; sourceTree = "<group>"; };
 		A488CCD21C08DAEF00B8B961 /* MASLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginViewController.h; sourceTree = "<group>"; };
 		A488CCD31C08DAEF00B8B961 /* MASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginViewController.m; sourceTree = "<group>"; };
 		A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginViewController.xib; sourceTree = "<group>"; };
@@ -215,6 +220,15 @@
 		CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginWebViewController.m; sourceTree = "<group>"; };
 		CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginWebViewController.xib; sourceTree = "<group>"; };
 		CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginWebViewController.h; sourceTree = "<group>"; };
+		CBC88F9C1DBE86E2009EE1C6 /* MASBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASBaseLoginViewController.h; sourceTree = "<group>"; };
+		CBC88F9D1DBE86E2009EE1C6 /* MASBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASBaseLoginViewController.m; sourceTree = "<group>"; };
+		CBC88FA11DBFED83009EE1C6 /* MAS+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MAS+UI.h"; sourceTree = "<group>"; };
+		CBC88FA21DBFED83009EE1C6 /* MAS+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MAS+UI.m"; sourceTree = "<group>"; };
+		CBC88FA51DBFED92009EE1C6 /* MASUser+MASUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASUser+MASUI.h"; sourceTree = "<group>"; };
+		CBC88FA61DBFED92009EE1C6 /* MASUser+MASUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASUser+MASUI.m"; sourceTree = "<group>"; };
+		CBC88FAB1DC12D94009EE1C6 /* MASUIConstantPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASUIConstantPrivate.h; sourceTree = "<group>"; };
+		CBC88FAD1DC130FF009EE1C6 /* NSError+MASUIPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MASUIPrivate.h"; sourceTree = "<group>"; };
+		CBC88FAE1DC130FF009EE1C6 /* NSError+MASUIPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MASUIPrivate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,8 +314,8 @@
 		A44EDAB31C06EEE100873659 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A488CCC81C08D87800B8B961 /* MAS+UI.h */,
-				A488CCC91C08D87800B8B961 /* MAS+UI.m */,
+				CBC88FA01DBFED83009EE1C6 /* categories */,
+				CBC88F9B1DBE7F2B009EE1C6 /* ui */,
 				A44EDAB41C06EEE100873659 /* _private_ */,
 			);
 			path = Classes;
@@ -310,6 +324,7 @@
 		A44EDAB41C06EEE100873659 /* _private_ */ = {
 			isa = PBXGroup;
 			children = (
+				CBC88FAB1DC12D94009EE1C6 /* MASUIConstantPrivate.h */,
 				A44EDAE91C07E39600873659 /* categories */,
 				A44EDAB51C06EEE100873659 /* services */,
 				A488CCD01C08DAD000B8B961 /* ui */,
@@ -344,6 +359,8 @@
 				A488CDDB1C0A178C00B8B961 /* UIAlertController+MASUI.m */,
 				A488CDD21C0A149C00B8B961 /* UIImage+MASUI.h */,
 				A488CDD31C0A149C00B8B961 /* UIImage+MASUI.m */,
+				CBC88FAD1DC130FF009EE1C6 /* NSError+MASUIPrivate.h */,
+				CBC88FAE1DC130FF009EE1C6 /* NSError+MASUIPrivate.m */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -446,6 +463,26 @@
 			path = otp;
 			sourceTree = "<group>";
 		};
+		CBC88F9B1DBE7F2B009EE1C6 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				CBC88F9C1DBE86E2009EE1C6 /* MASBaseLoginViewController.h */,
+				CBC88F9D1DBE86E2009EE1C6 /* MASBaseLoginViewController.m */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		CBC88FA01DBFED83009EE1C6 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				CBC88FA11DBFED83009EE1C6 /* MAS+UI.h */,
+				CBC88FA21DBFED83009EE1C6 /* MAS+UI.m */,
+				CBC88FA51DBFED92009EE1C6 /* MASUser+MASUI.h */,
+				CBC88FA61DBFED92009EE1C6 /* MASUser+MASUI.m */,
+			);
+			path = categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -453,20 +490,24 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A488CCCA1C08D87800B8B961 /* MAS+UI.h in Headers */,
 				A85F61291D0A94310014739E /* MASOTPViewController.h in Headers */,
 				A488CD9C1C0972FD00B8B961 /* MASViewController.h in Headers */,
+				CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */,
+				CBC88F9E1DBE86E2009EE1C6 /* MASBaseLoginViewController.h in Headers */,
 				A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */,
 				A488CDA81C09778100B8B961 /* NSBundle+MASUI.h in Headers */,
-				CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */,
 				104661151C06581500A2A03C /* MASUI.h in Headers */,
 				A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */,
+				CBC88FAF1DC130FF009EE1C6 /* NSError+MASUIPrivate.h in Headers */,
+				CBC88FA31DBFED83009EE1C6 /* MAS+UI.h in Headers */,
 				A488CDDC1C0A178C00B8B961 /* UIAlertController+MASUI.h in Headers */,
 				A488CDD41C0A149C00B8B961 /* UIImage+MASUI.h in Headers */,
 				A488CE241C0A758100B8B961 /* MASTableViewCell.h in Headers */,
 				A488CD941C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h in Headers */,
+				CBC88FA71DBFED92009EE1C6 /* MASUser+MASUI.h in Headers */,
 				A488CCD41C08DAEF00B8B961 /* MASLoginViewController.h in Headers */,
 				A488CD981C0972C900B8B961 /* MASCollectionViewCell.h in Headers */,
+				CBC88FAC1DC1308E009EE1C6 /* MASUIConstantPrivate.h in Headers */,
 				A85F61241D0A94310014739E /* MASOTPChannelViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +739,9 @@
 				A488CDA91C09778100B8B961 /* NSBundle+MASUI.m in Sources */,
 				A488CCD51C08DAEF00B8B961 /* MASLoginViewController.m in Sources */,
 				A488CD9D1C0972FD00B8B961 /* MASViewController.m in Sources */,
+				CBC88FA81DBFED92009EE1C6 /* MASUser+MASUI.m in Sources */,
+				CBC88F9F1DBE86E2009EE1C6 /* MASBaseLoginViewController.m in Sources */,
+				CBC88FA41DBFED83009EE1C6 /* MAS+UI.m in Sources */,
 				A85F61251D0A94310014739E /* MASOTPChannelViewController.m in Sources */,
 				A488CDDD1C0A178C00B8B961 /* UIAlertController+MASUI.m in Sources */,
 				A488CD991C0972C900B8B961 /* MASCollectionViewCell.m in Sources */,
@@ -706,8 +750,8 @@
 				A44EDABB1C06EF5600873659 /* MASUIService.m in Sources */,
 				A488CDD51C0A149C00B8B961 /* UIImage+MASUI.m in Sources */,
 				CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */,
-				A488CCCB1C08D87800B8B961 /* MAS+UI.m in Sources */,
 				A488CE251C0A758100B8B961 /* MASTableViewCell.m in Sources */,
+				CBC88FB01DC130FF009EE1C6 /* NSError+MASUIPrivate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
