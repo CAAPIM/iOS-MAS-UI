@@ -22,12 +22,14 @@ typedef NS_ENUM (NSUInteger, MASUIErrorCode)
     // Login screen
     //
     MASUIErrorCodeInvalidLoginErrorCode = 200001,
+    MASUIErrorCodeInvalidLockScreenErrorCode = 200002,
     
     //
     // User
     //
     MASUIErrorCodeUserAlreadyAuthenticated = 230001,
     MASUIErrorCodeLoginProcessCancel = 230005,
+    MASUIErrorCodeUserSessionIsAlreadyUnlocked = 230007,
     
     //
     // Proximity Login

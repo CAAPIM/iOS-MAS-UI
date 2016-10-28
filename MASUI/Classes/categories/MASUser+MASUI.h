@@ -19,4 +19,13 @@
  */
 + (void)presentLoginViewControllerWithCompletion:(MASCompletionErrorBlock)completion;
 
+
+
+/**
+ Display currently set lock screen view controller in MASUI for locked session
+ 
+ @param completion MASCompletionErrorBlock to notify the result of the displaying lock screen.
+ */
++ (void)presentSessionLockScreenViewController:(MASCompletionErrorBlock)completion;
+
 @end

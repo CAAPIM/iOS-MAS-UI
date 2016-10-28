@@ -111,10 +111,27 @@
 
 # pragma mark - Lock Screen
 
+/**
+ Set custom lock screen view controller that inherited MASViewController
+
+ @param viewController MASViewController of the lock screen
+ */
 + (void)setLockScreenViewController:(MASViewController *)viewController;
 
 
 
+/**
+ Return current set login view controller
+
+ @return MASViewController of current lock screen
+ */
 + (MASViewController *)lockScreenViewController;
+
+
+
+/**
+ Present currently set lock screen view controller as modal view
+ */
+- (void)presentSessionLockViewController;
 
 @end

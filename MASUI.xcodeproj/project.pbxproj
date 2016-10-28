@@ -105,6 +105,10 @@
 		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
 		CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
 		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB2FB2D81DC3CB00000DA2C0 /* MASSessionLockViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2FB2D61DC3CB00000DA2C0 /* MASSessionLockViewController.h */; };
+		CB2FB2D91DC3CB00000DA2C0 /* MASSessionLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2FB2D71DC3CB00000DA2C0 /* MASSessionLockViewController.m */; };
+		CB2FB2DD1DC3CB15000DA2C0 /* MASSessionLockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2FB2DC1DC3CB15000DA2C0 /* MASSessionLockViewController.xib */; };
+		CB2FB3321DC3D507000DA2C0 /* MASSessionLockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2FB2DC1DC3CB15000DA2C0 /* MASSessionLockViewController.xib */; };
 		CBC88F9E1DBE86E2009EE1C6 /* MASBaseLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88F9C1DBE86E2009EE1C6 /* MASBaseLoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBC88F9F1DBE86E2009EE1C6 /* MASBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC88F9D1DBE86E2009EE1C6 /* MASBaseLoginViewController.m */; };
 		CBC88FA31DBFED83009EE1C6 /* MAS+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88FA11DBFED83009EE1C6 /* MAS+UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -220,6 +224,9 @@
 		CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginWebViewController.m; sourceTree = "<group>"; };
 		CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginWebViewController.xib; sourceTree = "<group>"; };
 		CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginWebViewController.h; sourceTree = "<group>"; };
+		CB2FB2D61DC3CB00000DA2C0 /* MASSessionLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASSessionLockViewController.h; sourceTree = "<group>"; };
+		CB2FB2D71DC3CB00000DA2C0 /* MASSessionLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASSessionLockViewController.m; sourceTree = "<group>"; };
+		CB2FB2DC1DC3CB15000DA2C0 /* MASSessionLockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASSessionLockViewController.xib; sourceTree = "<group>"; };
 		CBC88F9C1DBE86E2009EE1C6 /* MASBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASBaseLoginViewController.h; sourceTree = "<group>"; };
 		CBC88F9D1DBE86E2009EE1C6 /* MASBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASBaseLoginViewController.m; sourceTree = "<group>"; };
 		CBC88FA11DBFED83009EE1C6 /* MAS+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MAS+UI.h"; sourceTree = "<group>"; };
@@ -392,6 +399,9 @@
 				A488CD921C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.h */,
 				A488CD931C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m */,
 				A488CD901C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib */,
+				CB2FB2D61DC3CB00000DA2C0 /* MASSessionLockViewController.h */,
+				CB2FB2D71DC3CB00000DA2C0 /* MASSessionLockViewController.m */,
+				CB2FB2DC1DC3CB15000DA2C0 /* MASSessionLockViewController.xib */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -495,6 +505,7 @@
 				CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */,
 				CBC88F9E1DBE86E2009EE1C6 /* MASBaseLoginViewController.h in Headers */,
 				A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */,
+				CB2FB2D81DC3CB00000DA2C0 /* MASSessionLockViewController.h in Headers */,
 				A488CDA81C09778100B8B961 /* NSBundle+MASUI.h in Headers */,
 				104661151C06581500A2A03C /* MASUI.h in Headers */,
 				A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */,
@@ -648,6 +659,7 @@
 				10246AA21CBAA2A400C0A70A /* enterprise_disable@2x.png in Resources */,
 				10246AA31CBAA2A400C0A70A /* enterprise.png in Resources */,
 				10246AA41CBAA2A400C0A70A /* enterprise@2x.png in Resources */,
+				CB2FB3321DC3D507000DA2C0 /* MASSessionLockViewController.xib in Resources */,
 				10246AA51CBAA2A400C0A70A /* facebook_disable.png in Resources */,
 				10246AA61CBAA2A400C0A70A /* facebook_disable@2x.png in Resources */,
 				10246AA71CBAA2A400C0A70A /* facebook.png in Resources */,
@@ -681,6 +693,7 @@
 				A488CCFE1C08F9AB00B8B961 /* facebook.png in Resources */,
 				A488CD911C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib in Resources */,
 				A488CCF91C08F9AB00B8B961 /* enterprise_disable@2x.png in Resources */,
+				CB2FB2DD1DC3CB15000DA2C0 /* MASSessionLockViewController.xib in Resources */,
 				A488CCD71C08DBDD00B8B961 /* MASLoginViewController.xib in Resources */,
 				A488CD0B1C08F9AB00B8B961 /* salesforce_disable@2x.png in Resources */,
 				A488CD051C08F9AB00B8B961 /* linkedin_disable.png in Resources */,
@@ -743,6 +756,7 @@
 				CBC88F9F1DBE86E2009EE1C6 /* MASBaseLoginViewController.m in Sources */,
 				CBC88FA41DBFED83009EE1C6 /* MAS+UI.m in Sources */,
 				A85F61251D0A94310014739E /* MASOTPChannelViewController.m in Sources */,
+				CB2FB2D91DC3CB00000DA2C0 /* MASSessionLockViewController.m in Sources */,
 				A488CDDD1C0A178C00B8B961 /* UIAlertController+MASUI.m in Sources */,
 				A488CD991C0972C900B8B961 /* MASCollectionViewCell.m in Sources */,
 				A488CD951C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m in Sources */,

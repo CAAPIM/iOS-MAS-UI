@@ -44,8 +44,14 @@
             // Login screen
             //
         case MASUIErrorCodeInvalidLoginErrorCode: return @"Invalid login view controller.  Login view controller should subclass from MASBaseLoginViewController";
+        case MASUIErrorCodeInvalidLockScreenErrorCode: return @"Invalid lock screen view controller.  Lock screen view controller should subclass from MASViewController";
+            
+            //
+            // User
+            //
         case MASUIErrorCodeUserAlreadyAuthenticated: return @"A user is already authenticated";
         case MASUIErrorCodeCurrentlyBeingAuthorized: return @"Authorization is currently in progress through session sharing";
+        case MASUIErrorCodeUserSessionIsAlreadyUnlocked: return @"User session is not locked";
             //
             // Default
             //

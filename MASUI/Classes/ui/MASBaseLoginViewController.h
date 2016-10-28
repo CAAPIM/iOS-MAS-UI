@@ -48,7 +48,7 @@
  
  NSArray of MASAuthenticationProvider for social login.
  */
-@property (nonatomic, strong) NSArray *authenticationProviders;
+@property (nonatomic, strong) NSArray *socialLoginAuthenticationProviders;
 
 
 /**
