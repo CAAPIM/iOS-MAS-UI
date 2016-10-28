@@ -18,6 +18,8 @@
 + (void)presentLoginViewControllerWithCompletion:(MASCompletionErrorBlock)completion
 {
     
+    __block MASCompletionErrorBlock blockCompletion = completion;
+    
     //
     //  If a user is currently authenticated, return an error
     //
@@ -62,7 +64,7 @@
         //
         //  Present login view controller
         //
-        [[MASUIService sharedService] presentLoginViewController:object completionBlock:completion];
+        [[MASUIService sharedService] presentLoginViewController:object completionBlock:blockCompletion];
     }];
 }
 
