@@ -43,6 +43,8 @@
 
 static BOOL _willHandleAuthentication_ = YES;
 static BOOL _willHandleOTPAuthentication_ = YES;
+static MASBaseLoginViewController * _loginViewController_ = nil;
+static MASViewController * _lockScreenViewController_ = nil;
 
 
 # pragma mark - Shared Service
@@ -105,6 +107,112 @@ static BOOL _willHandleOTPAuthentication_ = YES;
 }
 
 
+# pragma mark - Login Screen
+
++ (void)setLoginViewController:(MASBaseLoginViewController *)viewController
+{
+    _loginViewController_ = viewController;
+}
+
+
++ (MASBaseLoginViewController *)loginViewController
+{
+    return _loginViewController_;
+}
+
+
+- (void)presentLoginViewController:(MASAuthenticationProviders *)providers basicCredentialsBlock:(MASBasicCredentialsBlock)basicCredentialsBlock authorizationCodeBlock:(MASAuthorizationCodeCredentialsBlock)authorizationCodeBlock 
+{
+    
+    [self presentLoginViewController:providers basicCredentialsBlock:basicCredentialsBlock authorizationCodeBlock:authorizationCodeBlock completionBlock:nil];
+}
+
+
+- (void)presentLoginViewController:(MASAuthenticationProviders *)providers completionBlock:(MASCompletionErrorBlock)completionBlock
+{
+    
+    [self presentLoginViewController:providers basicCredentialsBlock:nil authorizationCodeBlock:nil completionBlock:completionBlock];
+}
+
+
+- (void)presentLoginViewController:(MASAuthenticationProviders *)providers basicCredentialsBlock:(MASBasicCredentialsBlock)basicCredentialsBlock authorizationCodeBlock:(MASAuthorizationCodeCredentialsBlock)authorizationCodeBlock completionBlock:(MASCompletionErrorBlock)completionBlock
+{
+    _loginViewController_.basicCredentialsBlock = nil;
+    _loginViewController_.authorizationCodeBlock = nil;
+    _loginViewController_.completionBlock = nil;
+    
+    _loginViewController_.basicCredentialsBlock = basicCredentialsBlock;
+    _loginViewController_.authorizationCodeBlock = authorizationCodeBlock;
+    _loginViewController_.completionBlock = completionBlock;
+    
+    
+    MASAuthenticationProvider *qrCodeAuthenticationProvider;
+    NSMutableArray *authProviders = [NSMutableArray new];
+    for(MASAuthenticationProvider *provider in providers.providers)
+    {
+        if([provider.identifier isEqualToString:MASUIAuthenticationProviderQrCodeImageKey])
+        {
+            qrCodeAuthenticationProvider = provider;
+            continue;
+        }
+        
+        [authProviders addObject:provider];
+    }
+    
+    _loginViewController_.availableProvider = providers.idp;
+    _loginViewController_.authenticationProviders = authProviders;
+    _loginViewController_.proximityLoginProvider = qrCodeAuthenticationProvider;
+    
+    //
+    // Show the controller
+    //
+    __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_loginViewController_];
+    
+    //
+    // Notify view controller for handle UI refresh
+    //
+    [_loginViewController_ viewWillReload];
+    
+    [[UIAlertController rootViewController] presentViewController:navigationController animated:YES
+                                                       completion:^{
+                                                           
+                                                           [_loginViewController_ viewDidReload];
+                                                           navigationController = nil;
+                                                       }];
+}
+
+
+# pragma mark - Lifecycle
+
+- (void)serviceWillStart
+{
+    [super serviceWillStart];
+    
+    if (!_loginViewController_)
+    {
+        
+        NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
+        //NSBundle* bundle = [NSBundle bundleForClass:[self class]] //Dynamic framework
+        _loginViewController_ = (MASBaseLoginViewController *)[[MASLoginViewController alloc] initWithNibName:@"MASLoginViewController" bundle:bundle];
+    }
+}
+
+
+# pragma mark - Lock Screen
+
++ (void)setLockScreenViewController:(MASViewController *)viewController
+{
+    _lockScreenViewController_ = viewController;
+}
+
+
++ (MASViewController *)lockScreenViewController
+{
+    return _lockScreenViewController_;
+}
+
+
+# pragma mark - Private
 //
 // Hidden: handle basic and social login, if any given
 //
@@ -119,47 +227,7 @@ static BOOL _willHandleOTPAuthentication_ = YES;
     {
         dispatch_async(dispatch_get_main_queue(), ^
         {
-            //
-            // Init with the nib file from the bundle
-            //
-             //NSBundle *bundle = [NSBundle bundleForClass:[self class]]; //Used for dynamic framework
-            
-            NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
-
-            _loginViewController = [[MASLoginViewController alloc] initWithNibName:@"MASLoginViewController" bundle:bundle];
-        //[NSBundle masUIFramework]
-            
-            MASAuthenticationProvider *qrCodeAuthenticationProvider;
-            NSMutableArray *mutableCopy = [NSMutableArray new];
-            for(MASAuthenticationProvider *provider in providers.providers)
-            {
-                if([provider.identifier isEqualToString:MASUIAuthenticationProviderQrCodeImageKey])
-                {
-                    qrCodeAuthenticationProvider = provider;
-                    continue;
-                }
-            
-                [mutableCopy addObject:provider];
-            }
-        
-            _loginViewController.basicCredentialsBlock = basicCredentialsBlock;
-            _loginViewController.authorizationCodeBlock = authorizationCodeBlock;
-            
-            _loginViewController.authenticationProviders = mutableCopy;
-            _loginViewController.qrCodeProvider = qrCodeAuthenticationProvider;
-            _loginViewController.availableProvider = providers.idp;
-        
-            //
-            // Show the controller
-            //
-            __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_loginViewController];
-            
-            [[UIAlertController rootViewController] presentViewController:navigationController animated:YES
-                                                               completion:^
-             {
-                 _loginViewController = nil;
-                 navigationController = nil;
-             }];
+            [self presentLoginViewController:providers basicCredentialsBlock:basicCredentialsBlock authorizationCodeBlock:authorizationCodeBlock];
             
             return;
         });

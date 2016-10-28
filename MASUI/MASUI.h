@@ -19,4 +19,11 @@ FOUNDATION_EXPORT const unsigned char MASUIVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <MASUI/PublicHeader.h>
 
 #import <MASUI/MAS+UI.h>
+
+//
+// Public ViewControllers
+//
 #import <MASUI/MASViewController.h>
+#import <MASUI/MASBaseLoginViewController.h>
+
+#import <MASUI/MASUser+MASUI.h>

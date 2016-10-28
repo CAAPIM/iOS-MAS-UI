@@ -41,4 +41,34 @@
     [MASUIService setWillHandleOTPAuthentication:handle];
 }
 
+
++ (void)setLoginViewController:(MASBaseLoginViewController *)viewController
+{
+    [MASUIService setLoginViewController:viewController];
+}
+
+
++ (MASBaseLoginViewController *)loginViewController
+{
+    return [MASUIService loginViewController];
+}
+
+
+///--------------------------------------
+/// @name Lock Screen
+///--------------------------------------
+
+# pragma mark - Lock Screen
+
++ (void)setLockScreenViewController:(MASViewController *)viewController
+{
+    [MASUIService setLockScreenViewController:viewController];
+}
+
+
++ (MASViewController *)lockScreenViewController
+{
+    return [MASUIService lockScreenViewController];
+}
+
 @end

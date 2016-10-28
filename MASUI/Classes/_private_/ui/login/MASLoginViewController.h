@@ -10,24 +10,8 @@
 
 #import "MASViewController.h"
 
-@class MASAuthenticationProvider;
+#import "MASBaseLoginViewController.h"
 
-
-@interface MASLoginViewController : MASViewController
-
-
-
-///--------------------------------------
-/// @name Properties
-///-------------------------------------
-
-# pragma mark - Properties
-
-@property (nonatomic, copy) MASAuthorizationCodeCredentialsBlock authorizationCodeBlock;
-@property (nonatomic, copy) MASBasicCredentialsBlock basicCredentialsBlock;
-
-@property (nonatomic, copy) NSArray *authenticationProviders;
-@property (nonatomic, copy) NSString *availableProvider;
-@property (nonatomic, strong) MASAuthenticationProvider *qrCodeProvider;
+@interface MASLoginViewController : MASBaseLoginViewController
 
 @end

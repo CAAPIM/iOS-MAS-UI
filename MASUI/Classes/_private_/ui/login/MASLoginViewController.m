@@ -21,11 +21,6 @@
 @interface MASLoginViewController ()
     <UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate, MASLoginWebViewControllerProtocol>
 
-// the original view frame must be used to specify the view's width and height
-// whenever appropriate in the "drawLoginDialogWithAuthProviders" implememtation.
-@property (nonatomic, assign, readonly) CGRect originalViewFrame;
-
-
 # pragma mark - IBOutlets
 
 @property (nonatomic, weak) IBOutlet UITextField *userNameField;
@@ -45,28 +40,6 @@
 
 # pragma mark - Lifecycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {
-        _originalViewFrame = self.view.frame;
-        [self.userNameField setDelegate:self];
-        [self.passwordField setDelegate:self];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAuthorizationCodeFromSessionSharing:)
-                                                     name:MASDeviceDidReceiveAuthorizationCodeFromProximityLoginNotification
-                                                   object:nil];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeQRCode:)
-                                                     name:MASProximityLoginQRCodeDidStopDisplayingQRCodeImage
-                                                   object:nil];
-    }
-    
-    return self;
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -81,34 +54,21 @@
     [self.collectionView setCollectionViewLayout:layout animated:NO];
     [self.collectionView registerClass:[MASAuthenticationProviderCollectionViewCell class]
         forCellWithReuseIdentifier:[MASAuthenticationProviderCollectionViewCell cellId]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAuthorizationCodeFromSessionSharing:)
+                                                 name:MASDeviceDidReceiveAuthorizationCodeFromProximityLoginNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeQRCode:)
+                                                 name:MASProximityLoginQRCodeDidStopDisplayingQRCodeImage
+                                               object:nil];
+
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    
-    [self.userNameField setText:@""];
-    [self.passwordField setText:@""];
-    
-    [self.collectionView reloadData];
-    
-    [_loginBtn setMultipleTouchEnabled:NO];
-    
-    [self.navigationController setNavigationBarHidden:YES];
-    
-    if (_qrCodeProvider)
-    {
-        [[MASDevice currentDevice] startAsBluetoothCentralWithAuthenticationProvider:_qrCodeProvider];
-        
-        if (_qrCode == nil)
-        {
-            _qrCode = [[MASProximityLoginQRCode alloc] initWithAuthenticationProvider:_qrCodeProvider];
-            
-            UIImage *qrCodeImage = [_qrCode startDisplayingQRCodeImageForProximityLogin];
-            [_qrCodeView setImage:qrCodeImage];
-        }
-    }
 }
 
 
@@ -119,6 +79,50 @@
     DLog(@"called");
 }
 
+
+# pragma mark - public
+
+- (void)viewWillReload
+{
+    [super viewWillReload];
+    
+    [self.userNameField setText:@""];
+    [self.passwordField setText:@""];
+    
+    [self.collectionView reloadData];
+    
+    [_loginBtn setMultipleTouchEnabled:NO];
+    
+    [_loginBtn setEnabled:YES];
+    [_cancelBtn setEnabled:YES];
+    
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+
+- (void)viewDidReload
+{
+    [super viewDidReload];
+    
+    if (self.proximityLoginProvider)
+    {
+        [[MASDevice currentDevice] startAsBluetoothCentralWithAuthenticationProvider:self.proximityLoginProvider];
+        
+        if (_qrCode == nil)
+        {
+            _qrCode = [[MASProximityLoginQRCode alloc] initWithAuthenticationProvider:self.proximityLoginProvider];
+            
+            UIImage *qrCodeImage = [_qrCode startDisplayingQRCodeImageForProximityLogin];
+            [_qrCodeView setImage:qrCodeImage];
+        }
+    }
+}
+
+
+- (void)cancel
+{
+    [super cancel];
+}
 
 # pragma mark - IBActions
 
@@ -134,28 +138,25 @@
     
     __block MASLoginViewController *blockSelf = self;
     
-    self.basicCredentialsBlock(nil, nil, YES,^(BOOL completed, NSError *error) {
-    
+    //
+    // Ensure this code runs in the main UI thread
+    //
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
         //
-        // Ensure this code runs in the main UI thread
+        // Stop progress animation
         //
-        dispatch_async(dispatch_get_main_queue(), ^
-                       {
-                           //
-                           // Stop progress animation
-                           //
-                           [blockSelf.activityIndicator stopAnimating];
-                           
-                           //
-                           // Stop QR Code session sharing
-                           //
-                           [_qrCode stopDisplayingQRCodeImageForProximityLogin];
-                           
-                           //
-                           // Dsmiss the view controller
-                           //
-                           [blockSelf dismissViewControllerAnimated:YES completion:nil];
-                       });
+        [blockSelf.activityIndicator stopAnimating];
+        
+        //
+        // Stop QR Code session sharing
+        //
+        [_qrCode stopDisplayingQRCodeImageForProximityLogin];
+        
+        //
+        // Cancel the operation
+        //
+        [self cancel];
     });
 }
 
@@ -164,17 +165,6 @@
 {
     [_loginBtn setEnabled:NO];
     [_cancelBtn setEnabled:NO];
-    
-    //
-    // Display an error if device is being authorized through other session sharing method.
-    //
-    if ([[MASDevice currentDevice] isBeingAuthorized])
-    {
-        
-        NSError *error = [NSError errorWithDomain:MASFoundationErrorDomainLocal code:MASFoundationErrorCodeProximityLoginAuthorizationInProgress userInfo:@{NSLocalizedDescriptionKey : @"Authorization is currently in progress through session sharing."}];
-        [UIAlertController popupErrorAlert:error inViewController:self];
-    }
-    
     
     [self.activityIndicator startAnimating];
     
@@ -190,37 +180,29 @@
     DLog(@"\n\ncalling basic credentials block: %@\n\n", self.basicCredentialsBlock);
     
     __block MASLoginViewController *blockSelf = self;
-    self.basicCredentialsBlock(self.userNameField.text, self.passwordField.text, NO, ^(BOOL completed, NSError *error)
-    {
-        DLog(@"\n\nblock callback: %@ or error: %@\n\n", (completed ? @"Yes" : @"No"), [error localizedDescription]);
+    
+    [self loginWithUsername:self.userNameField.text password:self.passwordField.text completion:^(BOOL completed, NSError *error) {
         
         //
         // Ensure this code runs in the main UI thread
         //
-        dispatch_async(dispatch_get_main_queue(), ^
-        {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
             //
             // Stop progress animation
             //
             [blockSelf.activityIndicator stopAnimating];
-        
+            
             //
             // Handle the error
             //
             if(error)
             {
-                //
-                //  Display the alert only for the MAS interface
-                //  If the backward compatibility interface and delegate to receive the error message are set, ignore the message
-                //
-                if ([L7SClientManager delegate] == nil || ![[L7SClientManager delegate] respondsToSelector:@selector(DidReceiveError:)])
-                {
-                    [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-                }
-                
                 [_loginBtn setEnabled:YES];
                 [_cancelBtn setEnabled:YES];
-            
+                
+                [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                
                 return;
             }
             
@@ -228,13 +210,13 @@
             // Stop QR Code session sharing
             //
             [_qrCode stopDisplayingQRCodeImageForProximityLogin];
-        
+            
             //
             // Dsmiss the view controller
             //
-            [blockSelf dismissViewControllerAnimated:YES completion:nil];
+            [self dismissLoginViewControllerAnimated:YES completion:nil];
         });
-    });
+    }];
 }
 
 
@@ -243,7 +225,7 @@
 - (NSString *)debugDescription
 {
     return [NSString stringWithFormat:@"(%@)\n\n        QR Code Provider: %@\n\n        Authentication Providers:\n\n%@",
-        [self class], [self qrCodeProvider], [self authenticationProviders]];
+        [self class], [self proximityLoginProvider], [self authenticationProviders]];
 }
 
 
@@ -265,43 +247,36 @@
     //
     [self.activityIndicator startAnimating];
     
-    self.authorizationCodeBlock(authorizationCode, NO, ^(BOOL completed, NSError *error)
-                                {
-                                    DLog(@"\n\nblock callback: %@ or error: %@\n\n", (completed ? @"Yes" : @"No"), [error localizedDescription]);
-                                    
-                                    //
-                                    // Ensure this code runs in the main UI thread
-                                    //
-                                    dispatch_async(dispatch_get_main_queue(), ^
-                                                   {
-                                                       //
-                                                       // Stop progress animation
-                                                       //
-                                                       [blockSelf.activityIndicator stopAnimating];
-                                                       
-                                                       //
-                                                       // Handle the error
-                                                       //
-                                                       if(error)
-                                                       {
-                                                           //
-                                                           //  Display the alert only for the MAS interface
-                                                           //  If the backward compatibility interface and delegate to receive the error message are set, ignore the message
-                                                           //
-                                                           if ([L7SClientManager delegate] == nil || ![[L7SClientManager delegate] respondsToSelector:@selector(DidReceiveError:)])
-                                                           {
-                                                               [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-                                                           }
-                                                           
-                                                           return;
-                                                       }
-                                                       
-                                                       //
-                                                       // Dsmiss the view controller
-                                                       //
-                                                       [blockSelf dismissViewControllerAnimated:YES completion:nil];
-                                                   });
-                                });
+    [self loginWithAuthorizationCode:authorizationCode completion:^(BOOL completed, NSError *error) {
+       
+        DLog(@"\n\nblock callback: %@ or error: %@\n\n", (completed ? @"Yes" : @"No"), [error localizedDescription]);
+        
+        //
+        // Ensure this code runs in the main UI thread
+        //
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Stop progress animation
+                           //
+                           [blockSelf.activityIndicator stopAnimating];
+                           
+                           //
+                           // Handle the error
+                           //
+                           if(error)
+                           {
+                               [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                               
+                               return;
+                           }
+                           
+                           //
+                           // Dsmiss the view controller
+                           //
+                           [blockSelf dismissLoginViewControllerAnimated:YES completion:nil];
+                       });
+    }];
 }
 
 
@@ -455,5 +430,39 @@
                    });
 }
 
+
+- (void)didReceiveAuthorizationCode:(NSString *)authorizationCode
+{
+    __block MASLoginViewController *blockSelf = self;
+    
+    [self loginWithAuthorizationCode:authorizationCode completion:^(BOOL completed, NSError *error) {
+        
+        //
+        // Handle the error
+        //
+        if(error)
+        {
+            [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+            
+            return;
+        }
+        
+        //
+        // Ensure this code runs in the main UI thread
+        //
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Stop progress animation
+                           //
+                           [blockSelf.activityIndicator stopAnimating];
+                           
+                           //
+                           // Dsmiss the view controller
+                           //
+                           [blockSelf dismissViewControllerAnimated:YES completion:nil];
+                       });
+    }];
+}
 
 @end
