@@ -225,7 +225,7 @@
 - (NSString *)debugDescription
 {
     return [NSString stringWithFormat:@"(%@)\n\n        QR Code Provider: %@\n\n        Authentication Providers:\n\n%@",
-        [self class], [self proximityLoginProvider], [self authenticationProviders]];
+        [self class], [self proximityLoginProvider], [self socialLoginAuthenticationProviders]];
 }
 
 
@@ -295,7 +295,7 @@
     //
     // Retrieve the authenticatin provider
     //
-    MASAuthenticationProvider *provider =[self.authenticationProviders objectAtIndex:indexPath.item];
+    MASAuthenticationProvider *provider =[self.socialLoginAuthenticationProviders objectAtIndex:indexPath.item];
     
     //
     // Check if selected provider is available
@@ -336,10 +336,10 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger count = self.authenticationProviders.count;
+    NSInteger count = self.socialLoginAuthenticationProviders.count;
     
     DLog(@"called and social login providers count: %lu with providers:\n\n%@\n\n",
-        (unsigned long)count, self.authenticationProviders);
+        (unsigned long)count, self.socialLoginAuthenticationProviders);
     
     return count;
 }
@@ -363,7 +363,7 @@
     //
     // Retrieve the authenticatin provider
     //
-    MASAuthenticationProvider *provider =[self.authenticationProviders objectAtIndex:indexPath.item];
+    MASAuthenticationProvider *provider =[self.socialLoginAuthenticationProviders objectAtIndex:indexPath.item];
     
     //
     // Update the cell

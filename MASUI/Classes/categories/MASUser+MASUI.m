@@ -68,4 +68,46 @@
     }];
 }
 
+
++ (void)presentSessionLockScreenViewController:(MASCompletionErrorBlock)completion
+{
+    
+    if (![MASUser currentUser] || ![MASUser currentUser].isSessionLocked)
+    {
+        //
+        //  Construct a NSError object for currently unlocked session
+        //
+        NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeUserSessionIsAlreadyUnlocked errorDomain:kSDKErrorDomain];
+        
+        if (completion)
+        {
+            completion(NO, error);
+        }
+        
+        return;
+    }
+    else if (![MASUIService lockScreenViewController] || ![[MASUIService lockScreenViewController] isKindOfClass:[MASViewController class]])
+    {
+        
+        //
+        //  Construct a NSError object for invalid session lock screen
+        //
+        NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeInvalidLockScreenErrorCode errorDomain:kSDKErrorDomain];
+        
+        if (completion)
+        {
+            completion(NO, error);
+        }
+    }
+    else {
+
+        //
+        //  Present login view controller
+        //
+        [[MASUIService sharedService] presentSessionLockViewController];
+        
+        completion(YES, nil);
+    }
+}
+
 @end

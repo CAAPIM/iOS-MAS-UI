@@ -13,6 +13,7 @@
 #import "MASLoginViewController.h"
 #import "MASOTPChannelViewController.h"
 #import "MASOTPViewController.h"
+#import "MASSessionLockViewController.h"
 #import "NSBundle+MASUI.h"
 #import "UIAlertController+MASUI.h"
 #import "UIImage+MASUI.h"
@@ -177,6 +178,21 @@ static MASViewController * _lockScreenViewController_ = nil;
                                                        completion:^{
                                                            
                                                            [_loginViewController_ viewDidReload];
+                                                           navigationController = nil;
+                                                       }];
+}
+
+
+- (void)presentSessionLockViewController
+{
+    //
+    // Show the controller
+    //
+    __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_lockScreenViewController_];
+    
+    [[UIAlertController rootViewController] presentViewController:navigationController animated:YES
+                                                       completion:^{
+                                                           
                                                            navigationController = nil;
                                                        }];
 }
