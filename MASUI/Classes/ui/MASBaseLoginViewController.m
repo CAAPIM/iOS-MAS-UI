@@ -55,13 +55,27 @@
     if (_basicCredentialsBlock)
     {
         _basicCredentialsBlock(username, password, NO, ^(BOOL completed, NSError *error){
-        
-            blockCompletion(completed, error);
+         
+            if (blockCompletion)
+            {
+                blockCompletion(completed, error);
+            }
         });
     }
     else {
         
-        [MASUser loginWithUserName:username password:password completion:blockCompletion];
+        [MASUser loginWithUserName:username password:password completion:^(BOOL completed, NSError *error) {
+            
+            if (_completionBlock)
+            {
+                _completionBlock(completed, error);
+            }
+            
+            if (blockCompletion)
+            {
+                blockCompletion(completed, error);
+            }
+        }];
     }
 }
 
@@ -80,7 +94,18 @@
     }
     else {
         
-        [MASUser loginWithAuthorizationCode:authorizationCode completion:completion];
+        [MASUser loginWithAuthorizationCode:authorizationCode completion:^(BOOL completed, NSError *error) {
+            
+            if (_completionBlock)
+            {
+                _completionBlock(completed, error);
+            }
+            
+            if (blockCompletion)
+            {
+                blockCompletion(completed, error);
+            }
+        }];
     }
 }
 

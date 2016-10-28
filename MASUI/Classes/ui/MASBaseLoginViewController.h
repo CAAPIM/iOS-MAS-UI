@@ -40,7 +40,7 @@
  
  MASCompletionErrorBlock to notify original caller for the result of the login.
  */
-@property (nonatomic, assign) MASCompletionErrorBlock completionBlock;
+@property (nonatomic, copy) MASCompletionErrorBlock completionBlock;
 
 
 /**
