@@ -161,7 +161,7 @@ static MASViewController * _lockScreenViewController_ = nil;
     }
     
     _loginViewController_.availableProvider = providers.idp;
-    _loginViewController_.authenticationProviders = authProviders;
+    _loginViewController_.socialLoginAuthenticationProviders = authProviders;
     _loginViewController_.proximityLoginProvider = qrCodeAuthenticationProvider;
     
     //
