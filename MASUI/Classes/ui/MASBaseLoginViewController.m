@@ -56,6 +56,11 @@
     {
         _basicCredentialsBlock(username, password, NO, ^(BOOL completed, NSError *error){
          
+            if (_completionBlock)
+            {
+                _completionBlock(completed, error);
+            }
+            
             if (blockCompletion)
             {
                 blockCompletion(completed, error);
@@ -89,7 +94,15 @@
     {
         _authorizationCodeBlock(authorizationCode, NO, ^(BOOL completed, NSError *error){
             
-            blockCompletion(completed, error);
+            if (_completionBlock)
+            {
+                _completionBlock(completed, error);
+            }
+            
+            if (blockCompletion)
+            {
+                blockCompletion(completed, error);
+            }
         });
     }
     else {
