@@ -174,6 +174,8 @@ static MASViewController * _lockScreenViewController_ = nil;
     //
     [_loginViewController_ viewWillReload];
     
+    [UIAlertController rootViewController].modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
     [[UIAlertController rootViewController] presentViewController:navigationController animated:YES
                                                        completion:^{
                                                            
@@ -190,7 +192,9 @@ static MASViewController * _lockScreenViewController_ = nil;
     //
     __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_lockScreenViewController_];
     
-    [[UIAlertController rootViewController] presentViewController:navigationController animated:YES
+    [UIAlertController rootViewController].modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [[UIAlertController rootViewController] presentViewController:navigationController animated:NO
                                                        completion:^{
                                                            
                                                            navigationController = nil;
