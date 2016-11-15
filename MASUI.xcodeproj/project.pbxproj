@@ -102,6 +102,8 @@
 		A85F612A1D0A94310014739E /* MASOTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F61221D0A94310014739E /* MASOTPViewController.m */; };
 		A85F612C1D0A94310014739E /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61231D0A94310014739E /* MASOTPViewController.xib */; };
 		A85F612D1D0A94310014739E /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61231D0A94310014739E /* MASOTPViewController.xib */; };
+		CB0B5E2F1DDB9B1000A46BAD /* logo-ca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2D1DDB9B1000A46BAD /* logo-ca@2x.png */; };
+		CB0B5E301DDB9B1000A46BAD /* icon-fingerprint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */; };
 		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
 		CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
 		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -221,6 +223,8 @@
 		A85F61211D0A94310014739E /* MASOTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASOTPViewController.h; sourceTree = "<group>"; };
 		A85F61221D0A94310014739E /* MASOTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASOTPViewController.m; sourceTree = "<group>"; };
 		A85F61231D0A94310014739E /* MASOTPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASOTPViewController.xib; sourceTree = "<group>"; };
+		CB0B5E2D1DDB9B1000A46BAD /* logo-ca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-ca@2x.png"; sourceTree = "<group>"; };
+		CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-fingerprint@2x.png"; sourceTree = "<group>"; };
 		CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginWebViewController.m; sourceTree = "<group>"; };
 		CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginWebViewController.xib; sourceTree = "<group>"; };
 		CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginWebViewController.h; sourceTree = "<group>"; };
@@ -417,6 +421,8 @@
 		A488CCE11C08E27D00B8B961 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CB0B5E2D1DDB9B1000A46BAD /* logo-ca@2x.png */,
+				CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */,
 				A488CD0E1C08F9E100B8B961 /* caLogo.png */,
 				A488CCE21C08F9AB00B8B961 /* enterprise_disable.png */,
 				A488CCE31C08F9AB00B8B961 /* enterprise_disable@2x.png */,
@@ -687,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10246A951CB987F900C0A70A /* MASUIResources.bundle in Resources */,
+				CB0B5E301DDB9B1000A46BAD /* icon-fingerprint@2x.png in Resources */,
 				CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */,
 				A488CD0C1C08F9AB00B8B961 /* salesforce.png in Resources */,
 				A488CCFD1C08F9AB00B8B961 /* facebook_disable@2x.png in Resources */,
@@ -701,6 +708,7 @@
 				A488CD081C08F9AB00B8B961 /* linkedin@2x.png in Resources */,
 				A488CD0A1C08F9AB00B8B961 /* salesforce_disable.png in Resources */,
 				A488CCFF1C08F9AB00B8B961 /* facebook@2x.png in Resources */,
+				CB0B5E2F1DDB9B1000A46BAD /* logo-ca@2x.png in Resources */,
 				A488CD011C08F9AB00B8B961 /* google_disable@2x.png in Resources */,
 				A488CD031C08F9AB00B8B961 /* google@2x.png in Resources */,
 				A85F612C1D0A94310014739E /* MASOTPViewController.xib in Resources */,

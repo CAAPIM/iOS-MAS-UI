@@ -12,6 +12,9 @@
 
 @interface MASSessionLockViewController ()
 
+@property (nonatomic, assign) IBOutlet UILabel *userLabel;
+@property (assign) BOOL isUnlocking;
+
 @end
 
 @implementation MASSessionLockViewController
@@ -22,13 +25,26 @@
 {
     [super viewDidLoad];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(unlockSession)];
+    [self.view addGestureRecognizer:tapGesture];
+    
+    _isUnlocking = NO;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES];
     
+    [self unlockSession];
+    [_userLabel setText:[NSString stringWithFormat:@"Logged-in as: %@", [MASUser currentUser].userName]];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 
@@ -38,53 +54,32 @@
     
 }
 
-# pragma mark - IBAction
 
-- (IBAction)onUnlockSessionSelected:(id)sender
+# pragma mark - Private
+
+- (void)unlockSession
 {
-    [[MASUser currentUser] unlockSessionWithCompletion:^(BOOL completed, NSError *error) {
-       
-        if (error != nil)
-        {
-            //
-            // Present error message
-            //
-            __block MASSessionLockViewController *blockSelf = self;
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-            });
-        }
-        else {
-            
-            //
-            // If unlock was successful, dismiss the view controller
-            //
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-    }];
-}
-
-
-- (IBAction)onDifferentCredentialSelected:(id)sender
-{
-    //
-    // Remove the current session lock
-    //
-    [[MASUser currentUser] removeSessionLock];
-    
-    //
-    // Dismiss the current view controller, and present login view controller
-    //
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-        
+    if (!_isUnlocking)
+    {
         dispatch_async(dispatch_get_main_queue(), ^{
-           
-            [MASUser presentLoginViewControllerWithCompletion:nil];
+            
+            _isUnlocking = YES;
+            
+            [[MASUser currentUser] unlockSessionWithCompletion:^(BOOL completed, NSError *error) {
+                
+                _isUnlocking = NO;
+                
+                if (error == nil)
+                {
+                    
+                    //
+                    // If unlock was successful, dismiss the view controller
+                    //
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+            }];
         });
-    }];
+    }
 }
 
 @end
