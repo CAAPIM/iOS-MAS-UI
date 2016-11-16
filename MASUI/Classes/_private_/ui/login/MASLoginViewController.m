@@ -283,6 +283,7 @@
 - (void)removeQRCode:(NSNotification *)notification
 {
     _qrCodeView.image = nil;
+    _qrCode = nil;
 }
 
 

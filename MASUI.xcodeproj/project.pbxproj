@@ -102,6 +102,8 @@
 		A85F612A1D0A94310014739E /* MASOTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F61221D0A94310014739E /* MASOTPViewController.m */; };
 		A85F612C1D0A94310014739E /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61231D0A94310014739E /* MASOTPViewController.xib */; };
 		A85F612D1D0A94310014739E /* MASOTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61231D0A94310014739E /* MASOTPViewController.xib */; };
+		CB0ACDC31DDCDE41008D2D48 /* logo-ca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2D1DDB9B1000A46BAD /* logo-ca@2x.png */; };
+		CB0ACDC61DDCDE45008D2D48 /* icon-fingerprint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */; };
 		CB0B5E2F1DDB9B1000A46BAD /* logo-ca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2D1DDB9B1000A46BAD /* logo-ca@2x.png */; };
 		CB0B5E301DDB9B1000A46BAD /* icon-fingerprint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */; };
 		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
@@ -666,6 +668,7 @@
 				10246AA31CBAA2A400C0A70A /* enterprise.png in Resources */,
 				10246AA41CBAA2A400C0A70A /* enterprise@2x.png in Resources */,
 				CB2FB3321DC3D507000DA2C0 /* MASSessionLockViewController.xib in Resources */,
+				CB0ACDC31DDCDE41008D2D48 /* logo-ca@2x.png in Resources */,
 				10246AA51CBAA2A400C0A70A /* facebook_disable.png in Resources */,
 				10246AA61CBAA2A400C0A70A /* facebook_disable@2x.png in Resources */,
 				10246AA71CBAA2A400C0A70A /* facebook.png in Resources */,
@@ -676,6 +679,7 @@
 				10246AAC1CBAA2A400C0A70A /* google@2x.png in Resources */,
 				10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */,
 				A85F612D1D0A94310014739E /* MASOTPViewController.xib in Resources */,
+				CB0ACDC61DDCDE45008D2D48 /* icon-fingerprint@2x.png in Resources */,
 				10246AAE1CBAA2A400C0A70A /* linkedin_disable.png in Resources */,
 				10246AAF1CBAA2A400C0A70A /* linkedin_disable@2x.png in Resources */,
 				10246AB01CBAA2A400C0A70A /* linkedin.png in Resources */,
