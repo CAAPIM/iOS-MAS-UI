@@ -1,3 +1,13 @@
+# Version 1.3
+
+### Bug fixes
+- Auto-correction on default login screen's username field is removed. [DE255185]
+
+### New features
+- Default login screen can now be prompted as needed through ```[MASUser presentLoginViewControllerWithCompletion:];```.
+- Default session lock screen is added; ```[MASUser presentSessionLockScreenViewController:]```.
+- ```MASBaseLoginViewController``` is introduced to allow better customization of the default login screen.
+
 # Version 1.2.00
 
 ### Bug fixes
