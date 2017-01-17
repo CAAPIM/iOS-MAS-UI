@@ -17,9 +17,11 @@
 #import "UIAlertController+MASUI.h"
 #import "UIImage+MASUI.h"
 
+#import <SafariServices/SafariServices.h>
+
 
 @interface MASLoginViewController ()
-    <UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate, MASLoginWebViewControllerProtocol>
+    <UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate, MASAuthorizationResponseDelegate>
 
 # pragma mark - IBOutlets
 
@@ -314,21 +316,13 @@
     //
     if (provider)
     {
-        //NSBundle *bundle = [NSBundle bundleForClass:[self class]]; // used for dynamic framework
-
-        NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
-        
-        __block MASLoginWebViewController *viewController = [[MASLoginWebViewController alloc] initWithNibName:@"MASLoginWebViewController" bundle:bundle];
-        //[NSBundle masUIFramework]
-        
-        viewController.authorizationCodeBlock = self.authorizationCodeBlock;
-        viewController.delegate = self;
-        [viewController setAuthenticationProvider:provider];
+        SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:provider.authenticationUrl];
+        [[MASAuthorizationResponse sharedInstance] setDelegate:self];
         
         //
         // Show the controller
         //
-        [self.navigationController pushViewController:viewController animated:YES];
+        [self.navigationController presentViewController:viewController animated:YES completion:nil];
     }
 }
 
@@ -407,36 +401,37 @@
 
 
 
-# pragma mark - MASLoginWebViewControllerProtocol
+# pragma mark - MASAuthorizationResponseDelegate
 
-- (void)didFinishLoginOnWebView
+- (void)didReceiveError:(NSError *)error
 {
-    
-    __block MASLoginViewController *blockSelf = self;
+    //
+    // Display the error
+    //
+    [UIAlertController popupErrorAlert:error inViewController:self];
     
     //
-    // Ensure this code runs in the main UI thread
+    // Dismiss SFViewController
     //
-    dispatch_async(dispatch_get_main_queue(), ^
-                   {
-                       //
-                       // Stop progress animation
-                       //
-                       [blockSelf.activityIndicator stopAnimating];
-                       
-                       //
-                       // Dsmiss the view controller
-                       //
-                       [blockSelf dismissViewControllerAnimated:YES completion:nil];
-                   });
+    [self.navigationController.topViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
-- (void)didReceiveAuthorizationCode:(NSString *)authorizationCode
+- (void)didReceiveAuthorizationCode:(NSString *)code
 {
+    //
+    // Dismiss SFViewController
+    //
+    [self.navigationController.topViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    //
+    // Start animating activity indicator
+    //
+    [self.activityIndicator startAnimating];
+    
     __block MASLoginViewController *blockSelf = self;
     
-    [self loginWithAuthorizationCode:authorizationCode completion:^(BOOL completed, NSError *error) {
+    [self loginWithAuthorizationCode:code completion:^(BOOL completed, NSError *error) {
         
         //
         // Handle the error
