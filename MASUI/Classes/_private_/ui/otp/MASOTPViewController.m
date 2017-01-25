@@ -129,16 +129,6 @@
                            [blockSelf.activityIndicator stopAnimating];
                            
                            //
-                           // Handle the error
-                           //
-                           if(error)
-                           {
-                               [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-                               
-                               return;
-                           }
-                           
-                           //
                            // Dsmiss the view controller
                            //
                            [blockSelf dismissViewControllerAnimated:YES completion:nil];
