@@ -434,16 +434,6 @@
     [self loginWithAuthorizationCode:code completion:^(BOOL completed, NSError *error) {
         
         //
-        // Handle the error
-        //
-        if(error)
-        {
-            [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-            
-            return;
-        }
-        
-        //
         // Ensure this code runs in the main UI thread
         //
         dispatch_async(dispatch_get_main_queue(), ^
@@ -452,6 +442,16 @@
                            // Stop progress animation
                            //
                            [blockSelf.activityIndicator stopAnimating];
+                           
+                           //
+                           // Handle the error
+                           //
+                           if(error)
+                           {
+                               [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                               
+                               return;
+                           }
                            
                            //
                            // Dsmiss the view controller
