@@ -434,6 +434,11 @@
     [self loginWithAuthorizationCode:code completion:^(BOOL completed, NSError *error) {
         
         //
+        // Stop progress animation
+        //
+        [blockSelf.activityIndicator stopAnimating];
+        
+        //
         // Handle the error
         //
         if(error)
