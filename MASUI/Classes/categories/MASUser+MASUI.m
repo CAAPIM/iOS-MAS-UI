@@ -106,7 +106,10 @@
         //
         [[MASUIService sharedService] presentSessionLockViewController];
         
-        completion(YES, nil);
+        if (completion)
+        {
+            completion(YES, nil);
+        }
     }
 }
 
