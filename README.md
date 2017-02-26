@@ -1,4 +1,4 @@
-MASUI is the core iOS UI framework of the Mobile SDK, which is part of [CA Mobile App Services][mas.ca.com]. MASUI brings pre-defined UIs and assets for developers to quick build prototyping apps without the need of any design. 
+MASUI is the core UI framework of the Mobile SDK, which is part of [CA Mobile App Services][mas.ca.com]. It provides resources to implement a user login dialog, Social Login, One-Time Password, and Proximity Login (QR code and BLE) saving developers the time of building those UI as well as providing them with a fast way for prototyping apps. 
 
 ## Features
 
@@ -8,6 +8,9 @@ The MASUI framework comes with the following features:
     + Built-in QR Code registration/authentication
     + Built-in BLE registration/authentication
     + Built-in social network (Google, Facebook, Salesforce, and LinkedIn) registration/authentication
+- One-Time Password dialogs
+	+ Channel selection (i.e. email, sms)
+	+ OTP challenger
 
 ## Get Started
 
@@ -61,6 +64,255 @@ For manual install, you add the Mobile SDK to your Xcode project. Note that you 
 #import <MASUI/MASUI.h>
 ```
 
+## UI Templates
+
+The MASUI library contains graphic and xib files to speed up development time. The library provides the following UI components:
+
+- User Login Dialog
+- Social Login
+- One Time Password
+- FingerPrint Lock
+
+### User Login Dialog
+
+::: Container width="300" align="center"
+![Social Login](http://mas.ca.com/docs/ios/1.3.00/guides/images/SocialLogin.png)
+:::
+
+To use the user login dialog, drag and drop `MASUI.framework` and `MASUIResources.bundle` into your project.  After the MASUI library is added to the project, MASFoundation automatically detects the presence of the MASUI library and processes the user login as needed.
+
+MASUI provides the following method to enable or disable the login dialog.  If MASUI is disabled to handle the authentication,  `MASUserLoginBlock` is invoked to retrieve the username and password.
+
+```
+/**
+ * Set the handling state of the authentication UI by this library.
+ *
+ * @param handle YES if you want the library to enable it, NO if not.
+ *     YES is the default.
+ */
++ (void)setWillHandleAuthentication:(BOOL)handle;
+``` 
+
+The user login dialog prompts whenever MASFoundation realizes that user authentication is required or you call the following method to present the login screen.
+
+```
+//
+// Display the login screen
+//
+[[MASUser currentUser] presentLoginViewControllerWithCompletion:^(BOOL completed, NSError *error){
+	
+}];
+```
+
+### Customize User Login Dialog
+
+To customize the user login dialog, you need the MASUI library and create your own login view controller, which inherits ```MASBaseLoginViewController```.  After creating your own user login dialog, you simply set the default user login screen in MASUI library, so that the custom login screen prompts whenever the user authentication is required.  
+
+::: alert danger
+**Important!** Do not modify properties of ```MASBaseLoginViewController``` for any reason.  These properties are used internally to process the authentication. Changing them can result in several types of app failures.  
+:::
+
+#### MASBaseLoginViewController
+
+Before implementing the custom login dialog, implement the following methods and also invoke the parent's method.
+
+*```- (void)viewWillReload;```*
+
+This method is invoked **before** the user login screen prompt.  This method prepares the data source of the UI and other logic with the latest authentication information.  
+
+```
+- (void)viewWillReload
+{
+   [super viewWillReload];
+
+	//
+	// Prepare for data source and other logic
+	//    
+}
+```
+
+
+*```- (void)viewDidReload;```*
+
+This method is invoked **after** the user login screen prompt.  This method reloads all UI elements and other logic.  
+
+```
+- (void)viewDidReload
+{
+   [super viewDidReload];
+
+	//
+	// Reload all UI elements and logic
+	//    
+}
+```
+
+
+*```- (void)loginWithUsername:(NSString *)username password:(NSString *)password completion:(MASCompletionErrorBlock)completion;```*
+
+This method can be invoked with the given user credentials to perform user authentication.  Note that successful authentication of this method does not dismiss the user login screen; it must be dismissed explicitly by calling the dismiss method.
+
+```
+// 
+// On your custom IBAction, or other places to perform authentication
+//
+- (IBAction)onLoginButtonSelected:(id)sender
+{
+	[self loginWithUsername:@"username" password:@"password" completion:^(BOOL completed, NSError *error){
+	
+		//
+		// handle the result
+		//
+	}];
+}
+```
+
+
+*```- (void)loginWithAuthorizationCode:(NSString *)authorizationCode completion:(MASCompletionErrorBlock)completion;```*
+
+This method can be invoked with the given authorization code to perform user authentication.  Note that successful authentication of this method does not dismiss the user login screen; it must be dismissed explicitly by calling the dismiss method.
+
+```
+// 
+// On your custom IBAction or other places to perform authentication
+//
+- (IBAction)onLoginButtonSelected:(id)sender
+{
+	[self loginWithAuthorizationCode:@"auth_code" completion:^(BOOL completed, NSError *error){
+	
+		//
+		// handle the result
+		//
+	}];
+}
+```
+
+
+*```- (void)cancel;```*
+
+This method can be invoked when users want to cancel the authentication process or close the user login screen. By invoking this method, the user login screen is dismissed.
+  
+```
+- (void)cancel
+{
+   [super cancel];
+
+	//
+	// Do what you have to do upon cancel
+	//    
+}
+```
+
+
+*```- (void)dismissLoginViewControllerAnimated:(BOOL)animated completion: (void (^)(void))completion;```*
+
+This method can be invoked to dismiss the user login screen upon successful authentication, or other times that you want to dismiss the login screen.
+  
+```
+//
+// Dismiss the view controller
+//
+[self dismissLoginViewControllerAnimated:YES completion:nil];
+```
+
+#### Set the custom login screen as default
+
+After creating the custom login screen, you must create a view controller object and set it as the default login screen in the MASUI library with the following method.  
+
+::: alert danger
+**Important:** Note that the user login dialog view controller object is **reused**for multiple user logins.  It is important to properly organize the lifecycle of the UI elements before and after the user authentication with the provided methods.  
+:::
+
+```
+/**
+ Set the custom login view controller for handling by MASUI library
+
+ @param viewController view controller object that inherited MASBaseLoginViewController
+ */
++ (void)setLoginViewController:(MASBaseLoginViewController *)viewController;
+```
+
+### Social Login
+
+The social login feature is included in the user login dialog (described in the previous section). No configuration is required to set up the social login.
+
+### Session Lock Screen
+
+::: Container width="300" align="left"
+![Social Login](http://mas.ca.com/docs/ios/1.3.00/guides/images/SessionLock.png)
+:::
+::: Container width="300" align="right"
+![Social Login](http://mas.ca.com/docs/ios/1.3.00/guides/images/SessionLock-default.png)
+:::
+
+Session lock screen is provided by simply dropping the MASUI.framework and MASUIResource.bundle into your project.  MASFoundation detects the presence of the MASUI library and presents the session lock screen upon the API call.
+
+```
+/**
+ Display currently set lock screen view controller in MASUI for locked session
+ 
+ @param completion MASCompletionErrorBlock to notify the result of the displaying lock screen.
+ */
++ (void)presentSessionLockScreenViewController:(MASCompletionErrorBlock)completion;
+```
+
+#### Customize session lock screen
+
+You can customize the session lock screen with custom logic for locking and unlocking the session, and for branding.  The session lock screen must inherit from the MASViewController (MASUI library).  For more information about fingerprint session lock APIs in the MASFoundation library, see [Fingerprint Sessions Lock section](#fingerprint-sessions-lock).
+
+After creating your own screen, simply set the default session lock screen in the MASUI library; your own screen then prompts when you call to present the session lock screen.
+
+```
+/**
+ Set custom lock screen view controller that inherits MASViewController
+
+ @param viewController MASViewController of the lock screen
+ */
++ (void)setLockScreenViewController:(MASViewController *)viewController
+```
+
+### One Time Password 
+
+To use the One Time Password dialogs, drag and drop the MASUI.framework and MASUIResources.bundle into your project. The MASFoundation detects the presence of the MASUI library and processes the One Time Password.
+
+#### OTP Delivery Channel Dialog   
+
+::: Container width="300" align="center"
+![DeliveryChanner](http://mas.ca.com/docs/ios/1.3.00/guides/images/DeliveryChannel.png)
+:::    
+
+MASUI provides the following method to enable or disable the OTP Delivery Channel dialog.         
+
+```
+/**
+ * Set the handling state of the OTP authentication UI by this framework.
+ *
+ * @param handle YES if you want the framework to enable it, NO if not.
+ *     YES is the default.
+ */
++ (void)setWillHandleOTPAuthentication:(BOOL)handle;
+```
+
+If MASUI is disabled to handle the OTP authentication, MASOTPChannelSelectionBlock is invoked to retrieve the OTP delivery channels.
+
+#### One Time Password Dialog
+
+::: Container width="300" align="center"
+![OTP](http://mas.ca.com/docs/ios/1.3.00/guides/images/OTP.png)
+:::   
+
+MASUI provides the following method to enable or disable the One Time Password dialog.
+
+```
+/**
+ * Set the handling state of the OTP authentication UI by this framework.
+ *
+ * @param handle YES if you want the framework to enable it, NO if not.
+ *     YES is the default.
+ */
++ (void)setWillHandleOTPAuthentication:(BOOL)handle;
+```
+If MASUI is disabled to handle the OTP authentication, MASOTPCredentialsBlock is invoked to retrieve the one time password.
 
 ## License
 
