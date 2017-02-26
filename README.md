@@ -11,6 +11,7 @@ The MASUI framework comes with the following features:
 - One-Time Password dialogs
 	+ Channel selection (i.e. email, sms)
 	+ OTP challenger
+- Session lock
 
 ## Get Started
 
@@ -71,13 +72,11 @@ The MASUI library contains graphic and xib files to speed up development time. T
 - User Login Dialog
 - Social Login
 - One Time Password
-- FingerPrint Lock
+- Session Lock
 
 ### User Login Dialog
 
-::: Container width="300" align="center"
-![Social Login](http://mas.ca.com/docs/ios/1.3.00/guides/images/SocialLogin.png)
-:::
+<p style="text-align:center"><img src="http://mas.ca.com/docs/ios/1.3.00/guides/images/SocialLogin.png" width="300"></p>
 
 To use the user login dialog, drag and drop `MASUI.framework` and `MASUIResources.bundle` into your project.  After the MASUI library is added to the project, MASFoundation automatically detects the presence of the MASUI library and processes the user login as needed.
 
@@ -238,12 +237,8 @@ The social login feature is included in the user login dialog (described in the 
 
 ### Session Lock Screen
 
-::: Container width="300" align="left"
-![Social Login](http://mas.ca.com/docs/ios/1.3.00/guides/images/SessionLock.png)
-:::
-::: Container width="300" align="right"
-![Social Login](http://mas.ca.com/docs/ios/1.3.00/guides/images/SessionLock-default.png)
-:::
+<p style="text-align:center"><img src="http://mas.ca.com/docs/ios/1.3.00/guides/images/SessionLock.png" width="300"></p>
+<p style="text-align:center"><img src="http://mas.ca.com/docs/ios/1.3.00/guides/images/SessionLock-default.png" width="300"></p>
 
 Session lock screen is provided by simply dropping the MASUI.framework and MASUIResource.bundle into your project.  MASFoundation detects the presence of the MASUI library and presents the session lock screen upon the API call.
 
@@ -277,9 +272,8 @@ To use the One Time Password dialogs, drag and drop the MASUI.framework and MASU
 
 #### OTP Delivery Channel Dialog   
 
-::: Container width="300" align="center"
-![DeliveryChanner](http://mas.ca.com/docs/ios/1.3.00/guides/images/DeliveryChannel.png)
-:::    
+<p style="text-align:center"><img src="http://mas.ca.com/docs/ios/1.3.00/guides/images/DeliveryChannel.png" width="300"></p>
+  
 
 MASUI provides the following method to enable or disable the OTP Delivery Channel dialog.         
 
@@ -297,9 +291,7 @@ If MASUI is disabled to handle the OTP authentication, MASOTPChannelSelectionBlo
 
 #### One Time Password Dialog
 
-::: Container width="300" align="center"
-![OTP](http://mas.ca.com/docs/ios/1.3.00/guides/images/OTP.png)
-:::   
+<p style="text-align:center"><img src="http://mas.ca.com/docs/ios/1.3.00/guides/images/OTP.png" width="300"></p>
 
 MASUI provides the following method to enable or disable the One Time Password dialog.
 
