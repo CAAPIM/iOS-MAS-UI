@@ -30,11 +30,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *loginBtn;
 @property (nonatomic, weak) IBOutlet UIButton *cancelBtn;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, weak) IBOutlet UIImageView *bleIcon;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) MASProximityLoginQRCode *qrCode;
-@property (nonatomic, assign) BOOL isBlinking;
 
 @end
 

@@ -124,6 +124,49 @@
 		CB8DDC971E84A22000B25AA9 /* MASLoginQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDC951E84A22000B25AA9 /* MASLoginQRCodeView.m */; };
 		CB8DDC991E84A22E00B25AA9 /* MASLoginQRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC981E84A22E00B25AA9 /* MASLoginQRCodeView.xib */; };
 		CB8DDC9A1E84A25300B25AA9 /* MASLoginQRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC981E84A22E00B25AA9 /* MASLoginQRCodeView.xib */; };
+		CBAE28531E85A3EB00D626F3 /* enterprise.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC521E84910C00B25AA9 /* enterprise.png */; };
+		CBAE28561E85A3ED00D626F3 /* enterprise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC531E84910C00B25AA9 /* enterprise@2x.png */; };
+		CBAE28571E85A3FF00D626F3 /* ic_bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4AF7EF1E85930700CCA739 /* ic_bluetooth.png */; };
+		CBAE28581E85A3FF00D626F3 /* ic_bluetooth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4AF7F01E85930700CCA739 /* ic_bluetooth@2x.png */; };
+		CBAE28591E85A3FF00D626F3 /* ic_bluetooth@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4AF7F11E85930700CCA739 /* ic_bluetooth@3x.png */; };
+		CBAE285A1E85A3FF00D626F3 /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4AF7E71E85862F00CCA739 /* ic_close.png */; };
+		CBAE285B1E85A3FF00D626F3 /* ic_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4AF7E81E85862F00CCA739 /* ic_close@2x.png */; };
+		CBAE285C1E85A3FF00D626F3 /* ic_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4AF7E91E85862F00CCA739 /* ic_close@3x.png */; };
+		CBAE285D1E85A3FF00D626F3 /* enterprise@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC541E84910C00B25AA9 /* enterprise@3x.png */; };
+		CBAE285E1E85A3FF00D626F3 /* enterprise_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC551E84910C00B25AA9 /* enterprise_disabled.png */; };
+		CBAE285F1E85A3FF00D626F3 /* enterprise_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC561E84910C00B25AA9 /* enterprise_disabled@2x.png */; };
+		CBAE28601E85A3FF00D626F3 /* enterprise_disabled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC571E84910C00B25AA9 /* enterprise_disabled@3x.png */; };
+		CBAE28611E85A3FF00D626F3 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC581E84910C00B25AA9 /* facebook.png */; };
+		CBAE28621E85A3FF00D626F3 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC591E84910C00B25AA9 /* facebook@2x.png */; };
+		CBAE28631E85A3FF00D626F3 /* facebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC5A1E84910C00B25AA9 /* facebook@3x.png */; };
+		CBAE28641E85A3FF00D626F3 /* facebook_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC5B1E84910C00B25AA9 /* facebook_disabled.png */; };
+		CBAE28651E85A3FF00D626F3 /* facebook_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC5C1E84910C00B25AA9 /* facebook_disabled@2x.png */; };
+		CBAE28661E85A3FF00D626F3 /* facebook_disabled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC5D1E84910C00B25AA9 /* facebook_disabled@3x.png */; };
+		CBAE28671E85A3FF00D626F3 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC5E1E84910C00B25AA9 /* google.png */; };
+		CBAE28681E85A3FF00D626F3 /* google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC5F1E84910C00B25AA9 /* google@2x.png */; };
+		CBAE28691E85A3FF00D626F3 /* google@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC601E84910C00B25AA9 /* google@3x.png */; };
+		CBAE286A1E85A3FF00D626F3 /* google_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC611E84910C00B25AA9 /* google_disabled.png */; };
+		CBAE286B1E85A3FF00D626F3 /* google_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC621E84910C00B25AA9 /* google_disabled@2x.png */; };
+		CBAE286C1E85A3FF00D626F3 /* google_disabled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC631E84910C00B25AA9 /* google_disabled@3x.png */; };
+		CBAE286D1E85A3FF00D626F3 /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC641E84910C00B25AA9 /* linkedin.png */; };
+		CBAE286E1E85A3FF00D626F3 /* linkedin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC651E84910C00B25AA9 /* linkedin@2x.png */; };
+		CBAE286F1E85A3FF00D626F3 /* linkedin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC661E84910C00B25AA9 /* linkedin@3x.png */; };
+		CBAE28701E85A3FF00D626F3 /* linkedin_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC671E84910C00B25AA9 /* linkedin_disabled.png */; };
+		CBAE28711E85A3FF00D626F3 /* linkedin_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC681E84910C00B25AA9 /* linkedin_disabled@2x.png */; };
+		CBAE28721E85A3FF00D626F3 /* linkedin_disabled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC691E84910C00B25AA9 /* linkedin_disabled@3x.png */; };
+		CBAE28731E85A3FF00D626F3 /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC6A1E84910C00B25AA9 /* qrcode.png */; };
+		CBAE28741E85A3FF00D626F3 /* qrcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC6B1E84910C00B25AA9 /* qrcode@2x.png */; };
+		CBAE28751E85A3FF00D626F3 /* qrcode@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC6C1E84910C00B25AA9 /* qrcode@3x.png */; };
+		CBAE28761E85A3FF00D626F3 /* salesforce.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC6D1E84910C00B25AA9 /* salesforce.png */; };
+		CBAE28771E85A3FF00D626F3 /* salesforce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC6E1E84910C00B25AA9 /* salesforce@2x.png */; };
+		CBAE28781E85A3FF00D626F3 /* salesforce@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC6F1E84910C00B25AA9 /* salesforce@3x.png */; };
+		CBAE28791E85A3FF00D626F3 /* salesforce_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC701E84910C00B25AA9 /* salesforce_disabled.png */; };
+		CBAE287A1E85A3FF00D626F3 /* salesforce_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC711E84910C00B25AA9 /* salesforce_disabled@2x.png */; };
+		CBAE287B1E85A3FF00D626F3 /* salesforce_disabled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC721E84910C00B25AA9 /* salesforce_disabled@3x.png */; };
+		CBAE287C1E85A3FF00D626F3 /* ic_account_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC491E845BE000B25AA9 /* ic_account_circle@2x.png */; };
+		CBAE287D1E85A3FF00D626F3 /* ic_account_circle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC4A1E845BE000B25AA9 /* ic_account_circle@3x.png */; };
+		CBAE287E1E85A3FF00D626F3 /* ic_lock_outline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC4B1E845BE000B25AA9 /* ic_lock_outline@2x.png */; };
+		CBAE287F1E85A3FF00D626F3 /* ic_lock_outline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDC4C1E845BE000B25AA9 /* ic_lock_outline@3x.png */; };
 		CBC88F9E1DBE86E2009EE1C6 /* MASBaseLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88F9C1DBE86E2009EE1C6 /* MASBaseLoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBC88F9F1DBE86E2009EE1C6 /* MASBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC88F9D1DBE86E2009EE1C6 /* MASBaseLoginViewController.m */; };
 		CBC88FA31DBFED83009EE1C6 /* MAS+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC88FA11DBFED83009EE1C6 /* MAS+UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -735,6 +778,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBAE28571E85A3FF00D626F3 /* ic_bluetooth.png in Resources */,
+				CBAE28581E85A3FF00D626F3 /* ic_bluetooth@2x.png in Resources */,
+				CBAE28591E85A3FF00D626F3 /* ic_bluetooth@3x.png in Resources */,
+				CBAE285A1E85A3FF00D626F3 /* ic_close.png in Resources */,
+				CBAE285B1E85A3FF00D626F3 /* ic_close@2x.png in Resources */,
+				CBAE285C1E85A3FF00D626F3 /* ic_close@3x.png in Resources */,
+				CBAE285D1E85A3FF00D626F3 /* enterprise@3x.png in Resources */,
+				CBAE285E1E85A3FF00D626F3 /* enterprise_disabled.png in Resources */,
+				CBAE285F1E85A3FF00D626F3 /* enterprise_disabled@2x.png in Resources */,
+				CBAE28601E85A3FF00D626F3 /* enterprise_disabled@3x.png in Resources */,
+				CBAE28611E85A3FF00D626F3 /* facebook.png in Resources */,
+				CBAE28621E85A3FF00D626F3 /* facebook@2x.png in Resources */,
+				CBAE28631E85A3FF00D626F3 /* facebook@3x.png in Resources */,
+				CBAE28641E85A3FF00D626F3 /* facebook_disabled.png in Resources */,
+				CBAE28651E85A3FF00D626F3 /* facebook_disabled@2x.png in Resources */,
+				CBAE28661E85A3FF00D626F3 /* facebook_disabled@3x.png in Resources */,
+				CBAE28671E85A3FF00D626F3 /* google.png in Resources */,
+				CBAE28681E85A3FF00D626F3 /* google@2x.png in Resources */,
+				CBAE28691E85A3FF00D626F3 /* google@3x.png in Resources */,
+				CBAE286A1E85A3FF00D626F3 /* google_disabled.png in Resources */,
+				CBAE286B1E85A3FF00D626F3 /* google_disabled@2x.png in Resources */,
+				CBAE286C1E85A3FF00D626F3 /* google_disabled@3x.png in Resources */,
+				CBAE286D1E85A3FF00D626F3 /* linkedin.png in Resources */,
+				CBAE286E1E85A3FF00D626F3 /* linkedin@2x.png in Resources */,
+				CBAE286F1E85A3FF00D626F3 /* linkedin@3x.png in Resources */,
+				CBAE28701E85A3FF00D626F3 /* linkedin_disabled.png in Resources */,
+				CBAE28711E85A3FF00D626F3 /* linkedin_disabled@2x.png in Resources */,
+				CBAE28721E85A3FF00D626F3 /* linkedin_disabled@3x.png in Resources */,
+				CBAE28731E85A3FF00D626F3 /* qrcode.png in Resources */,
+				CBAE28741E85A3FF00D626F3 /* qrcode@2x.png in Resources */,
+				CBAE28751E85A3FF00D626F3 /* qrcode@3x.png in Resources */,
+				CBAE28761E85A3FF00D626F3 /* salesforce.png in Resources */,
+				CBAE28771E85A3FF00D626F3 /* salesforce@2x.png in Resources */,
+				CBAE28781E85A3FF00D626F3 /* salesforce@3x.png in Resources */,
+				CBAE28791E85A3FF00D626F3 /* salesforce_disabled.png in Resources */,
+				CBAE287A1E85A3FF00D626F3 /* salesforce_disabled@2x.png in Resources */,
+				CBAE287B1E85A3FF00D626F3 /* salesforce_disabled@3x.png in Resources */,
+				CBAE287C1E85A3FF00D626F3 /* ic_account_circle@2x.png in Resources */,
+				CBAE287D1E85A3FF00D626F3 /* ic_account_circle@3x.png in Resources */,
+				CBAE287E1E85A3FF00D626F3 /* ic_lock_outline@2x.png in Resources */,
+				CBAE287F1E85A3FF00D626F3 /* ic_lock_outline@3x.png in Resources */,
 				10246AB61CBAA2C600C0A70A /* MASLoginWebViewController.xib in Resources */,
 				10246AB71CBAA2C600C0A70A /* MASLoginViewController.xib in Resources */,
 				10246AB81CBAA2C600C0A70A /* MASAuthenticationProviderCollectionViewCell.xib in Resources */,
@@ -743,10 +827,12 @@
 				CB2FB3321DC3D507000DA2C0 /* MASSessionLockViewController.xib in Resources */,
 				CB0ACDC31DDCDE41008D2D48 /* logo-ca@2x.png in Resources */,
 				CB8DDC431E844CAA00B25AA9 /* ic_account_circle.png in Resources */,
+				CBAE28561E85A3ED00D626F3 /* enterprise@2x.png in Resources */,
 				CB8DDC9A1E84A25300B25AA9 /* MASLoginQRCodeView.xib in Resources */,
 				10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */,
 				A85F612D1D0A94310014739E /* MASOTPViewController.xib in Resources */,
 				CB0ACDC61DDCDE45008D2D48 /* icon-fingerprint@2x.png in Resources */,
+				CBAE28531E85A3EB00D626F3 /* enterprise.png in Resources */,
 				A85F61281D0A94310014739E /* MASOTPChannelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1027,7 +1113,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = "1.3-CR1";
+				CURRENT_PROJECT_VERSION = 4.0.00;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1057,7 +1143,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = "1.3-CR1";
+				CURRENT_PROJECT_VERSION = 4.0.00;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
