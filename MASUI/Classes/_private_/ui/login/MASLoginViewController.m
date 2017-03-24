@@ -93,8 +93,7 @@
     [self.collectionView registerClass:[MASAuthenticationProviderCollectionViewCell class]
             forCellWithReuseIdentifier:[MASAuthenticationProviderCollectionViewCell cellId]];
     
-    NSBundle *thisBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]];;
-//    NSBundle *thisBundle = [NSBundle masUIFramework];
+    NSBundle *thisBundle = [NSBundle masUIFramework];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"MASAuthenticationProviderCollectionViewCell" bundle:thisBundle]
           forCellWithReuseIdentifier:[MASAuthenticationProviderCollectionViewCell cellId]];

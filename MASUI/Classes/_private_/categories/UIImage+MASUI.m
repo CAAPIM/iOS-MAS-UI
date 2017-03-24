@@ -28,12 +28,9 @@
 
 + (UIImage *)masUIImageNamed:(NSString *)imageName
 {
-    //NSBundle *bundle = [NSBundle bundleForClass:[self class]]; //Used for dynamic framework
+    NSBundle* bundle = [NSBundle masUIFramework]; 
     
-    NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
-//    return [UIImage imageNamed:[NSString stringWithFormat:@"MASUIResources.dundle/%@",imageName]];
-    return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
-    //[NSBundle masUIFramework]
+    return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];\
 }
     
 @end

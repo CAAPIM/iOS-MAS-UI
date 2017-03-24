@@ -208,8 +208,7 @@ static MASViewController * _lockScreenViewController_ = nil;
 {
     [super serviceWillStart];
     
-    NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
-//    NSBundle* bundle = [NSBundle bundleForClass:[self class]]; //Dynamic framework
+    NSBundle* bundle = [NSBundle masUIFramework]; 
     
     if (!_loginViewController_)
     {

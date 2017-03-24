@@ -63,8 +63,7 @@
 
 - (UIView *)viewFromNibForClass
 {
-//    NSBundle *bundle = [NSBundle masUIFramework]; //  Dynamic Framework
-    NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]];    //  Static Framework
+    NSBundle *bundle = [NSBundle masUIFramework];
     
     UINib *thisNib = [UINib nibWithNibName:NSStringFromClass([self class]) bundle:bundle];
     UIView *thisView = [thisNib instantiateWithOwner:self options:nil][0];

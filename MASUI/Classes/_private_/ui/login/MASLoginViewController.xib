@@ -72,10 +72,10 @@
                                     <color key="color" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 </activityIndicatorView>
                                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gQ9-8k-Jn3">
-                                    <rect key="frame" x="-3" y="331" width="317" height="160"/>
+                                    <rect key="frame" x="0.5" y="331" width="310" height="160"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="317" id="U0x-SD-gFU"/>
+                                        <constraint firstAttribute="width" constant="310" id="U0x-SD-gFU"/>
                                         <constraint firstAttribute="height" constant="160" id="iCO-rd-7v6"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="4" id="ZIl-IF-F1r">
@@ -176,7 +176,7 @@
                         <constraint firstItem="B0X-on-tmD" firstAttribute="top" secondItem="O8g-Ku-AfT" secondAttribute="top" priority="250" constant="73" id="17p-Yd-dKR"/>
                         <constraint firstItem="B0X-on-tmD" firstAttribute="centerY" secondItem="O8g-Ku-AfT" secondAttribute="centerY" id="EpQ-PZ-3Ap"/>
                         <constraint firstItem="B0X-on-tmD" firstAttribute="leading" secondItem="O8g-Ku-AfT" secondAttribute="leading" priority="250" constant="32" id="Pe3-Lp-cCP"/>
-                        <constraint firstAttribute="trailing" secondItem="B0X-on-tmD" secondAttribute="trailing" priority="250" constant="33" id="YWW-zB-47M"/>
+                        <constraint firstAttribute="trailing" secondItem="B0X-on-tmD" secondAttribute="trailing" priority="250" constant="32" id="YWW-zB-47M"/>
                         <constraint firstAttribute="bottom" secondItem="B0X-on-tmD" secondAttribute="bottom" priority="250" constant="74" id="ajL-1c-Cu8"/>
                         <constraint firstItem="B0X-on-tmD" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="vKb-N4-TB3"/>
                     </constraints>
