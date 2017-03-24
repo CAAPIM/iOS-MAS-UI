@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="NO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="NO">
     <dependencies>
         <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MASLoginViewController">
             <connections>
                 <outlet property="activityIndicator" destination="UNj-CY-8xe" id="Q2g-e4-7MV"/>
+                <outlet property="bleIcon" destination="8dP-cw-yON" id="2sa-IJ-WRA"/>
                 <outlet property="cancelBtn" destination="tas-dN-zD0" id="Gta-Ga-G0f"/>
                 <outlet property="collectionView" destination="gQ9-8k-Jn3" id="bl2-q9-iKM"/>
                 <outlet property="loginBtn" destination="Ot1-fH-gQ0" id="StL-Dr-uWI"/>
                 <outlet property="passwordField" destination="2L8-SH-gqo" id="qU2-SU-xhl"/>
-                <outlet property="qrCodeView" destination="FSo-bb-bb3" id="cuW-Kq-cdj"/>
+                <outlet property="scrollView" destination="O8g-Ku-AfT" id="bgS-hc-VPD"/>
                 <outlet property="userNameField" destination="CCu-g3-fih" id="TE3-HU-bgN"/>
                 <outlet property="view" destination="ac0-xI-Gdi" id="xFB-4h-Q7o"/>
             </connections>
@@ -26,146 +26,186 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8g-Ku-AfT">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCu-g3-fih">
-                            <rect key="frame" x="72" y="188" width="231" height="30"/>
-                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                            <accessibility key="accessibilityConfiguration" identifier="masui-usernameField"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="duz-Q2-PJP"/>
-                                <constraint firstAttribute="width" constant="231" id="pXN-cr-pf1"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                            <connections>
-                                <outlet property="delegate" destination="-1" id="sS6-0u-snc"/>
-                            </connections>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-SH-gqo">
-                            <rect key="frame" x="72" y="228" width="231" height="30"/>
-                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                            <accessibility key="accessibilityConfiguration" identifier="masui-passwordField"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="Cy6-cC-ajC"/>
-                                <constraint firstAttribute="width" constant="231" id="JBd-PY-EsL"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                            <connections>
-                                <outlet property="delegate" destination="-1" id="3AL-Wq-4Y7"/>
-                            </connections>
-                        </textField>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FSo-bb-bb3">
-                            <rect key="frame" x="136.5" y="447" width="100" height="100"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0X-on-tmD">
+                            <rect key="frame" x="32" y="73" width="310" height="520"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCu-g3-fih">
+                                    <rect key="frame" x="18" y="141" width="275" height="30"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="masui-usernameField"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="duz-Q2-PJP"/>
+                                        <constraint firstAttribute="width" constant="275" id="xHU-Kb-uPN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="sS6-0u-snc"/>
+                                    </connections>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-SH-gqo">
+                                    <rect key="frame" x="18" y="181" width="275" height="30"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="masui-passwordField"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Cy6-cC-ajC"/>
+                                        <constraint firstAttribute="width" constant="275" id="JBd-PY-EsL"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="3AL-Wq-4Y7"/>
+                                    </connections>
+                                </textField>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" image="caLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="phv-hA-oxT">
+                                    <rect key="frame" x="112" y="30" width="86" height="71"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="71" id="Adh-cu-etp"/>
+                                        <constraint firstAttribute="width" constant="86" id="gJF-lE-FY6"/>
+                                    </constraints>
+                                </imageView>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UNj-CY-8xe">
+                                    <rect key="frame" x="110" y="215" width="92" height="37"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="92" id="Fmz-oZ-e3P"/>
+                                        <constraint firstAttribute="height" constant="37" id="Rwb-ZI-DWh"/>
+                                    </constraints>
+                                    <color key="color" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                </activityIndicatorView>
+                                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gQ9-8k-Jn3">
+                                    <rect key="frame" x="-3" y="331" width="317" height="160"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="317" id="U0x-SD-gFU"/>
+                                        <constraint firstAttribute="height" constant="160" id="iCO-rd-7v6"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="4" id="ZIl-IF-F1r">
+                                        <size key="itemSize" width="48" height="48"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <cells/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="nv5-WE-S5m"/>
+                                        <outlet property="delegate" destination="-1" id="NEk-mh-CJO"/>
+                                    </connections>
+                                </collectionView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Or sign in with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkE-7h-Grd">
+                                    <rect key="frame" x="33" y="280" width="245" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="245" id="E3B-Ro-OyY"/>
+                                        <constraint firstAttribute="height" constant="32" id="Ihp-JA-TF5"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icw-sy-V8Y">
+                                    <rect key="frame" x="11" y="225" width="288" height="53"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tas-dN-zD0" userLabel="CancelButton">
+                                            <rect key="frame" x="8" y="9" width="132" height="36"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="masui-cancelBtn"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="xxh-59-3LO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <size key="titleShadowOffset" width="0.0" height="1"/>
+                                            <state key="normal" title="Cancel" backgroundImage="grey_button.png">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onCancelSelected:" destination="-1" eventType="touchUpInside" id="5ZH-AS-41s"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot1-fH-gQ0" userLabel="LoginButton">
+                                            <rect key="frame" x="148" y="9" width="132" height="35"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="masui-loginBtn"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="hMf-vg-tnE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <size key="titleShadowOffset" width="0.0" height="1"/>
+                                            <state key="normal" title="Login" backgroundImage="grey_button.png">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onLoginSelected:" destination="-1" eventType="touchUpInside" id="RVq-UQ-fqt"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Ot1-fH-gQ0" firstAttribute="width" secondItem="tas-dN-zD0" secondAttribute="width" id="81F-1l-3Y5"/>
+                                        <constraint firstItem="tas-dN-zD0" firstAttribute="leading" secondItem="icw-sy-V8Y" secondAttribute="leading" constant="8" id="ANL-Uy-FcU"/>
+                                        <constraint firstAttribute="bottom" secondItem="tas-dN-zD0" secondAttribute="bottom" constant="8" id="E0e-TH-QQU"/>
+                                        <constraint firstItem="Ot1-fH-gQ0" firstAttribute="leading" secondItem="tas-dN-zD0" secondAttribute="trailing" constant="8" id="KUq-a5-Exo"/>
+                                        <constraint firstAttribute="width" constant="288" id="Vis-mp-gy5"/>
+                                        <constraint firstAttribute="height" constant="53" id="ac9-Sb-45F"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ot1-fH-gQ0" secondAttribute="bottom" constant="9" id="jOO-q9-xAu"/>
+                                        <constraint firstItem="Ot1-fH-gQ0" firstAttribute="top" secondItem="icw-sy-V8Y" secondAttribute="top" constant="9" id="ldj-Ae-yni"/>
+                                        <constraint firstItem="tas-dN-zD0" firstAttribute="top" secondItem="icw-sy-V8Y" secondAttribute="top" constant="9" id="pXI-II-T7y"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ot1-fH-gQ0" secondAttribute="trailing" constant="8" id="xHi-mv-XLq"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="100" id="4dz-B0-p9S"/>
-                                <constraint firstAttribute="height" constant="100" id="CrR-mR-bLU"/>
+                                <constraint firstItem="UNj-CY-8xe" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" constant="1" id="0wL-NX-sgV"/>
+                                <constraint firstAttribute="width" constant="310" id="3vW-J7-Kv3"/>
+                                <constraint firstItem="gQ9-8k-Jn3" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="4Ub-1I-xfr"/>
+                                <constraint firstItem="UNj-CY-8xe" firstAttribute="centerY" secondItem="B0X-on-tmD" secondAttribute="centerY" constant="-26.5" id="JJb-qI-g0p"/>
+                                <constraint firstItem="SkE-7h-Grd" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="MVd-4q-Xcd"/>
+                                <constraint firstAttribute="bottom" secondItem="gQ9-8k-Jn3" secondAttribute="bottom" constant="29" id="OI6-f7-0u4"/>
+                                <constraint firstItem="CCu-g3-fih" firstAttribute="top" secondItem="phv-hA-oxT" secondAttribute="bottom" constant="40" id="YFN-Uh-Dr5"/>
+                                <constraint firstItem="phv-hA-oxT" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="ajR-0d-IZ0"/>
+                                <constraint firstItem="CCu-g3-fih" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="c0v-9D-HbX"/>
+                                <constraint firstItem="2L8-SH-gqo" firstAttribute="top" secondItem="CCu-g3-fih" secondAttribute="bottom" constant="10" id="eCN-Y8-awV"/>
+                                <constraint firstItem="SkE-7h-Grd" firstAttribute="top" secondItem="icw-sy-V8Y" secondAttribute="bottom" constant="2" id="iYe-Th-dn8"/>
+                                <constraint firstItem="phv-hA-oxT" firstAttribute="top" secondItem="B0X-on-tmD" secondAttribute="top" constant="30" id="nng-e8-P6E"/>
+                                <constraint firstAttribute="height" constant="520" id="pMh-yr-6HI"/>
+                                <constraint firstItem="2L8-SH-gqo" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="tgc-Ah-cqw"/>
+                                <constraint firstItem="icw-sy-V8Y" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="uF0-Mq-JIX"/>
+                                <constraint firstItem="icw-sy-V8Y" firstAttribute="top" secondItem="2L8-SH-gqo" secondAttribute="bottom" constant="14" id="y0g-V2-2kv"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_bluetooth.png" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-cw-yON">
+                            <rect key="frame" x="328" y="25" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="L5h-WX-mO2"/>
+                                <constraint firstAttribute="height" constant="24" id="SIH-zp-yBO"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot1-fH-gQ0" userLabel="LoginButton">
-                            <rect key="frame" x="89.5" y="273" width="194" height="35"/>
-                            <accessibility key="accessibilityConfiguration" identifier="masui-loginBtn"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="194" id="BzR-ky-7OO"/>
-                                <constraint firstAttribute="height" constant="35" id="Fqz-qh-nvD"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <size key="titleShadowOffset" width="0.0" height="1"/>
-                            <state key="normal" title="Login" backgroundImage="grey_button.png">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="onLoginSelected:" destination="-1" eventType="touchUpInside" id="RVq-UQ-fqt"/>
-                            </connections>
-                        </button>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" image="caLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="phv-hA-oxT">
-                            <rect key="frame" x="150" y="83" width="75" height="67"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="67" id="Adh-cu-etp"/>
-                                <constraint firstAttribute="width" constant="75" id="gJF-lE-FY6"/>
-                            </constraints>
-                        </imageView>
-                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UNj-CY-8xe">
-                            <rect key="frame" x="141.5" y="262" width="92" height="37"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="92" id="Fmz-oZ-e3P"/>
-                                <constraint firstAttribute="height" constant="37" id="Rwb-ZI-DWh"/>
-                            </constraints>
-                            <color key="color" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                        </activityIndicatorView>
-                        <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gQ9-8k-Jn3">
-                            <rect key="frame" x="37.5" y="376" width="300" height="50"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Hkn-M1-ZRS"/>
-                                <constraint firstAttribute="width" constant="300" id="pfB-fz-Rv8"/>
-                            </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="4" id="ZIl-IF-F1r">
-                                <size key="itemSize" width="48" height="48"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                            <cells/>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="nv5-WE-S5m"/>
-                                <outlet property="delegate" destination="-1" id="NEk-mh-CJO"/>
-                            </connections>
-                        </collectionView>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tas-dN-zD0" userLabel="CancelButton">
-                            <rect key="frame" x="89.5" y="318" width="194" height="36"/>
-                            <accessibility key="accessibilityConfiguration" identifier="masui-cancelBtn"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="194" id="JIb-MG-Egv"/>
-                                <constraint firstAttribute="height" constant="36" id="Xth-iZ-yFK"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <size key="titleShadowOffset" width="0.0" height="1"/>
-                            <state key="normal" title="Cancel" backgroundImage="grey_button.png">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="onCancelSelected:" destination="-1" eventType="touchUpInside" id="5ZH-AS-41s"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="CCu-g3-fih" firstAttribute="top" secondItem="phv-hA-oxT" secondAttribute="bottom" constant="38" id="49i-1S-vZN"/>
-                        <constraint firstItem="Ot1-fH-gQ0" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" constant="-1" id="5SL-at-Mk5"/>
-                        <constraint firstItem="2L8-SH-gqo" firstAttribute="top" secondItem="CCu-g3-fih" secondAttribute="bottom" constant="10" id="ACH-7G-Yl5"/>
-                        <constraint firstItem="FSo-bb-bb3" firstAttribute="top" secondItem="gQ9-8k-Jn3" secondAttribute="bottom" constant="21" id="Chn-Wq-gpC"/>
-                        <constraint firstAttribute="bottom" secondItem="FSo-bb-bb3" secondAttribute="bottom" constant="21" id="GH8-9k-kge"/>
-                        <constraint firstItem="phv-hA-oxT" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="KdJ-YG-DsI"/>
-                        <constraint firstItem="CCu-g3-fih" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="PFD-GT-chn"/>
-                        <constraint firstItem="Ot1-fH-gQ0" firstAttribute="top" secondItem="2L8-SH-gqo" secondAttribute="bottom" constant="15" id="QeV-f4-MaB"/>
-                        <constraint firstItem="phv-hA-oxT" firstAttribute="top" secondItem="O8g-Ku-AfT" secondAttribute="top" constant="83" id="VN6-jc-doE"/>
-                        <constraint firstItem="tas-dN-zD0" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" constant="-1" id="WKK-q6-LpO"/>
-                        <constraint firstItem="tas-dN-zD0" firstAttribute="top" secondItem="Ot1-fH-gQ0" secondAttribute="bottom" constant="10" id="Xyq-xw-naK"/>
-                        <constraint firstItem="gQ9-8k-Jn3" firstAttribute="trailing" secondItem="O8g-Ku-AfT" secondAttribute="trailingMargin" constant="-2" id="d80-qC-pk0"/>
-                        <constraint firstItem="UNj-CY-8xe" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="eri-00-pGt"/>
-                        <constraint firstItem="gQ9-8k-Jn3" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="ifv-hI-VHZ"/>
-                        <constraint firstItem="UNj-CY-8xe" firstAttribute="centerY" secondItem="O8g-Ku-AfT" secondAttribute="centerY" constant="-53" id="moU-c1-AoJ"/>
-                        <constraint firstItem="gQ9-8k-Jn3" firstAttribute="top" secondItem="Ot1-fH-gQ0" secondAttribute="bottom" constant="68" id="tik-Ox-qsA"/>
-                        <constraint firstItem="FSo-bb-bb3" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" constant="-1" id="vNC-1B-FkA"/>
-                        <constraint firstItem="2L8-SH-gqo" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="ym6-FN-sKB"/>
+                        <constraint firstItem="B0X-on-tmD" firstAttribute="top" secondItem="O8g-Ku-AfT" secondAttribute="top" priority="250" constant="73" id="17p-Yd-dKR"/>
+                        <constraint firstItem="B0X-on-tmD" firstAttribute="centerY" secondItem="O8g-Ku-AfT" secondAttribute="centerY" id="EpQ-PZ-3Ap"/>
+                        <constraint firstItem="B0X-on-tmD" firstAttribute="leading" secondItem="O8g-Ku-AfT" secondAttribute="leading" priority="250" constant="32" id="Pe3-Lp-cCP"/>
+                        <constraint firstAttribute="trailing" secondItem="B0X-on-tmD" secondAttribute="trailing" priority="250" constant="33" id="YWW-zB-47M"/>
+                        <constraint firstItem="8dP-cw-yON" firstAttribute="top" secondItem="O8g-Ku-AfT" secondAttribute="top" constant="25" id="Z0l-sq-yXh"/>
+                        <constraint firstAttribute="bottom" secondItem="B0X-on-tmD" secondAttribute="bottom" priority="250" constant="74" id="ajL-1c-Cu8"/>
+                        <constraint firstAttribute="trailing" secondItem="8dP-cw-yON" secondAttribute="trailing" constant="23" id="v9h-kC-zFL"/>
+                        <constraint firstItem="B0X-on-tmD" firstAttribute="centerX" secondItem="O8g-Ku-AfT" secondAttribute="centerX" id="vKb-N4-TB3"/>
                     </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="O8g-Ku-AfT" secondAttribute="trailing" id="5p9-4l-7Bz"/>
-                <constraint firstItem="O8g-Ku-AfT" firstAttribute="leading" secondItem="ac0-xI-Gdi" secondAttribute="leading" id="Kyq-FO-U40"/>
-                <constraint firstAttribute="bottom" secondItem="O8g-Ku-AfT" secondAttribute="bottom" id="eYp-dA-tuh"/>
-                <constraint firstItem="O8g-Ku-AfT" firstAttribute="top" secondItem="ac0-xI-Gdi" secondAttribute="top" id="oaj-iP-LEm"/>
+                <constraint firstItem="O8g-Ku-AfT" firstAttribute="leading" secondItem="ac0-xI-Gdi" secondAttribute="leading" id="Zn1-nj-M25"/>
+                <constraint firstAttribute="trailing" secondItem="O8g-Ku-AfT" secondAttribute="trailing" id="fed-jy-Ou2"/>
+                <constraint firstItem="O8g-Ku-AfT" firstAttribute="top" secondItem="ac0-xI-Gdi" secondAttribute="top" id="gCO-nQ-t2R"/>
+                <constraint firstAttribute="bottom" secondItem="O8g-Ku-AfT" secondAttribute="bottom" id="sd8-So-Lyk"/>
             </constraints>
-            <point key="canvasLocation" x="487" y="291"/>
+            <point key="canvasLocation" x="568" y="311"/>
         </view>
     </objects>
     <resources>
         <image name="caLogo.png" width="86" height="71"/>
         <image name="grey_button.png" width="240" height="36"/>
+        <image name="ic_bluetooth.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -14,9 +14,17 @@
 
 
 #define MASAuthenticationProviderCellIdSuffix @"Id"
-#define MASAuthenticationProviderCellWidth 48.0
-#define MASAuthenticationProviderCellHeight 48.0
+#define MASAuthenticationProviderCellWidth 136.0
+#define MASAuthenticationProviderCellHeight 40.0
 
+
+@interface MASAuthenticationProviderCollectionViewCell ()
+
+@property (nonatomic, weak) IBOutlet UIImageView *iconImgView;
+@property (nonatomic, weak) IBOutlet UILabel *providerLabel;
+@property (nonatomic, weak) IBOutlet UIView *dropShadowView;
+
+@end
 
 @implementation MASAuthenticationProviderCollectionViewCell
 
@@ -29,7 +37,7 @@
 {
     if(self = [super initWithCoder:aDecoder])
     {
-        [self.contentView.layer setCornerRadius:5.0];
+        
     }
     
     return self;
@@ -64,7 +72,33 @@
     // Retrieve and set the image for that provider
     //
     UIImage *backgroundImage = [UIImage masUIAuthenticationProviderImageForKey:provider.identifier enabled:isAvailable];
-    [self.contentView setBackgroundColor:[UIColor colorWithPatternImage:backgroundImage]];
+
+    [self.iconImgView setImage:backgroundImage];
+    [self.providerLabel setText:[self retrieveProperNameForIdentifier:provider.identifier]];
+    
+    self.dropShadowView.layer.cornerRadius = 2.0f;
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.dropShadowView.bounds];
+    self.dropShadowView.layer.masksToBounds = NO;
+    self.dropShadowView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.dropShadowView.layer.shadowOffset = CGSizeMake(0.5f, 0.5f);
+    self.dropShadowView.layer.shadowOpacity = 0.5f;
+    self.dropShadowView.layer.shadowPath = shadowPath.CGPath;
+}
+
+
+# pragma mark - Private
+
+- (NSString *)retrieveProperNameForIdentifier:(NSString *)identifier
+{
+    NSDictionary *providerNames = @{@"facebook":@"Facebook", @"google":@"Google", @"salesforce":@"Salesforce", @"linkedin":@"LinkedIn", @"enterprise":@"Enterprise", @"qrcode":@"QR Code"};
+    
+    if ([providerNames.allKeys containsObject:identifier])
+    {
+        return [providerNames objectForKey:identifier];
+    }
+    else {
+        return identifier;
+    }
 }
 
 @end

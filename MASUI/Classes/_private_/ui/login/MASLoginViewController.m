@@ -12,7 +12,7 @@
 
 #import "MASAuthenticationProviderCollectionViewCell.h"
 #import "MASICenterFlowLayout.h"
-#import "MASLoginWebViewController.h"
+#import "MASLoginQRCodeView.h"
 #import "NSBundle+MASUI.h"
 #import "UIAlertController+MASUI.h"
 #import "UIImage+MASUI.h"
@@ -30,9 +30,11 @@
 @property (nonatomic, weak) IBOutlet UIButton *loginBtn;
 @property (nonatomic, weak) IBOutlet UIButton *cancelBtn;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, weak) IBOutlet UIImageView *qrCodeView;
+@property (nonatomic, weak) IBOutlet UIImageView *bleIcon;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) MASProximityLoginQRCode *qrCode;
+@property (nonatomic, assign) BOOL isBlinking;
 
 @end
 
@@ -45,26 +47,67 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //
+    //  UITextField - bottom border only, and icon for each field
+    //
+    self.userNameField.borderStyle = UITextBorderStyleNone;
+    self.userNameField.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.userNameField.layer.masksToBounds = NO;
+    self.userNameField.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.userNameField.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    self.userNameField.layer.shadowRadius = 0.0;
+    self.userNameField.layer.shadowOpacity = 1.0;
+    self.userNameField.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIImageView *userIconImgView = [[UIImageView alloc] initWithFrame:CGRectMake(3, 0, 18, 18)];
+    [userIconImgView setImage:[UIImage masUIImageNamed:@"ic_account_circle"]];
+    UIView *userView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 31, 18)];
+    [userView addSubview:userIconImgView];
+    self.userNameField.leftView = userView;
+    
+    self.passwordField.borderStyle = UITextBorderStyleNone;
+    self.passwordField.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.passwordField.layer.masksToBounds = NO;
+    self.passwordField.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.passwordField.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    self.passwordField.layer.shadowRadius = 0.0;
+    self.passwordField.layer.shadowOpacity = 1.0;
+    self.passwordField.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIImageView *passwordIconImgView = [[UIImageView alloc] initWithFrame:CGRectMake(3, 0, 18, 18)];
+    [passwordIconImgView setImage:[UIImage masUIImageNamed:@"ic_lock_outline"]];
+    UIView *passView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 31, 18)];
+    [passView addSubview:passwordIconImgView];
+    self.passwordField.leftView = passView;
    
     //
     // CollectionView
     //
     MASICenterFlowLayout *layout = [MASICenterFlowLayout new];
-    layout.minimumInteritemSpacing = 10.f;
-    layout.minimumLineSpacing = 10.f;
+    layout.minimumInteritemSpacing = 6.0f;
+    layout.minimumLineSpacing = 5.0f;
 
+    //
+    //  Register the class and nib for custom cell
+    //
     [self.collectionView setCollectionViewLayout:layout animated:NO];
     [self.collectionView registerClass:[MASAuthenticationProviderCollectionViewCell class]
-        forCellWithReuseIdentifier:[MASAuthenticationProviderCollectionViewCell cellId]];
+            forCellWithReuseIdentifier:[MASAuthenticationProviderCollectionViewCell cellId]];
     
+    NSBundle *thisBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]];;
+//    NSBundle *thisBundle = [NSBundle masUIFramework];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"MASAuthenticationProviderCollectionViewCell" bundle:thisBundle]
+          forCellWithReuseIdentifier:[MASAuthenticationProviderCollectionViewCell cellId]];
+    
+    
+    //
+    //  QR Code session sharing
+    //
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAuthorizationCodeFromSessionSharing:)
                                                  name:MASDeviceDidReceiveAuthorizationCodeFromProximityLoginNotification
                                                object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeQRCode:)
-                                                 name:MASProximityLoginQRCodeDidStopDisplayingQRCodeImage
-                                               object:nil];
-
 }
 
 
@@ -98,6 +141,15 @@
     [_loginBtn setEnabled:YES];
     [_cancelBtn setEnabled:YES];
     
+    //
+    //  Combine QR code and social login
+    //
+    if (self.proximityLoginProvider)
+    {
+        NSArray *combinedArray = [self.socialLoginAuthenticationProviders arrayByAddingObject:self.proximityLoginProvider];
+        self.socialLoginAuthenticationProviders = combinedArray;
+    }
+    
     [self.navigationController setNavigationBarHidden:YES];
 }
 
@@ -109,14 +161,6 @@
     if (self.proximityLoginProvider)
     {
         [[MASDevice currentDevice] startAsBluetoothCentralWithAuthenticationProvider:self.proximityLoginProvider];
-        
-        if (_qrCode == nil)
-        {
-            _qrCode = [[MASProximityLoginQRCode alloc] initWithAuthenticationProvider:self.proximityLoginProvider];
-            
-            UIImage *qrCodeImage = [_qrCode startDisplayingQRCodeImageForProximityLogin];
-            [_qrCodeView setImage:qrCodeImage];
-        }
     }
 }
 
@@ -154,6 +198,11 @@
         // Stop QR Code session sharing
         //
         [_qrCode stopDisplayingQRCodeImageForProximityLogin];
+        
+        //
+        //  Stop BLE
+        //
+        [[MASDevice currentDevice] stopAsBluetoothCentral];
         
         //
         // Cancel the operation
@@ -282,10 +331,16 @@
 }
 
 
-- (void)removeQRCode:(NSNotification *)notification
+- (void)displayQRCodeOverlay
 {
-    _qrCodeView.image = nil;
-    _qrCode = nil;
+    MASLoginQRCodeView *qrCodeView = [[MASLoginQRCodeView alloc] initWithFrame:self.view.bounds];
+    [qrCodeView displayQRCodeWithProvider:self.proximityLoginProvider];
+    
+    [UIView transitionWithView:self.view
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^ { [self.view addSubview:qrCodeView]; }
+                    completion:nil];
 }
 
 
@@ -314,7 +369,7 @@
     //
     // if the authentication provider exists 
     //
-    if (provider)
+    if (provider && ![provider.identifier isEqualToString:@"qrcode"])
     {
         SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:provider.authenticationUrl];
         [[MASAuthorizationResponse sharedInstance] setDelegate:self];
@@ -323,6 +378,10 @@
         // Show the controller
         //
         [self.navigationController presentViewController:viewController animated:YES completion:nil];
+    }
+    else if (provider && [provider.identifier isEqualToString:@"qrcode"])
+    {
+        [self displayQRCodeOverlay];
     }
 }
 
@@ -373,7 +432,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //DLog(@"called for item at indexPath: %@", indexPath);
-    
+
     return [MASAuthenticationProviderCollectionViewCell cellSize];
 }
 
