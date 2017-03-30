@@ -1,7 +1,7 @@
 # Version 4.0.00
 
 ### Bug fixes
-- Missing cancel button on OTP Channel selection screen and OTP Credential screen [DE258664]
+- The cancel button was missing on OTP Channel selection screen and OTP Credential screen [DE258664]
 
 ### New Features
 - Change to SFSafariViewController for all social login [US279228]
