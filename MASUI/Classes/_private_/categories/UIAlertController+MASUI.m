@@ -130,22 +130,32 @@
 }
 
 
-+ (UIViewController *) presentedViewController:(UIViewController *)viewController
++ (UIViewController *) presentedViewController:(id)viewController
 {
+    if ([viewController isKindOfClass:[UINavigationController class]])
+    {
+        UINavigationController *navigationController = (UINavigationController *)viewController;
+        return [self presentedViewController:navigationController.topViewController];
+    }
     if ([viewController isKindOfClass:[UIViewController class]])
     {
         if ([viewController presentedViewController])
         {
+            if ([[viewController presentedViewController] isKindOfClass:[UINavigationController class]])
+            {
+                UINavigationController *navigationController = (UINavigationController *)[viewController presentedViewController];
+                
+                if (navigationController.isBeingDismissed)
+                {
+                    return viewController;
+                }
+            }
+            
             return [self presentedViewController:[viewController presentedViewController]];
         }
         else {
             return viewController;
         }
-    }
-    else if ([viewController isKindOfClass:[UINavigationController class]])
-    {
-        UINavigationController *navigationController = (UINavigationController *)viewController;
-        return [self presentedViewController:navigationController.topViewController];
     }
     else if ([viewController isKindOfClass:[UITabBarController class]])
     {
