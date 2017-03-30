@@ -1,4 +1,4 @@
-# Version 4.0
+# Version 4.0.00
 
 ### Bug fixes
 - Missing cancel button on OTP Channel selection screen and OTP Credential screen [DE258664]
