@@ -10,6 +10,8 @@
 
 #import "MASOTPViewController.h"
 
+#import "UIAlertController+MASUI.h"
+
 
 @interface MASOTPViewController () <UITextFieldDelegate>
 
@@ -44,6 +46,12 @@
  *  One Time Password send button.
  */
 @property (nonatomic, weak) IBOutlet UIButton *sendBtn;
+
+
+/**
+ *  OTP Channel list cancel button
+ */
+@property (nonatomic, weak) IBOutlet UIButton *cancelBtn;
 
 @end
 
@@ -89,7 +97,49 @@
 # pragma mark - IBActions
 
 /**
- *  IBAction - sendBtn 
+ *  IBAction - cancelBtn
+ *  Cancel the current OTP request.
+ *
+ *  @param sender
+ */
+- (IBAction)onCancelSelected:(id)sender
+{
+    [_sendBtn setEnabled:NO];
+    [_cancelBtn setEnabled:NO];
+    
+    [self.activityIndicator startAnimating];
+    
+    //
+    // Make sure the keyboard is closed
+    //
+    [_oneTimePasswordField resignFirstResponder];
+    
+    __block MASOTPViewController *blockSelf = self;
+    
+    self.otpCredentialsBlock(nil, YES, ^(BOOL completed, NSError *error) {
+        
+        //
+        // Ensure this code runs in the main UI thread
+        //
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Stop progress animation
+                           //
+                           [blockSelf.activityIndicator stopAnimating];
+                           
+                           //
+                           // Dsmiss the view controller
+                           //
+                           [blockSelf dismissViewControllerAnimated:YES completion:nil];
+                       });
+        
+    });
+}
+
+
+/**
+ *  IBAction - sendBtn
  *  Sends the OTP entered to continue the request with OTP value.
  *
  *  @param sender
@@ -109,6 +159,7 @@
     }
     
     [_sendBtn setEnabled:NO];
+    [_cancelBtn setEnabled:NO];
     
     [self.activityIndicator startAnimating];
     
@@ -143,9 +194,11 @@
             //
             if(error)
             {
-                               
                 [_sendBtn setEnabled:YES];
-                               
+                [_cancelBtn setEnabled:YES];
+                
+                [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                
                 return;
             }
                            

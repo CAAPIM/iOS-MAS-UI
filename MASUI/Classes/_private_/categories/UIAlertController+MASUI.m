@@ -130,17 +130,49 @@
 }
 
 
++ (UIViewController *) presentedViewController:(id)viewController
+{
+    if ([viewController isKindOfClass:[UINavigationController class]])
+    {
+        UINavigationController *navigationController = (UINavigationController *)viewController;
+        return [self presentedViewController:navigationController.topViewController];
+    }
+    if ([viewController isKindOfClass:[UIViewController class]])
+    {
+        if ([viewController presentedViewController])
+        {
+            if ([[viewController presentedViewController] isKindOfClass:[UINavigationController class]])
+            {
+                UINavigationController *navigationController = (UINavigationController *)[viewController presentedViewController];
+                
+                if (navigationController.isBeingDismissed)
+                {
+                    return viewController;
+                }
+            }
+            
+            return [self presentedViewController:[viewController presentedViewController]];
+        }
+        else {
+            return viewController;
+        }
+    }
+    else if ([viewController isKindOfClass:[UITabBarController class]])
+    {
+        UITabBarController *tabBarController = (UITabBarController *)viewController;
+        return [self presentedViewController:tabBarController.presentedViewController];
+    }
+    else {
+        return nil;
+    }
+}
+
+
 # pragma mark - Public
 
 + (UIViewController *)rootViewController
 {
-    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if([viewController isKindOfClass:[UINavigationController class]])
-    {
-        viewController = ((UINavigationController *)viewController).topViewController;
-    }
-    
-    return viewController;
+    return [self presentedViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
 
 @end

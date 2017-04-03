@@ -11,6 +11,7 @@
 #import "MASOTPChannelViewController.h"
 
 #import "MASTableViewCell.h"
+#import "UIAlertController+MASUI.h"
 
 
 @interface MASOTPChannelViewController ()
@@ -28,12 +29,6 @@
  *  UITableView
  */
 @property (nonatomic, weak) IBOutlet UITableView *channelListView;
-
-
-/**
- *  OTP Channel list send button
- */
-@property (nonatomic, weak) IBOutlet UIButton *sendBtn;
 
 @end
 
@@ -83,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return _supportedChannels.count + 1;
+    return _supportedChannels.count + 2;
 }
 
 
@@ -106,6 +101,14 @@
         cell.textLabel.font = [UIFont boldSystemFontOfSize:21.0f];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
+    else if (indexPath.row == _supportedChannels.count + 1)
+    {
+        cell.textLabel.text = @"Cancel";
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.backgroundColor = [UIColor lightGrayColor];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:21.0f];
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    }
     else {
      
         cell.textLabel.text = [_supportedChannels objectAtIndex:indexPath.row];
@@ -118,7 +121,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == _supportedChannels.count)
+    if (indexPath.row == _supportedChannels.count || indexPath.row == _supportedChannels.count + 1)
     {
         return NO;
     }
@@ -183,9 +186,8 @@
                 //
                 if(error)
                 {
-                                                           
-                    [_sendBtn setEnabled:YES];
-                                                           
+                    [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                    
                     return;
                 }
                                                        
@@ -195,6 +197,31 @@
                 [blockSelf dismissViewControllerAnimated:YES completion:nil];
             });
             
+        });
+    }
+    else if (indexPath.row == _supportedChannels.count + 1)
+    {
+        [self.activityIndicator startAnimating];
+        
+        __block MASOTPChannelViewController *blockSelf = self;
+        self.otpGenerationBlock(nil, YES, ^(BOOL completed, NSError *error) {
+        
+            //
+            // Ensure this code runs in the main UI thread
+            //
+            dispatch_async(dispatch_get_main_queue(), ^
+                           {
+                               //
+                               // Stop progress animation
+                               //
+                               [blockSelf.activityIndicator stopAnimating];
+                               
+                               //
+                               // Dsmiss the view controller
+                               //
+                               [blockSelf dismissViewControllerAnimated:YES completion:nil];
+                           });
+
         });
     }
 }

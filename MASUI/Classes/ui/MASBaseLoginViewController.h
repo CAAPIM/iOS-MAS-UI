@@ -10,6 +10,14 @@
 
 #import "MASViewController.h"
 
+
+/**
+ Base ViewController class for customized login dialog through MASUI framework.  To customize the login dialog which will be displayed by MASUI and MASFoundation SDKs, please inherite from this base class, and implement UI elements in this ViewController.
+
+ @warning Please DO NOT manually or programmatically change or update any of the properties in this class as these will be used to authenticate the user based on mutually agreed protocol in between MASFoundation and MASUI.
+ 
+ @see Please refer to public methods to implement login functionalities.
+ */
 @interface MASBaseLoginViewController : MASViewController
 
 ///--------------------------------------

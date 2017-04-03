@@ -208,8 +208,7 @@ static MASViewController * _lockScreenViewController_ = nil;
 {
     [super serviceWillStart];
     
-    NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
-//    NSBundle* bundle = [NSBundle bundleForClass:[self class]]; //Dynamic framework
+    NSBundle* bundle = [NSBundle masUIFramework]; 
     
     if (!_loginViewController_)
     {
@@ -277,9 +276,7 @@ static MASViewController * _lockScreenViewController_ = nil;
                            //
                            // Init with the nib file from the bundle
                            //
-                           //NSBundle *bundle = [NSBundle bundleForClass:[self class]]; //Used for dynamic framework
-                           
-                           NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
+                           NSBundle* bundle = [NSBundle masUIFramework];
                            
                            _otpViewController = [[MASOTPViewController alloc] initWithNibName:@"MASOTPViewController" bundle:bundle];
                            
@@ -322,9 +319,7 @@ static MASViewController * _lockScreenViewController_ = nil;
                            //
                            // Init with the nib file from the bundle
                            //
-                           //NSBundle *bundle = [NSBundle bundleForClass:[self class]]; //Used for dynamic framework
-                           
-                           NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"MASUIResources" withExtension:@"bundle"]]; //Used for Static framework
+                           NSBundle* bundle = [NSBundle masUIFramework];
                            
                            _channelViewController = [[MASOTPChannelViewController alloc] initWithNibName:@"MASOTPChannelViewController" bundle:bundle];
                            
