@@ -1,4 +1,4 @@
-# Version 4.0.00
+# Version 1.4.00
 
 ### Bug fixes
 - The cancel button was missing on OTP Channel selection screen and OTP Credential screen [DE258664]
@@ -8,7 +8,7 @@
 - Complete revamp of login screen with new design 
 
 
-# Version 1.3
+# Version 1.3.00
 
 ### Bug fixes
 - Auto-correction on default login screen's username field is removed. [DE255185]
