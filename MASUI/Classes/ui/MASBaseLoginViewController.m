@@ -52,10 +52,11 @@
     
     __block MASCompletionErrorBlock blockCompletion = completion;
     
-    if (_basicCredentialsBlock)
+    if (_authCredentialsBlock)
     {
-        _basicCredentialsBlock(username, password, NO, ^(BOOL completed, NSError *error){
-         
+        MASAuthCredentialsPassword *authCredentials = [MASAuthCredentialsPassword initWithUsername:username password:password];
+        _authCredentialsBlock(authCredentials, NO, ^(BOOL completed, NSError *error) {
+            
             if (_completionBlock)
             {
                 _completionBlock(completed, error);
@@ -90,9 +91,10 @@
     
     __block MASCompletionErrorBlock blockCompletion = completion;
     
-    if (_authorizationCodeBlock)
+    if (_authCredentialsBlock)
     {
-        _authorizationCodeBlock(authorizationCode, NO, ^(BOOL completed, NSError *error){
+        MASAuthCredentialsAuthorizationCode *authCredentials = [MASAuthCredentialsAuthorizationCode initWithAuthorizationCode:authorizationCode];
+        _authCredentialsBlock(authCredentials, NO, ^(BOOL completed, NSError *error) {
             
             if (_completionBlock)
             {
@@ -125,13 +127,9 @@
 
 - (void)cancel
 {
-    if (_basicCredentialsBlock)
+    if (_authCredentialsBlock)
     {
-        _basicCredentialsBlock(nil, nil, YES, nil);
-    }
-    else if (_authorizationCodeBlock)
-    {
-        _authorizationCodeBlock(nil, YES, nil);
+        _authCredentialsBlock(nil, YES, nil);
     }
     
     if (_completionBlock)

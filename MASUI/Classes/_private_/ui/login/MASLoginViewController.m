@@ -177,7 +177,7 @@
     //
     // Perform the request
     //
-    DLog(@"\n\ncalling basic credentials block: %@\n\n", self.basicCredentialsBlock);
+    DLog(@"\n\ncalling auth credentials block: %@\n\n", self.authCredentialsBlock);
     
     __block MASLoginViewController *blockSelf = self;
     
@@ -225,7 +225,7 @@
     //
     // Perform the request
     //
-    DLog(@"\n\ncalling basic credentials block: %@\n\n", self.basicCredentialsBlock);
+    DLog(@"\n\ncalling auth credentials block: %@\n\n", self.authCredentialsBlock);
     
     __block MASLoginViewController *blockSelf = self;
     
