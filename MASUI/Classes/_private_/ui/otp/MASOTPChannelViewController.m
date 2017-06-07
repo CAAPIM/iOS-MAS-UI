@@ -115,7 +115,7 @@
      
         cell.textLabel.text = [_supportedChannels objectAtIndex:indexPath.row];
         cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        cell.accessibilityIdentifier = [NSString stringWithFormat:@"masui-otp-channel-%@", [[_supportedChannels objectAtIndex:indexPath.row] lowercaseString]]
+        cell.accessibilityIdentifier = [NSString stringWithFormat:@"masui-otp-channel-%@", [[_supportedChannels objectAtIndex:indexPath.row] lowercaseString]];
     }
     
     return cell;
