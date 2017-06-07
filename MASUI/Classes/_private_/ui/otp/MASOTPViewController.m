@@ -67,6 +67,10 @@
     {
         _originalViewFrame = self.view.frame;
         [self.oneTimePasswordField setDelegate:self];
+        
+        _oneTimePasswordField.accessibilityIdentifier = @"masui-otp-cred-passwordField";
+        _sendBtn.accessibilityIdentifier = @"masui-otp-cred-sendBtn";
+        _cancelBtn.accessibilityIdentifier = @"masui-otp-cred-cancelBtn";
     }
     
     return self;
