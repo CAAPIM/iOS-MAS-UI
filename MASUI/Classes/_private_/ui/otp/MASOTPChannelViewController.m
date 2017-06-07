@@ -100,6 +100,7 @@
         cell.backgroundColor = [UIColor darkGrayColor];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:21.0f];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.accessibilityIdentifier = @"masui-otp-channel-sendBtn";
     }
     else if (indexPath.row == _supportedChannels.count + 1)
     {
@@ -108,11 +109,13 @@
         cell.backgroundColor = [UIColor lightGrayColor];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:21.0f];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.accessibilityIdentifier = @"masui-otp-channel-cancelBtn";
     }
     else {
      
         cell.textLabel.text = [_supportedChannels objectAtIndex:indexPath.row];
         cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        cell.accessibilityIdentifier = [NSString stringWithFormat:@"masui-otp-channel-%@", [[_supportedChannels objectAtIndex:indexPath.row] lowercaseString]]
     }
     
     return cell;
