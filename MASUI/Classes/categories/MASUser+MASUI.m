@@ -64,7 +64,7 @@
         //
         //  Present login view controller
         //
-        [[MASUIService sharedService] presentLoginViewController:object completionBlock:blockCompletion];
+        [[MASUIService sharedService] presentLoginViewController:object authCredentialsBlock:nil completionBlock:blockCompletion];
     }];
 }
 

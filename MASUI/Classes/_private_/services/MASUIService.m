@@ -122,28 +122,12 @@ static MASViewController * _lockScreenViewController_ = nil;
 }
 
 
-- (void)presentLoginViewController:(MASAuthenticationProviders *)providers basicCredentialsBlock:(MASBasicCredentialsBlock)basicCredentialsBlock authorizationCodeBlock:(MASAuthorizationCodeCredentialsBlock)authorizationCodeBlock 
+- (void)presentLoginViewController:(MASAuthenticationProviders *)providers authCredentialsBlock:(MASAuthCredentialsBlock)authCredentialsBlock completionBlock:(MASCompletionErrorBlock)completionBlock
 {
-    
-    [self presentLoginViewController:providers basicCredentialsBlock:basicCredentialsBlock authorizationCodeBlock:authorizationCodeBlock completionBlock:nil];
-}
-
-
-- (void)presentLoginViewController:(MASAuthenticationProviders *)providers completionBlock:(MASCompletionErrorBlock)completionBlock
-{
-    
-    [self presentLoginViewController:providers basicCredentialsBlock:nil authorizationCodeBlock:nil completionBlock:completionBlock];
-}
-
-
-- (void)presentLoginViewController:(MASAuthenticationProviders *)providers basicCredentialsBlock:(MASBasicCredentialsBlock)basicCredentialsBlock authorizationCodeBlock:(MASAuthorizationCodeCredentialsBlock)authorizationCodeBlock completionBlock:(MASCompletionErrorBlock)completionBlock
-{
-    _loginViewController_.basicCredentialsBlock = nil;
-    _loginViewController_.authorizationCodeBlock = nil;
+    _loginViewController_.authCredentialsBlock = nil;
     _loginViewController_.completionBlock = nil;
     
-    _loginViewController_.basicCredentialsBlock = basicCredentialsBlock;
-    _loginViewController_.authorizationCodeBlock = authorizationCodeBlock;
+    _loginViewController_.authCredentialsBlock = authCredentialsBlock;
     _loginViewController_.completionBlock = completionBlock;
     
     
@@ -241,20 +225,16 @@ static MASViewController * _lockScreenViewController_ = nil;
 // Hidden: handle basic and social login, if any given
 //
 
-- (void)__masRequestsCredentialsWithAuthenticationProviders:(MASAuthenticationProviders *)providers
-    basicCredentialsBlock:(MASBasicCredentialsBlock)basicCredentialsBlock
-    authorizationCodeBlock__:(MASAuthorizationCodeCredentialsBlock)authorizationCodeBlock
+- (void)__masRequestsCredentialsWithAuthenticationProviders__:(MASAuthenticationProviders *)providers
+                                         authCredentialsBlock:(MASAuthCredentialsBlock)authCredentialsBlock
 {
-    //DLog(@"\n\ncalled with basic block: %@ and code block: %@ providers: %@\n\n", basicCredentialsBlock, authorisationCodeBlock,  providers);
-    
-    if(!self.loginViewController)
+    if (!self.loginViewController)
     {
         dispatch_async(dispatch_get_main_queue(), ^
-        {
-            [self presentLoginViewController:providers basicCredentialsBlock:basicCredentialsBlock authorizationCodeBlock:authorizationCodeBlock];
-            
-            return;
-        });
+                       {
+                           [self presentLoginViewController:providers authCredentialsBlock:authCredentialsBlock completionBlock:nil];
+                           return;
+                       });
     }
     
     DLog(@"\n\nWarning you have called this method when a login view controller is already visible\n\n");
