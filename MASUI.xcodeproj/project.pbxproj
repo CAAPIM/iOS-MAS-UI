@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		10246A951CB987F900C0A70A /* MASUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10246A8B1CB9779E00C0A70A /* MASUIResources.bundle */; };
 		10246AA01CBAA2A400C0A70A /* caLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CD0E1C08F9E100B8B961 /* caLogo.png */; };
 		10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEE1C08F9AB00B8B961 /* grey_button.png */; };
 		10246AB61CBAA2C600C0A70A /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
@@ -179,13 +178,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		10246A961CB9895B00C0A70A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 104661081C06581500A2A03C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 10246A8A1CB9779E00C0A70A;
-			remoteInfo = MASUIResources;
-		};
 		10246ABF1CBAA82600C0A70A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
@@ -681,7 +673,6 @@
 			);
 			dependencies = (
 				10246AC41CBAA83C00C0A70A /* PBXTargetDependency */,
-				10246A971CB9895B00C0A70A /* PBXTargetDependency */,
 			);
 			name = MASUI;
 			productName = MASUI;
@@ -844,7 +835,6 @@
 				CB8DDC901E84910C00B25AA9 /* salesforce@3x.png in Resources */,
 				CB4AF7F31E85930700CCA739 /* ic_bluetooth@2x.png in Resources */,
 				CB8DDC991E84A22E00B25AA9 /* MASLoginQRCodeView.xib in Resources */,
-				10246A951CB987F900C0A70A /* MASUIResources.bundle in Resources */,
 				CB8DDC8D1E84910C00B25AA9 /* qrcode@3x.png in Resources */,
 				CB8DDC881E84910C00B25AA9 /* linkedin_disabled.png in Resources */,
 				CB8DDC791E84910C00B25AA9 /* facebook.png in Resources */,
@@ -922,7 +912,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n#---------------\n#Framework Name\n#---------------\n\nFRAMEWORK_NAME=MASUI\n\n\n#---------------\n#SDK Directory\n#---------------\n\nSDK_DIR=../iOS_SDK\n\n\n#-----------------------\n#CleanUp Build Cache\n#-----------------------\n\nxcodebuild -project $PROJECT_NAME.xcodeproj -configuration Debug -alltargets clean\nxcodebuild -project $PROJECT_NAME.xcodeproj -configuration Release -alltargets clean\n\n\n#-----------------------\n#CleanUp Previous Builds\n#-----------------------\n\n# Remove the framework from the Project Folder\nrm -Rf \"${PROJECT_DIR}/${FRAMEWORK_NAME}.framework\"\n\n# Remove Build folder from DerivedData\nrm -Rf \"${BUILD_DIR}\"\n\n\n#-----------------------\n#Creating New Builds\n#-----------------------\n\n# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nARCHIVE_OUTPUTFOLDER=${BUILD_DIR}/../Intermediates/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/UninstalledProducts/iphoneos\n\n# Archive framework for iPhoneOS with BitCode enabled\n#xcodebuild -scheme $PROJECT_NAME  -configuration Release archive\n\nxcodebuild OTHER_CFLAGS=\"-fembed-bitcode\" -scheme $PROJECT_NAME  -configuration Release archive CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\" -archivePath \"${BUILD_DIR}\"\n\n# Build framework for iPhoneOS\n#xcodebuild -target ${FRAMEWORK_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\"\n\n# Build framework for iPhoneSimulator\nxcodebuild -target ${FRAMEWORK_NAME} -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\"\n\n\n#-----------------------\n#Creating Universal Framework\n#-----------------------\n\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n\n# Build the universal library\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}\" \"${ARCHIVE_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Copy the .framework folder of iphoneos\ncp -R \"${ARCHIVE_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Delete the library for iphoneos\nrm \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Move the Universal Library into our framework\nmv \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}\" \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/\"\n\n# Remove the _CodeSignature from the UniversalFramework\nrm -Rf \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/_CodeSignature\"\n\n# Copy the framework\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework\" \"${SDK_DIR}\"\n\n# Move the bundle out of the framework file\nmv \"${SDK_DIR}/${FRAMEWORK_NAME}.framework/MASUIResources.bundle\" \"${SDK_DIR}\"\n\n\n#-----------------------\n#Deleting Build Folder\n#-----------------------\n\n# Remove build folder from the Project Folder\nrm -Rf \"${PROJECT_DIR}/build\"\n";
+			shellScript = "set -e\n\n#---------------\n#Framework Name\n#---------------\n\nFRAMEWORK_NAME=MASUI\n\n\n#---------------\n#SDK Directory\n#---------------\n\nSDK_DIR=../iOS_SDK\n\n\n#-----------------------\n#CleanUp Build Cache\n#-----------------------\n\nxcodebuild -project $PROJECT_NAME.xcodeproj -configuration Debug -alltargets clean\nxcodebuild -project $PROJECT_NAME.xcodeproj -configuration Release -alltargets clean\n\n\n#-----------------------\n#CleanUp Previous Builds\n#-----------------------\n\n# Remove the framework from the Project Folder\nrm -Rf \"${PROJECT_DIR}/${FRAMEWORK_NAME}.framework\"\n\n# Remove Build folder from DerivedData\nrm -Rf \"${BUILD_DIR}\"\n\n\n#-----------------------\n#Creating New Builds\n#-----------------------\n\n# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nARCHIVE_OUTPUTFOLDER=${BUILD_DIR}/../Intermediates/ArchiveIntermediates/$PROJECT_NAME/IntermediateBuildFilesPath/UninstalledProducts/iphoneos\n\n# Archive framework for iPhoneOS with BitCode enabled\n#xcodebuild -scheme $PROJECT_NAME  -configuration Release archive\n\nxcodebuild OTHER_CFLAGS=\"-fembed-bitcode\" -scheme $PROJECT_NAME  -configuration Release archive CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\" -archivePath \"${BUILD_DIR}\"\n\n# Build framework for iPhoneOS\n#xcodebuild -target ${FRAMEWORK_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\"\n\n# Build framework for iPhoneSimulator\nxcodebuild -target ${FRAMEWORK_NAME} -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" CODE_SIGN_IDENTITY=\"iPhone Distribution: CA, Inc (RAKRWMN9VH)\"\n\n\n#-----------------------\n#Creating Universal Framework\n#-----------------------\n\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n\n# Build the universal library\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}\" \"${ARCHIVE_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Copy the .framework folder of iphoneos\ncp -R \"${ARCHIVE_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Delete the library for iphoneos\nrm \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Move the Universal Library into our framework\nmv \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}\" \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/\"\n\n# Remove the _CodeSignature from the UniversalFramework\nrm -Rf \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/_CodeSignature\"\n\n# Copy the framework\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework\" \"${SDK_DIR}\"\n\n# Move the bundle out of the framework file\n#mv \"${SDK_DIR}/${FRAMEWORK_NAME}.framework/MASUIResources.bundle\" \"${SDK_DIR}\"\n\n\n#-----------------------\n#Deleting Build Folder\n#-----------------------\n\n# Remove build folder from the Project Folder\nrm -Rf \"${PROJECT_DIR}/build\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -964,11 +954,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		10246A971CB9895B00C0A70A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 10246A8A1CB9779E00C0A70A /* MASUIResources */;
-			targetProxy = 10246A961CB9895B00C0A70A /* PBXContainerItemProxy */;
-		};
 		10246AC41CBAA83C00C0A70A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MASFoundation;
@@ -1129,7 +1114,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1159,7 +1144,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
