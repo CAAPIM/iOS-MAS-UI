@@ -1,3 +1,15 @@
+# Version 1.5.00
+
+NOTE: From this version on the frameworks changed to Dynamic instead of Static library
+
+### Bug fixes
+- 
+
+### New Features
+-  
+
+
+
 # Version 1.4.00
 
 ### Bug fixes
