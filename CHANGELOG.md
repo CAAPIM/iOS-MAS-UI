@@ -6,7 +6,7 @@ NOTE: From this version on the frameworks changed to Dynamic instead of Static l
 None.
 
 ### New Features
-- Mobile SDK is now built as Dynamic Framework. [US367604]
+- The SDK supports dynamic framework. All you need to do is update your Xcode settings. [US367604]
 
 # Version 1.4.00
 
