@@ -24,3 +24,15 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
+This product includes the Facebook logo, the use and distribution of which is subject to Facebook’s terms and guidelines available at the following web addresses:
+- [facebookbrand.com][facebook-brand]
+- [facebookbrand.com/wp-content/uploads/2016/08/facebook_brandassetsguide.pdf][facebook-brand-policy]
+
+This product includes the LinkedIn logo, the use and distribution of which is subject to LinkedIn’s terms and guidelines available at the following web addresses:
+- [brand.linkedin.com][linkedin-brand]
+- [brand.linkedin.com/policies][linkedin-brand-policy]
+
+ [linkedin-brand]: https://brand.linkedin.com
+ [linkedin-brand-policy]: https://brand.linkedin.com/policies
+ [facebook-brand]: https://facebookbrand.com
+ [facebook-brand-policy]: https://facebookbrand.com/wp-content/uploads/2016/08/facebook_brandassetsguide.pdf
