@@ -24,6 +24,13 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
+Use of Google brands, including the Google sign-in icon/button, in ways not expressly covered
+by Google’s Sign-In Branding Guidelines [https://developers.google.com/identity/brandingguidelines][google-brand]
+is not allowed without prior written consent from Google (see the Guidelines for
+Third Party Use of Google Brand Features for more information).
+The Google sign in icon is reproduced or modified from work created and shared by Google and
+used according to the terms described in the [Creative Commons][creative-common] 3.0 Attribution License.
+
 This product includes the Facebook logo, the use and distribution of which is subject to Facebook’s terms and guidelines available at the following web addresses:
 - [facebookbrand.com][facebook-brand]
 - [facebookbrand.com/wp-content/uploads/2016/08/facebook_brandassetsguide.pdf][facebook-brand-policy]
@@ -32,6 +39,8 @@ This product includes the LinkedIn logo, the use and distribution of which is su
 - [brand.linkedin.com][linkedin-brand]
 - [brand.linkedin.com/policies][linkedin-brand-policy]
 
+ [creative-common]: https://creativecommons.org/licenses/by/3.0/
+ [google-brand]: https://developers.google.com/identity/brandingguidelines
  [linkedin-brand]: https://brand.linkedin.com
  [linkedin-brand-policy]: https://brand.linkedin.com/policies
  [facebook-brand]: https://facebookbrand.com
