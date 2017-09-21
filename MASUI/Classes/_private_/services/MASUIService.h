@@ -85,23 +85,13 @@
 
 
 /**
- Present currently set login view controller as modal view
-
- @param providers              MASAuthenticationProviders object for social login and Proximity Login
- @param basicCredentialsBlock  MASBasicCrednetialsBlock for basic credentials authentication
- @param authorizationCodeBlock MASAuthorizationCodeCredentialsBlock for authorization code authentication
+ *  Present currently set login view controller as modal view
+ *
+ *  @param providers                MASAuthenticationProviders object for social login and Proximity Login
+ *  @param authCredentialsBlock     MASAuthCredentialsBlock auth credential block to be invoked
+ *  @param complectionBlock         MASCompletionErrorBlock to notify the original caller for the result of the authentication
  */
-- (void)presentLoginViewController:(MASAuthenticationProviders *)providers basicCredentialsBlock:(MASBasicCredentialsBlock)basicCredentialsBlock authorizationCodeBlock:(MASAuthorizationCodeCredentialsBlock)authorizationCodeBlock;
-
-
-
-/**
- Present currently set login view controller as modal view
-
- @param providers       MASAuthenticationProviders object for social login and Proximity Login
- @param completionBlock MASCompletionErrorBlock to notify the original caller for the result of the authentication
- */
-- (void)presentLoginViewController:(MASAuthenticationProviders *)providers completionBlock:(MASCompletionErrorBlock)completionBlock;
+- (void)presentLoginViewController:(MASAuthenticationProviders *)providers authCredentialsBlock:(MASAuthCredentialsBlock)authCredentialsBlock completionBlock:(MASCompletionErrorBlock)completionBlock;
 
 
 

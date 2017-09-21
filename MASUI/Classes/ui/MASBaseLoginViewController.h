@@ -30,17 +30,9 @@
 /**
  @warning DO NOT MANUALLY MODIFY THIS PROPERTY
  
- MASAuthorizationCodeCredentialsBlock to handle basic credential login.
+ MASAuthCredentialsBlock to handle auth credential login.
  */
-@property (nonatomic, copy) MASAuthorizationCodeCredentialsBlock authorizationCodeBlock;
-
-
-/**
- @warning DO NOT MANUALLY MODIFY THIS PROPERTY
- 
- MASBasicCredentialsBlock to handle authorization code credential login.
- */
-@property (nonatomic, copy) MASBasicCredentialsBlock basicCredentialsBlock;
+@property (nonatomic, copy) MASAuthCredentialsBlock authCredentialsBlock;
 
 
 /**

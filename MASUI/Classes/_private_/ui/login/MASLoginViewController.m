@@ -177,7 +177,7 @@
     //
     // Perform the request
     //
-    DLog(@"\n\ncalling basic credentials block: %@\n\n", self.basicCredentialsBlock);
+    DLog(@"\n\ncalling auth credentials block: %@\n\n", self.authCredentialsBlock);
     
     __block MASLoginViewController *blockSelf = self;
     
@@ -225,7 +225,7 @@
     //
     // Perform the request
     //
-    DLog(@"\n\ncalling basic credentials block: %@\n\n", self.basicCredentialsBlock);
+    DLog(@"\n\ncalling auth credentials block: %@\n\n", self.authCredentialsBlock);
     
     __block MASLoginViewController *blockSelf = self;
     
@@ -475,45 +475,37 @@
 
 - (void)didReceiveAuthorizationCode:(NSString *)code
 {
+    __block MASLoginViewController *blockSelf = self;
+    
     //
     // Dismiss SFViewController
     //
-    [self.navigationController.topViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    //
-    // Start animating activity indicator
-    //
-    [self.activityIndicator startAnimating];
-    
-    __block MASLoginViewController *blockSelf = self;
-    
-    [self loginWithAuthorizationCode:code completion:^(BOOL completed, NSError *error) {
-        
+    [self.navigationController.topViewController dismissViewControllerAnimated:YES completion:^{
+
         //
         // Ensure this code runs in the main UI thread
         //
-        dispatch_async(dispatch_get_main_queue(), ^
-                       {
-                           //
-                           // Stop progress animation
-                           //
-                           [blockSelf.activityIndicator stopAnimating];
-                           
-                           //
-                           // Handle the error
-                           //
-                           if(error)
-                           {
-                               [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-                               
-                               return;
-                           }
-                           
-                           //
-                           // Dsmiss the view controller
-                           //
-                           [blockSelf dismissViewControllerAnimated:YES completion:nil];
-                       });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            //
+            // Dsmiss the view controller
+            //
+            [blockSelf dismissViewControllerAnimated:YES completion:nil];
+        });
+        
+        
+        [blockSelf loginWithAuthorizationCode:code completion:^(BOOL completed, NSError *error) {
+            
+            //
+            // Handle the error
+            //
+            if(error)
+            {
+                [UIAlertController popupErrorAlert:error inViewController:[UIAlertController rootViewController]];
+                
+                return;
+            }
+        }];
     }];
 }
 

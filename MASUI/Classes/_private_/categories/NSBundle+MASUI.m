@@ -18,10 +18,14 @@ static NSBundle *_masUIFramework__;
 
 + (NSBundle *)masUIFramework
 {
-//    if (!_masUIFramework__)
-//    {
-//        _masUIFramework__ = [NSBundle bundleWithIdentifier:@"com.ca.MASUI"];
-//    }
+
+    if (![[NSBundle mainBundle] URLForResource:@"MASUIResources" withExtension:@"bundle"]) {
+        
+        if (!_masUIFramework__)
+        {
+            _masUIFramework__ = [NSBundle bundleWithIdentifier:@"com.ca.MASUI"];
+        }
+    }
 
     if (!_masUIFramework__)
     {
