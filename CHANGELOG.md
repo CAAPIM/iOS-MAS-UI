@@ -18,7 +18,7 @@ None.
 - Complete revamp of login screen with new design 
 
 
-# Version 1.3.00
+# Version 1.3.01
 
 ### Bug fixes
 - Auto-correction on default login screen's username field is removed. [DE255185]
