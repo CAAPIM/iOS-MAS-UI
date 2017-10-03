@@ -28,6 +28,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *userNameField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
 @property (nonatomic, weak) IBOutlet UIButton *loginBtn;
+@property (nonatomic, weak) IBOutlet UIButton *fidoLoginBtn;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *fidologinBtnHeight;
 @property (nonatomic, weak) IBOutlet UIButton *cancelBtn;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -110,6 +112,23 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if(NSClassFromString(@"MASAuthCredentialsFIDO")) {
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            self.fidologinBtnHeight.constant = 35.0;
+            [self.view layoutIfNeeded];
+        }];
+    }
+    else {
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            self.fidologinBtnHeight.constant = 0;
+            [self.view layoutIfNeeded];
+        }];
+    }
+    
     [super viewWillAppear:YES];
 }
 
@@ -136,6 +155,7 @@
     [_loginBtn setMultipleTouchEnabled:NO];
     
     [_loginBtn setEnabled:YES];
+    [_fidoLoginBtn setEnabled:YES];
     [_cancelBtn setEnabled:YES];
     
     //
@@ -212,6 +232,7 @@
 - (IBAction)onLoginSelected:(id)sender
 {
     [_loginBtn setEnabled:NO];
+    [_fidoLoginBtn setEnabled:NO];
     [_cancelBtn setEnabled:NO];
     
     [self.activityIndicator startAnimating];
@@ -247,6 +268,7 @@
             if(error)
             {
                 [_loginBtn setEnabled:YES];
+                [_fidoLoginBtn setEnabled:YES];
                 [_cancelBtn setEnabled:YES];
                 
                 [UIAlertController popupErrorAlert:error inViewController:blockSelf];
@@ -265,6 +287,45 @@
             [self dismissLoginViewControllerAnimated:YES completion:nil];
         });
     }];
+}
+
+- (IBAction)onFIDOLoginSelected:(id)sender
+{
+    [_loginBtn setEnabled:NO];
+    [_fidoLoginBtn setEnabled:NO];
+    [_cancelBtn setEnabled:NO];
+    
+    //
+    // Make sure the keyboard is closed
+    //
+    [self.userNameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+    
+    //
+    // Perform the request
+    //
+    DLog(@"\n\ncalling auth credentials block: %@\n\n", self.authCredentialsBlock);
+    
+    __block MASLoginViewController *blockSelf = self;
+    
+    //
+    // Ensure this code runs in the main UI thread
+    //
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        //
+        // Stop QR Code session sharing
+        //
+        [_qrCode stopDisplayingQRCodeImageForProximityLogin];
+        
+        //
+        // Dsmiss the view controller
+        //
+        [blockSelf dismissLoginViewControllerAnimated:YES completion:^{
+            
+            [blockSelf loginWithFIDOUsername:self.userNameField.text completion:nil];
+        }];
+    });
 }
 
 

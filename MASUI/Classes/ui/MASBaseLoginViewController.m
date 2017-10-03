@@ -124,6 +124,86 @@
     }
 }
 
+- (void)loginWithFIDOUsername:(NSString *)userName completion:(MASCompletionErrorBlock)completion {
+    
+    __block MASCompletionErrorBlock blockCompletion = completion;
+    
+    if (_authCredentialsBlock) {
+        
+        SEL selector = NSSelectorFromString(@"initWithUserName:");
+        Class authCredentialsFIDOClass = NSClassFromString(@"MASAuthCredentialsFIDO");
+        if (![authCredentialsFIDOClass respondsToSelector:selector]) {
+            
+            NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeLoginProcessCancel errorDomain:kSDKErrorDomain];
+            
+            if (_completionBlock)
+            {
+                _completionBlock(NO, error);
+            }
+
+            if (blockCompletion)
+            {
+                blockCompletion(NO, error);
+            }
+        }
+        
+        IMP imp = [authCredentialsFIDOClass methodForSelector:selector];
+        __block id (*initWithUserName)(id, SEL, NSString*) = (void *)imp;
+        
+        id authCredentialsFIDO =
+            initWithUserName(authCredentialsFIDOClass, selector, userName);
+        
+        MASAuthCredentials *authCredentials = (MASAuthCredentials *)authCredentialsFIDO;
+        
+        _authCredentialsBlock(authCredentials, NO, ^(BOOL completed, NSError *error) {
+            
+            if (_completionBlock)
+            {
+                _completionBlock(completed, error);
+            }
+            
+            if (blockCompletion)
+            {
+                blockCompletion(completed, error);
+            }
+        });
+    }
+    else {
+        
+        SEL selector = NSSelectorFromString(@"loginWithFIDOUserName:completion:");
+        if (![MASUser respondsToSelector:selector]) {
+            
+            NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeLoginProcessCancel errorDomain:kSDKErrorDomain];
+            
+            if (_completionBlock)
+            {
+                _completionBlock(NO, error);
+            }
+            
+            if (blockCompletion)
+            {
+                blockCompletion(NO, error);
+            }
+        }
+        
+        IMP imp = [MASUser methodForSelector:selector];
+        __block void (*loginWithFIDOUserName)(id, SEL, NSString*, MASCompletionErrorBlock) = (void *)imp;
+        
+        loginWithFIDOUserName(MASUser.class, selector, userName, ^(BOOL completed, NSError *error) {
+            
+            if (_completionBlock)
+            {
+                _completionBlock(completed, error);
+            }
+            
+            if (blockCompletion)
+            {
+                blockCompletion(completed, error);
+            }
+        });
+    }
+}
+
 
 - (void)cancel
 {

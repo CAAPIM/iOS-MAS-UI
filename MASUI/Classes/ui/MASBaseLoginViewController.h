@@ -107,6 +107,10 @@
 
 
 
+- (void)loginWithFIDOUsername:(NSString *)userName completion:(MASCompletionErrorBlock)completion;
+
+
+
 /**
  Cancel the login process and dismiss currently presented login view controller
  */
