@@ -112,7 +112,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if(NSClassFromString(@"MASAuthCredentialsFIDO")) {
+    NSInteger fidoProviderType = -1;
+    SEL selector = NSSelectorFromString(@"MASFIDOProviderType");
+    if ([MAS respondsToSelector:selector]) {
+        
+        IMP imp = [MAS methodForSelector:selector];
+        __block NSInteger (*MASFIDOProviderType)(id, SEL) = (void *)imp;
+        fidoProviderType = MASFIDOProviderType([MAS class], selector);
+    }
+    
+    if(NSClassFromString(@"MASAuthCredentialsFIDO") && fidoProviderType != -1) {
         
         [UIView animateWithDuration:0.3 animations:^{
             
