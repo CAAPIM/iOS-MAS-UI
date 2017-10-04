@@ -112,6 +112,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //
+    //  Check for valid FIDOProviderType
+    //
     NSInteger fidoProviderType = -1;
     SEL selector = NSSelectorFromString(@"MASFIDOProviderType");
     if ([MAS respondsToSelector:selector]) {
@@ -121,6 +124,10 @@
         fidoProviderType = MASFIDOProviderType([MAS class], selector);
     }
     
+    //
+    //  Display "FIDO Login" button.
+    //  When FIDO framework exists and has valid FIDOProviderType configured.
+    //
     if(NSClassFromString(@"MASAuthCredentialsFIDO") && fidoProviderType != -1) {
         
         [UIView animateWithDuration:0.3 animations:^{
