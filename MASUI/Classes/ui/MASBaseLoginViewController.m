@@ -134,7 +134,7 @@
         Class authCredentialsFIDOClass = NSClassFromString(@"MASAuthCredentialsFIDO");
         if (![authCredentialsFIDOClass respondsToSelector:selector]) {
             
-            NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeLoginProcessCancel errorDomain:kSDKErrorDomain];
+            NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeMissingMASFIDOFramework errorDomain:kSDKErrorDomain];
             
             if (_completionBlock)
             {
@@ -173,7 +173,7 @@
         SEL selector = NSSelectorFromString(@"loginWithFIDOUserName:completion:");
         if (![MASUser respondsToSelector:selector]) {
             
-            NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeLoginProcessCancel errorDomain:kSDKErrorDomain];
+            NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeMissingMASFIDOFramework errorDomain:kSDKErrorDomain];
             
             if (_completionBlock)
             {

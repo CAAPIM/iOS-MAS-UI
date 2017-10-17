@@ -130,19 +130,13 @@
     //
     if(NSClassFromString(@"MASAuthCredentialsFIDO") && fidoProviderType != -1) {
         
-        [UIView animateWithDuration:0.3 animations:^{
-            
-            self.fidologinBtnHeight.constant = 35.0;
-            [self.view layoutIfNeeded];
-        }];
+        self.fidologinBtnHeight.constant = 35.0;
+        [self.view layoutIfNeeded];
     }
     else {
         
-        [UIView animateWithDuration:0.3 animations:^{
-            
-            self.fidologinBtnHeight.constant = 0;
-            [self.view layoutIfNeeded];
-        }];
+        self.fidologinBtnHeight.constant = 0;
+        [self.view layoutIfNeeded];
     }
     
     [super viewWillAppear:YES];
