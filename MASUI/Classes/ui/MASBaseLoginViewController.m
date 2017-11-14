@@ -126,6 +126,22 @@
 
 - (void)loginWithFIDOUsername:(NSString *)userName completion:(MASCompletionErrorBlock)completion {
     
+    //
+    // Display an error if device is being authorized through other session sharing method.
+    //
+    if ([[MASDevice currentDevice] isBeingAuthorized])
+    {
+        
+        NSError *error = [NSError errorForUIErrorCode:MASUIErrorCodeCurrentlyBeingAuthorized errorDomain:kSDKErrorDomain];
+        
+        if (completion)
+        {
+            completion(NO, error);
+        }
+        
+        return;
+    }
+    
     __block MASCompletionErrorBlock blockCompletion = completion;
     
     if (_authCredentialsBlock) {

@@ -299,11 +299,14 @@
     }];
 }
 
+
 - (IBAction)onFIDOLoginSelected:(id)sender
 {
     [_loginBtn setEnabled:NO];
     [_fidoLoginBtn setEnabled:NO];
     [_cancelBtn setEnabled:NO];
+    
+    [self.activityIndicator startAnimating];
     
     //
     // Make sure the keyboard is closed
@@ -318,24 +321,43 @@
     
     __block MASLoginViewController *blockSelf = self;
     
-    //
-    // Ensure this code runs in the main UI thread
-    //
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self loginWithFIDOUsername:self.userNameField.text completion:^(BOOL completed, NSError *error) {
         
         //
-        // Stop QR Code session sharing
+        // Ensure this code runs in the main UI thread
         //
-        [_qrCode stopDisplayingQRCodeImageForProximityLogin];
-        
-        //
-        // Dsmiss the view controller
-        //
-        [blockSelf dismissLoginViewControllerAnimated:YES completion:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             
-            [blockSelf loginWithFIDOUsername:self.userNameField.text completion:nil];
-        }];
-    });
+            //
+            // Stop progress animation
+            //
+            [blockSelf.activityIndicator stopAnimating];
+            
+            //
+            // Handle the error
+            //
+            if(error)
+            {
+                [_loginBtn setEnabled:YES];
+                [_fidoLoginBtn setEnabled:YES];
+                [_cancelBtn setEnabled:YES];
+                
+                [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                
+                return;
+            }
+            
+            //
+            // Stop QR Code session sharing
+            //
+            [_qrCode stopDisplayingQRCodeImageForProximityLogin];
+            
+            //
+            // Dsmiss the view controller
+            //
+            [self dismissLoginViewControllerAnimated:YES completion:nil];
+        });
+    }];
 }
 
 
