@@ -34,7 +34,12 @@ typedef NS_ENUM (NSUInteger, MASUIErrorCode)
     //
     // Proximity Login
     //
-    MASUIErrorCodeCurrentlyBeingAuthorized = 250101
+    MASUIErrorCodeCurrentlyBeingAuthorized = 250101,
+    
+    //
+    //  FIDO Login
+    //
+    MASUIErrorCodeMissingMASFIDOFramework = 260101
     
 };
 
