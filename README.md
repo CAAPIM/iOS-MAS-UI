@@ -1,4 +1,4 @@
-MASUI is the core UI framework of the Mobile SDK, which is part of [CA Mobile App Services][mas.ca.com]. It provides resources to implement a user login dialog, Social Login, One-Time Password, and Proximity Login (QR code and BLE) saving developers the time of building those UI as well as providing them with a fast way for prototyping apps. 
+MASUI is the core UI framework of the iOS Mobile SDK, which is part of CA Mobile API Gateway. It provides resources to implement a user login dialog, Social Login, One-Time Password, and Proximity Login (QR code and BLE) saving developers the time of building those UI as well as providing them with a fast way for prototyping apps. 
 
 ## Features
 
@@ -9,15 +9,14 @@ The MASUI framework comes with the following features:
     + Built-in BLE registration/authentication
     + Built-in social network (Google, Facebook, Salesforce, and LinkedIn) registration/authentication
 - One-Time Password dialogs
-	+ Channel selection (i.e. email, sms)
-	+ OTP challenger
+  + Channel selection (i.e. email, sms)
+  + OTP challenger
 - Session lock
 
 ## Get Started
 
+- Check out our [documentation][docs] for sample code, video tutorials, and more.
 - [Download MASUI][download] 
-- Read the ["Getting Started" guide][get-started] or watch some [video tutorials][videos]
-- Check out our [documentation][docs] for more details and sample codes
 
 
 ## Communication
@@ -323,4 +322,3 @@ of the MIT license. See the [LICENSE][license-link] file for details.
  [download]: https://github.com/CAAPIM/iOS-MAS-UI/archive/master.zip
  [contributing]: https://github.com/CAAPIM/iOS-MAS-UI/blob/develop/CONTRIBUTING.md
  [license-link]: /LICENSE
-
