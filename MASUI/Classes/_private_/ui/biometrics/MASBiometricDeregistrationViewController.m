@@ -141,26 +141,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //
-    //  Stub to remove multi selection mode.
-    //
-//    if([[tableView indexPathsForSelectedRows] count] > 1) {
-//
-//        for (NSIndexPath *index in [tableView indexPathsForSelectedRows]) {
-//
-//            if (index.row != indexPath.row) {
-//
-//                [self.tableView deselectRowAtIndexPath:index animated:YES];
-//
-//                NSString *modality =
-//                    [_tobeDeregisteredModalities objectAtIndex:index.row];
-//
-//                if ([_selectedModalities containsObject:modality])
-//                    [_selectedModalities removeObject:modality];
-//            }
-//        }
-//    }
-    
-    //
     //  Adding selected modality.
     //
     NSString *modality = [_tobeDeregisteredModalities objectAtIndex:indexPath.row];        
