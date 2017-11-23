@@ -306,8 +306,6 @@
     [_fidoLoginBtn setEnabled:NO];
     [_cancelBtn setEnabled:NO];
     
-    [self.activityIndicator startAnimating];
-    
     //
     // Make sure the keyboard is closed
     //
@@ -321,43 +319,43 @@
     
     __block MASLoginViewController *blockSelf = self;
     
-    [self loginWithFIDOUsername:self.userNameField.text completion:^(BOOL completed, NSError *error) {
+    //
+    // Ensure this code runs in the main UI thread
+    //
+    dispatch_async(dispatch_get_main_queue(), ^{
         
         //
-        // Ensure this code runs in the main UI thread
+        // Stop QR Code session sharing
         //
-        dispatch_async(dispatch_get_main_queue(), ^{
+        [_qrCode stopDisplayingQRCodeImageForProximityLogin];
+        
+        //
+        // Dsmiss the view controller
+        //
+        // This is to encounter the issue with SDS View Controllers
+        // not being presented in proper window heirarchy.
+        //
+        [blockSelf dismissLoginViewControllerAnimated:YES completion:^{
             
-            //
-            // Stop progress animation
-            //
-            [blockSelf.activityIndicator stopAnimating];
-            
-            //
-            // Handle the error
-            //
-            if(error)
-            {
-                [_loginBtn setEnabled:YES];
-                [_fidoLoginBtn setEnabled:YES];
-                [_cancelBtn setEnabled:YES];
-                
-                [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-                
-                return;
-            }
-            
-            //
-            // Stop QR Code session sharing
-            //
-            [_qrCode stopDisplayingQRCodeImageForProximityLogin];
-            
-            //
-            // Dsmiss the view controller
-            //
-            [self dismissLoginViewControllerAnimated:YES completion:nil];
-        });
-    }];
+            [blockSelf loginWithFIDOUsername:self.userNameField.text
+                                  completion:
+             ^(BOOL completed, NSError * _Nullable error) {
+                 
+                 if (!completed && error) {
+                     
+                     //
+                     // Re-present login view controller with error alert.
+                     //
+                     MASUIService *uiService = [MASUIService sharedService];
+                     [uiService presentLoginViewController:[MASAuthenticationProviders currentProviders] authCredentialsBlock:self.authCredentialsBlock completionBlock:nil];
+                     
+                     [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                     
+                     return;
+                 }
+             }];
+        }];
+    });
 }
 
 

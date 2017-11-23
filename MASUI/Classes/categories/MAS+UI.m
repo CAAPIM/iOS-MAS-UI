@@ -42,6 +42,18 @@
 }
 
 
++ (BOOL)willHandleBiometricAuthentication
+{
+    return [MASUIService willHandleBiometricAuthentication];
+}
+
+
++ (void)setWillHandleBiometricAuthentication:(BOOL)handle
+{
+    [MASUIService setWillHandleBiometricAuthentication:handle];
+}
+
+
 + (void)setLoginViewController:(MASBaseLoginViewController *)viewController
 {
     [MASUIService setLoginViewController:viewController];

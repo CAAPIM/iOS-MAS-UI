@@ -53,6 +53,26 @@
 		A488CE251C0A758100B8B961 /* MASTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE231C0A758100B8B961 /* MASTableViewCell.m */; };
 		A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */; };
 		A488CE361C0A82F300B8B961 /* MASICenterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */; };
+		A80EC2D71FC68A7E00BD8632 /* MASBiometricDeregistrationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A80EC2CF1FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.h */; };
+		A80EC2D81FC68A7E00BD8632 /* MASBiometricDeregistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EC2D01FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.m */; };
+		A80EC2D91FC68A7E00BD8632 /* MASBiometricDeregistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2D11FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.xib */; };
+		A80EC2DA1FC68A7E00BD8632 /* MASBiometricRegistrationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A80EC2D21FC68A7D00BD8632 /* MASBiometricRegistrationViewController.h */; };
+		A80EC2DB1FC68A7E00BD8632 /* MASBiometricRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EC2D31FC68A7D00BD8632 /* MASBiometricRegistrationViewController.m */; };
+		A80EC2DC1FC68A7E00BD8632 /* MASBiometricRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2D41FC68A7D00BD8632 /* MASBiometricRegistrationViewController.xib */; };
+		A80EC2EC1FC68A9500BD8632 /* face_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2DE1FC68A9500BD8632 /* face_disabled.png */; };
+		A80EC2ED1FC68A9500BD8632 /* face_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2DF1FC68A9500BD8632 /* face_enabled.png */; };
+		A80EC2EE1FC68A9500BD8632 /* finger_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E01FC68A9500BD8632 /* finger_disabled.png */; };
+		A80EC2EF1FC68A9500BD8632 /* finger_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E11FC68A9500BD8632 /* finger_enabled.png */; };
+		A80EC2F01FC68A9500BD8632 /* iris_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E21FC68A9500BD8632 /* iris_disabled.png */; };
+		A80EC2F11FC68A9500BD8632 /* iris_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E31FC68A9500BD8632 /* iris_enabled.png */; };
+		A80EC2F21FC68A9500BD8632 /* passcode_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E41FC68A9500BD8632 /* passcode_disabled.png */; };
+		A80EC2F31FC68A9500BD8632 /* passcode_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E51FC68A9500BD8632 /* passcode_enabled.png */; };
+		A80EC2F41FC68A9500BD8632 /* pin_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E61FC68A9500BD8632 /* pin_disabled.png */; };
+		A80EC2F51FC68A9500BD8632 /* pin_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E71FC68A9500BD8632 /* pin_enabled.png */; };
+		A80EC2F61FC68A9500BD8632 /* voice_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E81FC68A9500BD8632 /* voice_disabled.png */; };
+		A80EC2F71FC68A9500BD8632 /* voice_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2E91FC68A9500BD8632 /* voice_enabled.png */; };
+		A80EC2F81FC68A9500BD8632 /* voiceandface_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2EA1FC68A9500BD8632 /* voiceandface_disabled.png */; };
+		A80EC2F91FC68A9500BD8632 /* voiceandface_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EC2EB1FC68A9500BD8632 /* voiceandface_enabled.png */; };
 		A85F61241D0A94310014739E /* MASOTPChannelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A85F611E1D0A94310014739E /* MASOTPChannelViewController.h */; };
 		A85F61251D0A94310014739E /* MASOTPChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F611F1D0A94310014739E /* MASOTPChannelViewController.m */; };
 		A85F61271D0A94310014739E /* MASOTPChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F61201D0A94310014739E /* MASOTPChannelViewController.xib */; };
@@ -233,6 +253,26 @@
 		A488CE231C0A758100B8B961 /* MASTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASTableViewCell.m; path = login/MASTableViewCell.m; sourceTree = "<group>"; };
 		A488CE331C0A82F300B8B961 /* MASICenterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASICenterFlowLayout.h; sourceTree = "<group>"; };
 		A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASICenterFlowLayout.m; sourceTree = "<group>"; };
+		A80EC2CF1FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASBiometricDeregistrationViewController.h; sourceTree = "<group>"; };
+		A80EC2D01FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASBiometricDeregistrationViewController.m; sourceTree = "<group>"; };
+		A80EC2D11FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASBiometricDeregistrationViewController.xib; sourceTree = "<group>"; };
+		A80EC2D21FC68A7D00BD8632 /* MASBiometricRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASBiometricRegistrationViewController.h; sourceTree = "<group>"; };
+		A80EC2D31FC68A7D00BD8632 /* MASBiometricRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASBiometricRegistrationViewController.m; sourceTree = "<group>"; };
+		A80EC2D41FC68A7D00BD8632 /* MASBiometricRegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASBiometricRegistrationViewController.xib; sourceTree = "<group>"; };
+		A80EC2DE1FC68A9500BD8632 /* face_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_disabled.png; sourceTree = "<group>"; };
+		A80EC2DF1FC68A9500BD8632 /* face_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_enabled.png; sourceTree = "<group>"; };
+		A80EC2E01FC68A9500BD8632 /* finger_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger_disabled.png; sourceTree = "<group>"; };
+		A80EC2E11FC68A9500BD8632 /* finger_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger_enabled.png; sourceTree = "<group>"; };
+		A80EC2E21FC68A9500BD8632 /* iris_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iris_disabled.png; sourceTree = "<group>"; };
+		A80EC2E31FC68A9500BD8632 /* iris_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iris_enabled.png; sourceTree = "<group>"; };
+		A80EC2E41FC68A9500BD8632 /* passcode_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passcode_disabled.png; sourceTree = "<group>"; };
+		A80EC2E51FC68A9500BD8632 /* passcode_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passcode_enabled.png; sourceTree = "<group>"; };
+		A80EC2E61FC68A9500BD8632 /* pin_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_disabled.png; sourceTree = "<group>"; };
+		A80EC2E71FC68A9500BD8632 /* pin_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_enabled.png; sourceTree = "<group>"; };
+		A80EC2E81FC68A9500BD8632 /* voice_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice_disabled.png; sourceTree = "<group>"; };
+		A80EC2E91FC68A9500BD8632 /* voice_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice_enabled.png; sourceTree = "<group>"; };
+		A80EC2EA1FC68A9500BD8632 /* voiceandface_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voiceandface_disabled.png; sourceTree = "<group>"; };
+		A80EC2EB1FC68A9500BD8632 /* voiceandface_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voiceandface_enabled.png; sourceTree = "<group>"; };
 		A85F611E1D0A94310014739E /* MASOTPChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASOTPChannelViewController.h; sourceTree = "<group>"; };
 		A85F611F1D0A94310014739E /* MASOTPChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASOTPChannelViewController.m; sourceTree = "<group>"; };
 		A85F61201D0A94310014739E /* MASOTPChannelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASOTPChannelViewController.xib; sourceTree = "<group>"; };
@@ -443,6 +483,7 @@
 				A488CE231C0A758100B8B961 /* MASTableViewCell.m */,
 				A488CD9A1C0972FD00B8B961 /* MASViewController.h */,
 				A488CD9B1C0972FD00B8B961 /* MASViewController.m */,
+				A80EC2CE1FC68A7D00BD8632 /* biometrics */,
 				A488CCD11C08DAD000B8B961 /* login */,
 				A85F611D1D0A94310014739E /* otp */,
 			);
@@ -482,6 +523,7 @@
 		A488CCE11C08E27D00B8B961 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A80EC2DD1FC68A9500BD8632 /* biometrics */,
 				CB4AF7EF1E85930700CCA739 /* ic_bluetooth.png */,
 				CB4AF7F01E85930700CCA739 /* ic_bluetooth@2x.png */,
 				CB4AF7F11E85930700CCA739 /* ic_bluetooth@3x.png */,
@@ -518,6 +560,40 @@
 				A488CE341C0A82F300B8B961 /* MASICenterFlowLayout.m */,
 			);
 			path = MASICenterFlowLayout;
+			sourceTree = "<group>";
+		};
+		A80EC2CE1FC68A7D00BD8632 /* biometrics */ = {
+			isa = PBXGroup;
+			children = (
+				A80EC2CF1FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.h */,
+				A80EC2D01FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.m */,
+				A80EC2D11FC68A7D00BD8632 /* MASBiometricDeregistrationViewController.xib */,
+				A80EC2D21FC68A7D00BD8632 /* MASBiometricRegistrationViewController.h */,
+				A80EC2D31FC68A7D00BD8632 /* MASBiometricRegistrationViewController.m */,
+				A80EC2D41FC68A7D00BD8632 /* MASBiometricRegistrationViewController.xib */,
+			);
+			path = biometrics;
+			sourceTree = "<group>";
+		};
+		A80EC2DD1FC68A9500BD8632 /* biometrics */ = {
+			isa = PBXGroup;
+			children = (
+				A80EC2DE1FC68A9500BD8632 /* face_disabled.png */,
+				A80EC2DF1FC68A9500BD8632 /* face_enabled.png */,
+				A80EC2E01FC68A9500BD8632 /* finger_disabled.png */,
+				A80EC2E11FC68A9500BD8632 /* finger_enabled.png */,
+				A80EC2E21FC68A9500BD8632 /* iris_disabled.png */,
+				A80EC2E31FC68A9500BD8632 /* iris_enabled.png */,
+				A80EC2E41FC68A9500BD8632 /* passcode_disabled.png */,
+				A80EC2E51FC68A9500BD8632 /* passcode_enabled.png */,
+				A80EC2E61FC68A9500BD8632 /* pin_disabled.png */,
+				A80EC2E71FC68A9500BD8632 /* pin_enabled.png */,
+				A80EC2E81FC68A9500BD8632 /* voice_disabled.png */,
+				A80EC2E91FC68A9500BD8632 /* voice_enabled.png */,
+				A80EC2EA1FC68A9500BD8632 /* voiceandface_disabled.png */,
+				A80EC2EB1FC68A9500BD8632 /* voiceandface_enabled.png */,
+			);
+			path = biometrics;
 			sourceTree = "<group>";
 		};
 		A85F611D1D0A94310014739E /* otp */ = {
@@ -594,6 +670,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80EC2D71FC68A7E00BD8632 /* MASBiometricDeregistrationViewController.h in Headers */,
 				A85F61291D0A94310014739E /* MASOTPViewController.h in Headers */,
 				A488CD9C1C0972FD00B8B961 /* MASViewController.h in Headers */,
 				CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */,
@@ -602,6 +679,7 @@
 				A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */,
 				CB2FB2D81DC3CB00000DA2C0 /* MASSessionLockViewController.h in Headers */,
 				A488CDA81C09778100B8B961 /* NSBundle+MASUI.h in Headers */,
+				A80EC2DA1FC68A7E00BD8632 /* MASBiometricRegistrationViewController.h in Headers */,
 				104661151C06581500A2A03C /* MASUI.h in Headers */,
 				A488CE351C0A82F300B8B961 /* MASICenterFlowLayout.h in Headers */,
 				CBC88FAF1DC130FF009EE1C6 /* NSError+MASUIPrivate.h in Headers */,
@@ -806,10 +884,14 @@
 				CB8DDC991E84A22E00B25AA9 /* MASLoginQRCodeView.xib in Resources */,
 				CB8DDC8D1E84910C00B25AA9 /* qrcode@3x.png in Resources */,
 				CB8DDC881E84910C00B25AA9 /* linkedin_disabled.png in Resources */,
+				A80EC2F71FC68A9500BD8632 /* voice_enabled.png in Resources */,
 				CB8DDC791E84910C00B25AA9 /* facebook.png in Resources */,
 				CB0B5E301DDB9B1000A46BAD /* icon-fingerprint@2x.png in Resources */,
+				A80EC2F21FC68A9500BD8632 /* passcode_disabled.png in Resources */,
 				CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */,
 				CB8DDC861E84910C00B25AA9 /* linkedin@2x.png in Resources */,
+				A80EC2F61FC68A9500BD8632 /* voice_disabled.png in Resources */,
+				A80EC2F01FC68A9500BD8632 /* iris_disabled.png in Resources */,
 				CB8DDC7C1E84910C00B25AA9 /* facebook_disabled.png in Resources */,
 				CB8DDC8C1E84910C00B25AA9 /* qrcode@2x.png in Resources */,
 				A488CD911C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib in Resources */,
@@ -817,9 +899,11 @@
 				CB8DDC771E84910C00B25AA9 /* enterprise_disabled@2x.png in Resources */,
 				CB8DDC811E84910C00B25AA9 /* google@3x.png in Resources */,
 				CB2FB2DD1DC3CB15000DA2C0 /* MASSessionLockViewController.xib in Resources */,
+				A80EC2F11FC68A9500BD8632 /* iris_enabled.png in Resources */,
 				A488CCD71C08DBDD00B8B961 /* MASLoginViewController.xib in Resources */,
 				CB8DDC7B1E84910C00B25AA9 /* facebook@3x.png in Resources */,
 				CB8DDC841E84910C00B25AA9 /* google_disabled@3x.png in Resources */,
+				A80EC2F81FC68A9500BD8632 /* voiceandface_disabled.png in Resources */,
 				CB8DDC3D1E844C0500B25AA9 /* ic_account_circle.png in Resources */,
 				CB8DDC751E84910C00B25AA9 /* enterprise@3x.png in Resources */,
 				CB8DDC781E84910C00B25AA9 /* enterprise_disabled@3x.png in Resources */,
@@ -829,29 +913,39 @@
 				CB8DDC8B1E84910C00B25AA9 /* qrcode.png in Resources */,
 				CB8DDC731E84910C00B25AA9 /* enterprise.png in Resources */,
 				CB8DDC7A1E84910C00B25AA9 /* facebook@2x.png in Resources */,
+				A80EC2D91FC68A7E00BD8632 /* MASBiometricDeregistrationViewController.xib in Resources */,
 				CB8DDC7D1E84910C00B25AA9 /* facebook_disabled@2x.png in Resources */,
 				CB8DDC501E845BE000B25AA9 /* ic_lock_outline@3x.png in Resources */,
 				A85F612C1D0A94310014739E /* MASOTPViewController.xib in Resources */,
+				A80EC2EC1FC68A9500BD8632 /* face_disabled.png in Resources */,
 				CB4AF7F41E85930700CCA739 /* ic_bluetooth@3x.png in Resources */,
 				CB8DDC401E844C0500B25AA9 /* ic_lock_outline.png in Resources */,
 				A488CD0F1C08F9E100B8B961 /* caLogo.png in Resources */,
 				CB8DDC8A1E84910C00B25AA9 /* linkedin_disabled@3x.png in Resources */,
+				A80EC2ED1FC68A9500BD8632 /* face_enabled.png in Resources */,
 				CB4AF7EA1E85862F00CCA739 /* ic_close.png in Resources */,
 				CB8DDC821E84910C00B25AA9 /* google_disabled.png in Resources */,
 				CB8DDC4E1E845BE000B25AA9 /* ic_account_circle@3x.png in Resources */,
+				A80EC2F51FC68A9500BD8632 /* pin_enabled.png in Resources */,
+				A80EC2F91FC68A9500BD8632 /* voiceandface_enabled.png in Resources */,
 				A488CD041C08F9AB00B8B961 /* grey_button.png in Resources */,
 				CB8DDC741E84910C00B25AA9 /* enterprise@2x.png in Resources */,
+				A80EC2EF1FC68A9500BD8632 /* finger_enabled.png in Resources */,
 				A85F61271D0A94310014739E /* MASOTPChannelViewController.xib in Resources */,
 				CB8DDC761E84910C00B25AA9 /* enterprise_disabled.png in Resources */,
+				A80EC2F41FC68A9500BD8632 /* pin_disabled.png in Resources */,
 				CB8DDC891E84910C00B25AA9 /* linkedin_disabled@2x.png in Resources */,
 				CB4AF7EC1E85862F00CCA739 /* ic_close@3x.png in Resources */,
+				A80EC2DC1FC68A7E00BD8632 /* MASBiometricRegistrationViewController.xib in Resources */,
 				CB8DDC871E84910C00B25AA9 /* linkedin@3x.png in Resources */,
 				CB8DDC7F1E84910C00B25AA9 /* google.png in Resources */,
 				CB4AF7EB1E85862F00CCA739 /* ic_close@2x.png in Resources */,
 				CB4AF7F21E85930700CCA739 /* ic_bluetooth.png in Resources */,
+				A80EC2EE1FC68A9500BD8632 /* finger_disabled.png in Resources */,
 				CB8DDC851E84910C00B25AA9 /* linkedin.png in Resources */,
 				CB8DDC801E84910C00B25AA9 /* google@2x.png in Resources */,
 				CB8DDC7E1E84910C00B25AA9 /* facebook_disabled@3x.png in Resources */,
+				A80EC2F31FC68A9500BD8632 /* passcode_enabled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +986,7 @@
 				CBC88FA81DBFED92009EE1C6 /* MASUser+MASUI.m in Sources */,
 				CBC88F9F1DBE86E2009EE1C6 /* MASBaseLoginViewController.m in Sources */,
 				CBC88FA41DBFED83009EE1C6 /* MAS+UI.m in Sources */,
+				A80EC2D81FC68A7E00BD8632 /* MASBiometricDeregistrationViewController.m in Sources */,
 				A85F61251D0A94310014739E /* MASOTPChannelViewController.m in Sources */,
 				CB2FB2D91DC3CB00000DA2C0 /* MASSessionLockViewController.m in Sources */,
 				A488CDDD1C0A178C00B8B961 /* UIAlertController+MASUI.m in Sources */,
@@ -899,6 +994,7 @@
 				A488CD951C09726000B8B961 /* MASAuthenticationProviderCollectionViewCell.m in Sources */,
 				CB8DDC971E84A22000B25AA9 /* MASLoginQRCodeView.m in Sources */,
 				A488CE361C0A82F300B8B961 /* MASICenterFlowLayout.m in Sources */,
+				A80EC2DB1FC68A7E00BD8632 /* MASBiometricRegistrationViewController.m in Sources */,
 				A44EDABB1C06EF5600873659 /* MASUIService.m in Sources */,
 				A488CDD51C0A149C00B8B961 /* UIImage+MASUI.m in Sources */,
 				CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */,

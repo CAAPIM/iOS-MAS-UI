@@ -57,6 +57,7 @@
             // FIDO Login
             //
         case MASUIErrorCodeMissingMASFIDOFramework: return @"MASFIDO framework not found.";
+        case MASUIErrorCodeNothingSelected: return @"Please select any one of the Biometric Modality";
             //
             // Default
             //
