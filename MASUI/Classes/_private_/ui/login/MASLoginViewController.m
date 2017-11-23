@@ -10,12 +10,14 @@
 
 #import "MASLoginViewController.h"
 
-#import "MASAuthenticationProviderCollectionViewCell.h"
-#import "MASICenterFlowLayout.h"
+#import "MASUIService.h"
 #import "MASLoginQRCodeView.h"
+#import "MASICenterFlowLayout.h"
+#import "MASAuthenticationProviderCollectionViewCell.h"
+
+#import "UIImage+MASUI.h"
 #import "NSBundle+MASUI.h"
 #import "UIAlertController+MASUI.h"
-#import "UIImage+MASUI.h"
 
 #import <SafariServices/SafariServices.h>
 
@@ -343,13 +345,18 @@
                  
                  if (!completed && error) {
                      
-                     //
-                     // Re-present login view controller with error alert.
-                     //
-                     MASUIService *uiService = [MASUIService sharedService];
-                     [uiService presentLoginViewController:[MASAuthenticationProviders currentProviders] authCredentialsBlock:self.authCredentialsBlock completionBlock:nil];
-                     
-                     [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                     double delayInSeconds = 2.0;
+                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                         
+                         //
+                         // Re-present login view controller with error alert.
+                         //
+                         MASUIService *uiService = [MASUIService sharedService];
+                         [uiService presentLoginViewController:[MASAuthenticationProviders currentProviders] authCredentialsBlock:self.authCredentialsBlock completionBlock:nil];
+                         
+                         [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                     });
                      
                      return;
                  }
