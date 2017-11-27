@@ -33,7 +33,11 @@
             <constraints>
                 <constraint firstItem="Nfp-CK-IvM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4eU-jK-q9p"/>
                 <constraint firstItem="Nfp-CK-IvM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6WW-9o-Spz"/>
+                <constraint firstItem="Nfp-CK-IvM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jgr-vy-Cqh"/>
                 <constraint firstItem="Nfp-CK-IvM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NFU-EA-6OU"/>
+                <constraint firstItem="Nfp-CK-IvM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Omh-fk-xvt"/>
+                <constraint firstAttribute="trailing" secondItem="Nfp-CK-IvM" secondAttribute="trailing" id="di3-pm-3BS"/>
+                <constraint firstAttribute="bottom" secondItem="Nfp-CK-IvM" secondAttribute="bottom" id="kuo-eG-BV9"/>
                 <constraint firstItem="Nfp-CK-IvM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nn6-iE-0Cy"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="53.5"/>

@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Register Biometrics";
+    self.title = @"Register";
     
     //
     //  Enable UITableView editing with Multiple selection.

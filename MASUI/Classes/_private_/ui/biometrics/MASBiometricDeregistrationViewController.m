@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Deregister Biometrics";
+    self.title = @"Deregister";
     
     //
     //  Enable UITableView editing with Multiple selection.
@@ -74,6 +74,32 @@
     }
     
     _selectedModalities = [NSMutableArray array];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    UIBarButtonItem *flexItem =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    UIBarButtonItem *deregisterAllButton =
+        [[UIBarButtonItem alloc] initWithTitle:@"Deregister All" style:UIBarButtonItemStylePlain
+                                        target:self action:@selector(deregisterAll:)];
+    
+    [self setToolbarItems:[NSArray arrayWithObjects:flexItem, deregisterAllButton, flexItem, nil]];
+    
+    self.navigationController.toolbarHidden = NO;
+    
+    [super viewWillAppear:animated];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [self setToolbarItems:nil];
+    
+    self.navigationController.toolbarHidden = YES;
+    
+    [super viewWillDisappear:animated];
 }
 
 
@@ -219,6 +245,13 @@
     });
 }
 
+
+- (IBAction)deregisterAll:(id)sender {
+    
+    _selectedModalities = _tobeDeregisteredModalities;
+    
+    [self doneAction:sender];
+}
 
 - (void)dismissDeregistrationViewControllerAnimated:(BOOL)animated completion: (void (^)(void))completion
 {    

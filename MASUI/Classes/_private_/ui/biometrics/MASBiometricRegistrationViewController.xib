@@ -34,7 +34,11 @@
                 <constraint firstItem="2dP-jG-crQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2bC-LO-Sw8"/>
                 <constraint firstItem="2dP-jG-crQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CNV-hS-aOH"/>
                 <constraint firstItem="2dP-jG-crQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IMs-EI-wX6"/>
+                <constraint firstItem="2dP-jG-crQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tps-MV-xqd"/>
                 <constraint firstItem="2dP-jG-crQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aek-4Q-aKA"/>
+                <constraint firstAttribute="trailing" secondItem="2dP-jG-crQ" secondAttribute="trailing" id="m0Y-by-xrk"/>
+                <constraint firstAttribute="bottom" secondItem="2dP-jG-crQ" secondAttribute="bottom" id="s1r-l4-Cge"/>
+                <constraint firstItem="2dP-jG-crQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sb2-yv-G7Z"/>
             </constraints>
         </view>
     </objects>
