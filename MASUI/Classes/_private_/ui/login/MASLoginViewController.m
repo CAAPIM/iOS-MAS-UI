@@ -10,12 +10,14 @@
 
 #import "MASLoginViewController.h"
 
-#import "MASAuthenticationProviderCollectionViewCell.h"
-#import "MASICenterFlowLayout.h"
+#import "MASUIService.h"
 #import "MASLoginQRCodeView.h"
+#import "MASICenterFlowLayout.h"
+#import "MASAuthenticationProviderCollectionViewCell.h"
+
+#import "UIImage+MASUI.h"
 #import "NSBundle+MASUI.h"
 #import "UIAlertController+MASUI.h"
-#import "UIImage+MASUI.h"
 
 #import <SafariServices/SafariServices.h>
 
@@ -28,6 +30,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *userNameField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
 @property (nonatomic, weak) IBOutlet UIButton *loginBtn;
+@property (nonatomic, weak) IBOutlet UIButton *fidoLoginBtn;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *fidologinBtnHeight;
 @property (nonatomic, weak) IBOutlet UIButton *cancelBtn;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -110,6 +114,33 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //
+    //  Check for valid FIDOProviderType
+    //
+    NSInteger fidoProviderType = -1;
+    SEL selector = NSSelectorFromString(@"MASFIDOProviderType");
+    if ([MAS respondsToSelector:selector]) {
+        
+        IMP imp = [MAS methodForSelector:selector];
+        __block NSInteger (*MASFIDOProviderType)(id, SEL) = (void *)imp;
+        fidoProviderType = MASFIDOProviderType([MAS class], selector);
+    }
+    
+    //
+    //  Display "FIDO Login" button.
+    //  When FIDO framework exists and has valid FIDOProviderType configured.
+    //
+    if(NSClassFromString(@"MASAuthCredentialsFIDO") && fidoProviderType != -1) {
+        
+        self.fidologinBtnHeight.constant = 35.0;
+        [self.view layoutIfNeeded];
+    }
+    else {
+        
+        self.fidologinBtnHeight.constant = 0;
+        [self.view layoutIfNeeded];
+    }
+    
     [super viewWillAppear:YES];
 }
 
@@ -136,6 +167,7 @@
     [_loginBtn setMultipleTouchEnabled:NO];
     
     [_loginBtn setEnabled:YES];
+    [_fidoLoginBtn setEnabled:YES];
     [_cancelBtn setEnabled:YES];
     
     //
@@ -212,6 +244,7 @@
 - (IBAction)onLoginSelected:(id)sender
 {
     [_loginBtn setEnabled:NO];
+    [_fidoLoginBtn setEnabled:NO];
     [_cancelBtn setEnabled:NO];
     
     [self.activityIndicator startAnimating];
@@ -247,6 +280,7 @@
             if(error)
             {
                 [_loginBtn setEnabled:YES];
+                [_fidoLoginBtn setEnabled:YES];
                 [_cancelBtn setEnabled:YES];
                 
                 [UIAlertController popupErrorAlert:error inViewController:blockSelf];
@@ -265,6 +299,70 @@
             [self dismissLoginViewControllerAnimated:YES completion:nil];
         });
     }];
+}
+
+
+- (IBAction)onFIDOLoginSelected:(id)sender
+{
+    [_loginBtn setEnabled:NO];
+    [_fidoLoginBtn setEnabled:NO];
+    [_cancelBtn setEnabled:NO];
+    
+    //
+    // Make sure the keyboard is closed
+    //
+    [self.userNameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+    
+    //
+    // Perform the request
+    //
+    DLog(@"\n\ncalling auth credentials block: %@\n\n", self.authCredentialsBlock);
+    
+    __block MASLoginViewController *blockSelf = self;
+    
+    //
+    // Ensure this code runs in the main UI thread
+    //
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        //
+        // Stop QR Code session sharing
+        //
+        [_qrCode stopDisplayingQRCodeImageForProximityLogin];
+        
+        //
+        // Dsmiss the view controller
+        //
+        // This is to encounter the issue with SDS View Controllers
+        // not being presented in proper window heirarchy.
+        //
+        [blockSelf dismissLoginViewControllerAnimated:YES completion:^{
+            
+            [blockSelf loginWithFIDOUsername:self.userNameField.text
+                                  completion:
+             ^(BOOL completed, NSError * _Nullable error) {
+                 
+                 if (!completed && error) {
+                     
+                     double delayInSeconds = 2.0;
+                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                         
+                         //
+                         // Re-present login view controller with error alert.
+                         //
+                         MASUIService *uiService = [MASUIService sharedService];
+                         [uiService presentLoginViewController:[MASAuthenticationProviders currentProviders] authCredentialsBlock:self.authCredentialsBlock completionBlock:nil];
+                         
+                         [UIAlertController popupErrorAlert:error inViewController:blockSelf];
+                     });
+                     
+                     return;
+                 }
+             }];
+        }];
+    });
 }
 
 

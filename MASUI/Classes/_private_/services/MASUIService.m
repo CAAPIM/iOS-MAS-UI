@@ -10,13 +10,16 @@
 
 #import "MASUIService.h"
 
+#import "NSBundle+MASUI.h"
+#import "UIImage+MASUI.h"
+#import "UIAlertController+MASUI.h"
+
+#import "MASOTPViewController.h"
 #import "MASLoginViewController.h"
 #import "MASOTPChannelViewController.h"
-#import "MASOTPViewController.h"
 #import "MASSessionLockViewController.h"
-#import "NSBundle+MASUI.h"
-#import "UIAlertController+MASUI.h"
-#import "UIImage+MASUI.h"
+#import "MASBiometricRegistrationViewController.h"
+#import "MASBiometricDeregistrationViewController.h"
 
 
 @interface MASUIService ()
@@ -37,6 +40,18 @@
  */
 @property (nonatomic, strong, readonly) MASOTPChannelViewController *channelViewController;
 
+
+/**
+ *  Biometric Registration Modalities Selection View Controller
+ */
+@property (nonatomic, strong, readonly) MASBiometricRegistrationViewController *biometricRegViewController;
+
+
+/**
+ *  Biometric Deregistration Modalities Selection View Controller
+ */
+@property (nonatomic, strong, readonly) MASBiometricDeregistrationViewController *biometricDeregViewController;
+
 @end
 
 
@@ -44,6 +59,7 @@
 
 static BOOL _willHandleAuthentication_ = YES;
 static BOOL _willHandleOTPAuthentication_ = YES;
+static BOOL _willHandleBiometricAuthentication_ = YES;
 static MASBaseLoginViewController * _loginViewController_ = nil;
 static MASViewController * _lockScreenViewController_ = nil;
 
@@ -105,6 +121,18 @@ static MASViewController * _lockScreenViewController_ = nil;
 + (void)setWillHandleOTPAuthentication:(BOOL)handle
 {
     _willHandleOTPAuthentication_ = handle;
+}
+
+
++ (BOOL)willHandleBiometricAuthentication
+{
+    return _willHandleBiometricAuthentication_;
+}
+
+
++ (void)setWillHandleBiometricAuthentication:(BOOL)handle
+{
+    _willHandleBiometricAuthentication_ = handle;
 }
 
 
@@ -324,6 +352,94 @@ static MASViewController * _lockScreenViewController_ = nil;
     }
     
     DLog(@"\n\nWarning you have called this method when a channel view controller is already visible\n\n");
+}
+
+
+//
+// Hidden: handle biometric modalities registration flow
+//
+
+- (void)__masRequestsRegistrationModalitySelectionWithModalities__:(NSArray *)availableModalities
+                                                   completionBlock:(MASBiometricModalitiesBlock)completionBlock
+{
+    //DLog(@"\n\ncalled with biometric modalities block: %@ and available modalities : %@\n\n", completionBlock, availableModalities);
+    
+    if(!self.biometricRegViewController)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Init with the nib file from the bundle
+                           //
+                           NSBundle* bundle = [NSBundle masUIFramework];
+                           
+                           _biometricRegViewController = [[MASBiometricRegistrationViewController alloc] initWithNibName:@"MASBiometricRegistrationViewController" bundle:bundle];
+                           
+                           _biometricRegViewController.completionBlock = completionBlock;
+                           _biometricRegViewController.availableModalities = availableModalities;
+                           
+                           //
+                           // Show the controller
+                           //
+                           __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_biometricRegViewController];
+                           
+                           [[UIAlertController rootViewController] presentViewController:navigationController
+                                                                                animated:YES
+                                                                              completion:^
+                            {
+                                _biometricRegViewController = nil;
+                                navigationController = nil;
+                            }];
+                           
+                           return;
+                       });
+    }
+    
+    DLog(@"\n\nWarning you have called this method when a biometric view controller is already visible\n\n");
+}
+
+
+//
+// Hidden: handle biometric modalities deregistration flow
+//
+
+- (void)__masRequestsDeregistrationModalitySelectionWithModalities__:(NSArray *)availableModalities
+                                                     completionBlock:(MASBiometricModalitiesBlock)completionBlock
+{
+    //DLog(@"\n\ncalled with biometric modalities block: %@ and available modalities : %@\n\n", completionBlock, availableModalities);
+    
+    if(!self.biometricDeregViewController)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                           //
+                           // Init with the nib file from the bundle
+                           //
+                           NSBundle* bundle = [NSBundle masUIFramework];
+                           
+                           _biometricDeregViewController = [[MASBiometricDeregistrationViewController alloc] initWithNibName:@"MASBiometricDeregistrationViewController" bundle:bundle];
+                           
+                           _biometricDeregViewController.completionBlock = completionBlock;
+                           _biometricDeregViewController.availableModalities = availableModalities;
+                           
+                           //
+                           // Show the controller
+                           //
+                           __block UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_biometricDeregViewController];
+                           
+                           [[UIAlertController rootViewController] presentViewController:navigationController
+                                                                                animated:YES
+                                                                              completion:^
+                            {
+                                _biometricDeregViewController = nil;
+                                navigationController = nil;
+                            }];
+                           
+                           return;
+                       });
+    }
+    
+    DLog(@"\n\nWarning you have called this method when a biometric view controller is already visible\n\n");
 }
 
 @end

@@ -59,6 +59,25 @@
 
 
 
+/**
+ * Detect if handling of Biometric authentication UI is enabled.
+ *
+ * @return Returns YES if enabled, NO if not.  The default is YES.
+ */
++ (BOOL)willHandleBiometricAuthentication;
+
+
+
+/**
+ * Set the handling state of the Biometric authentication UI by this framework.
+ *
+ * @param handle YES if you want the framework to enable it, NO if not.
+ *     YES is the default.
+ */
++ (void)setWillHandleBiometricAuthentication:(BOOL)handle;
+
+
+
 ///--------------------------------------
 /// @name Login Screen
 ///--------------------------------------
