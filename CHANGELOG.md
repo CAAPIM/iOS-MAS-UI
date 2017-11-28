@@ -4,7 +4,7 @@
 None.
 
 ### New features
-- `MASUI` supports `MASFIDO`'s biometric authentication in default login screen when `MASFIDO` SDK is included. [US423714]
+- `MASUI` supports `Samsung SDS Nexsign Integration` for biometric authentication in default login screen when it is enabled. [US423714]
 
 # Version 1.5.00
 
