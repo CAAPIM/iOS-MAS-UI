@@ -1,3 +1,11 @@
+# Version 1.6.00
+
+### Bug fixes
+None.
+
+### New features
+- `MASUI` supports `Samsung SDS Nexsign Integration` for biometric authentication in default login screen when it is enabled. [US423714]
+
 # Version 1.5.00
 
 NOTE: From this version on the frameworks changed to Dynamic instead of Static library
