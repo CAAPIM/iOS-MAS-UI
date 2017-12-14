@@ -36,6 +36,16 @@ None.
 - Default session lock screen is added; ```[MASUser presentSessionLockScreenViewController:]```.
 - ```MASBaseLoginViewController``` is introduced to allow better customization of the default login screen.
 
+
+# Version 1.2.03
+
+### Bug fixes
+- None
+
+### New features
+- None
+
+
 # Version 1.2.00
 
 ### Bug fixes
