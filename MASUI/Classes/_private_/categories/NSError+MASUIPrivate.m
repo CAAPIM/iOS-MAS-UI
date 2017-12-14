@@ -52,6 +52,12 @@
         case MASUIErrorCodeUserAlreadyAuthenticated: return @"A user is already authenticated";
         case MASUIErrorCodeCurrentlyBeingAuthorized: return @"Authorization is currently in progress through session sharing";
         case MASUIErrorCodeUserSessionIsAlreadyUnlocked: return @"User session is not locked";
+            
+            //
+            // FIDO Login
+            //
+        case MASUIErrorCodeMissingMASFIDOFramework: return @"MASFIDO framework not found.";
+        case MASUIErrorCodeNothingSelected: return @"Please select any one of the Biometric Modality";
             //
             // Default
             //
