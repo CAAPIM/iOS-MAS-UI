@@ -1,3 +1,11 @@
+# Version 1.6.11
+
+### Bug fixes
+None.
+
+### New features
+None.
+
 # Version 1.6.10
 
 ### Bug fixes
