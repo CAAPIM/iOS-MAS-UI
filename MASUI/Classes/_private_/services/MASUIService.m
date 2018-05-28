@@ -81,6 +81,12 @@ static MASViewController * _lockScreenViewController_ = nil;
 
 # pragma mark - Lifecycle
 
++ (void)load
+{
+    [MASService registerSubclass:[self class] serviceUUID:@"c15a0126-fe71-46bb-98f0-f87966b3beb4"];
+}
+
+
 + (NSString *)serviceUUID
 {
     // DO NOT change this without a corresponding change in MASFoundation
