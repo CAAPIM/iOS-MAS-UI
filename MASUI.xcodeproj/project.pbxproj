@@ -23,7 +23,6 @@
 /* Begin PBXBuildFile section */
 		10246AA01CBAA2A400C0A70A /* caLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CD0E1C08F9E100B8B961 /* caLogo.png */; };
 		10246AAD1CBAA2A400C0A70A /* grey_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A488CCEE1C08F9AB00B8B961 /* grey_button.png */; };
-		10246AB61CBAA2C600C0A70A /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
 		10246AB71CBAA2C600C0A70A /* MASLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */; };
 		10246AB81CBAA2C600C0A70A /* MASAuthenticationProviderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A488CD901C0971F400B8B961 /* MASAuthenticationProviderCollectionViewCell.xib */; };
 		104661151C06581500A2A03C /* MASUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 104661141C06581500A2A03C /* MASUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,9 +84,6 @@
 		CB0ACDC61DDCDE45008D2D48 /* icon-fingerprint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */; };
 		CB0B5E2F1DDB9B1000A46BAD /* logo-ca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2D1DDB9B1000A46BAD /* logo-ca@2x.png */; };
 		CB0B5E301DDB9B1000A46BAD /* icon-fingerprint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */; };
-		CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */; };
-		CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */; };
-		CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB2FB2D81DC3CB00000DA2C0 /* MASSessionLockViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2FB2D61DC3CB00000DA2C0 /* MASSessionLockViewController.h */; };
 		CB2FB2D91DC3CB00000DA2C0 /* MASSessionLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2FB2D71DC3CB00000DA2C0 /* MASSessionLockViewController.m */; };
 		CB2FB2DD1DC3CB15000DA2C0 /* MASSessionLockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2FB2DC1DC3CB15000DA2C0 /* MASSessionLockViewController.xib */; };
@@ -281,9 +277,6 @@
 		A85F61231D0A94310014739E /* MASOTPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASOTPViewController.xib; sourceTree = "<group>"; };
 		CB0B5E2D1DDB9B1000A46BAD /* logo-ca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-ca@2x.png"; sourceTree = "<group>"; };
 		CB0B5E2E1DDB9B1000A46BAD /* icon-fingerprint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-fingerprint@2x.png"; sourceTree = "<group>"; };
-		CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginWebViewController.m; sourceTree = "<group>"; };
-		CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginWebViewController.xib; sourceTree = "<group>"; };
-		CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginWebViewController.h; sourceTree = "<group>"; };
 		CB2FB2D61DC3CB00000DA2C0 /* MASSessionLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASSessionLockViewController.h; sourceTree = "<group>"; };
 		CB2FB2D71DC3CB00000DA2C0 /* MASSessionLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASSessionLockViewController.m; sourceTree = "<group>"; };
 		CB2FB2DC1DC3CB15000DA2C0 /* MASSessionLockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASSessionLockViewController.xib; sourceTree = "<group>"; };
@@ -493,9 +486,6 @@
 		A488CCD11C08DAD000B8B961 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				CB0FE0BE1C208CFF00D65B89 /* MASLoginWebViewController.h */,
-				CB0FE0BC1C208CFF00D65B89 /* MASLoginWebViewController.m */,
-				CB0FE0BD1C208CFF00D65B89 /* MASLoginWebViewController.xib */,
 				A488CCD21C08DAEF00B8B961 /* MASLoginViewController.h */,
 				A488CCD31C08DAEF00B8B961 /* MASLoginViewController.m */,
 				A488CCD61C08DBDD00B8B961 /* MASLoginViewController.xib */,
@@ -673,7 +663,6 @@
 				A80EC2D71FC68A7E00BD8632 /* MASBiometricDeregistrationViewController.h in Headers */,
 				A85F61291D0A94310014739E /* MASOTPViewController.h in Headers */,
 				A488CD9C1C0972FD00B8B961 /* MASViewController.h in Headers */,
-				CB0FE0C11C208CFF00D65B89 /* MASLoginWebViewController.h in Headers */,
 				CBC88F9E1DBE86E2009EE1C6 /* MASBaseLoginViewController.h in Headers */,
 				CB8DDC961E84A22000B25AA9 /* MASLoginQRCodeView.h in Headers */,
 				A44EDABA1C06EF5600873659 /* MASUIService.h in Headers */,
@@ -858,7 +847,6 @@
 				CBAE287D1E85A3FF00D626F3 /* ic_account_circle@3x.png in Resources */,
 				CBAE287E1E85A3FF00D626F3 /* ic_lock_outline@2x.png in Resources */,
 				CBAE287F1E85A3FF00D626F3 /* ic_lock_outline@3x.png in Resources */,
-				10246AB61CBAA2C600C0A70A /* MASLoginWebViewController.xib in Resources */,
 				10246AB71CBAA2C600C0A70A /* MASLoginViewController.xib in Resources */,
 				10246AB81CBAA2C600C0A70A /* MASAuthenticationProviderCollectionViewCell.xib in Resources */,
 				10246AA01CBAA2A400C0A70A /* caLogo.png in Resources */,
@@ -888,7 +876,6 @@
 				CB8DDC791E84910C00B25AA9 /* facebook.png in Resources */,
 				CB0B5E301DDB9B1000A46BAD /* icon-fingerprint@2x.png in Resources */,
 				A80EC2F21FC68A9500BD8632 /* passcode_disabled.png in Resources */,
-				CB0FE0C01C208CFF00D65B89 /* MASLoginWebViewController.xib in Resources */,
 				CB8DDC861E84910C00B25AA9 /* linkedin@2x.png in Resources */,
 				A80EC2F61FC68A9500BD8632 /* voice_disabled.png in Resources */,
 				A80EC2F01FC68A9500BD8632 /* iris_disabled.png in Resources */,
@@ -997,7 +984,6 @@
 				A80EC2DB1FC68A7E00BD8632 /* MASBiometricRegistrationViewController.m in Sources */,
 				A44EDABB1C06EF5600873659 /* MASUIService.m in Sources */,
 				A488CDD51C0A149C00B8B961 /* UIImage+MASUI.m in Sources */,
-				CB0FE0BF1C208CFF00D65B89 /* MASLoginWebViewController.m in Sources */,
 				A488CE251C0A758100B8B961 /* MASTableViewCell.m in Sources */,
 				CBC88FB01DC130FF009EE1C6 /* NSError+MASUIPrivate.m in Sources */,
 			);
@@ -1158,7 +1144,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1.6.10;
+				CURRENT_PROJECT_VERSION = 1.7.00;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1188,7 +1174,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1.6.10;
+				CURRENT_PROJECT_VERSION = 1.7.00;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
