@@ -1,4 +1,4 @@
-# Version 1.6.11
+# Version 1.7.00
 
 ### Bug fixes
 None.
