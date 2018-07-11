@@ -167,10 +167,10 @@
         //
         DLog(@"\n\ncalling otp generation block: %@\n\n", self.otpGenerationBlock);
         
+        __block UITableView *blockTableView = tableView;
+        __block NSIndexPath *blockIndexPath = indexPath;
         __block MASOTPChannelViewController *blockSelf = self;
-        self.otpGenerationBlock([_supportedChannels objectsAtIndexes:indicesOfItemsToSelect], NO,
-        ^(BOOL completed, NSError *error)
-        {
+        self.otpGenerationBlock([_supportedChannels objectsAtIndexes:indicesOfItemsToSelect], NO, ^(BOOL completed, NSError *error) {
                                     
             DLog(@"\n\nblock callback: %@ or error: %@\n\n", (completed ? @"Yes" : @"No"), [error localizedDescription]);
                                     
@@ -187,17 +187,22 @@
                 //
                 // Handle the error
                 //
-                if(error)
+                if (error)
                 {
                     [UIAlertController popupErrorAlert:error inViewController:blockSelf];
-                    
+                    [blockTableView deselectRowAtIndexPath:blockIndexPath animated:YES];
                     return;
                 }
-                                                       
                 //
-                // Dsmiss the view controller
+                //  Only close the screen if there is no error
                 //
-                [blockSelf dismissViewControllerAnimated:YES completion:nil];
+                else {
+                    
+                    //
+                    // Dsmiss the view controller
+                    //
+                    [blockSelf dismissViewControllerAnimated:YES completion:nil];
+                }
             });
             
         });
@@ -207,7 +212,7 @@
         [self.activityIndicator startAnimating];
         
         __block MASOTPChannelViewController *blockSelf = self;
-        self.otpGenerationBlock(nil, YES, ^(BOOL completed, NSError *error) {
+        self.otpGenerationBlock([NSArray array], YES, ^(BOOL completed, NSError *error) {
         
             //
             // Ensure this code runs in the main UI thread

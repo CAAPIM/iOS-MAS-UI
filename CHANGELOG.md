@@ -1,3 +1,11 @@
+# Version 1.7.10
+
+### Bug fixes
+- MASUI's OTP channel selection screen was dismissed as soon as channel was selected which caused unexpected behaviour returning an internal OTP processing error to the original request. The Mobile SDK now prompts the internal OTP processing error on the channel selection screen, and the channel selection screen will only be dismissed upon cancellation of OTP process, and/or successful generation of OTP for the selected channel. [DE366491]
+
+### New features
+None.
+
 # Version 1.7.00
 
 ### Bug fixes
