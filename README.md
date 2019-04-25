@@ -61,6 +61,7 @@ For manual install, you add the Mobile SDK to your Xcode project. Note that you 
 
 ```
 #import <MASFoundation/MASFoundation.h>
+#import <MASProximity/MASProximity.h>
 #import <MASUI/MASUI.h>
 ```
 

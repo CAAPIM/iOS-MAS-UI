@@ -1,3 +1,8 @@
+# Version 1.9.20
+
+### New features
+- MASUI framework now has new dependency on [MASProximity][MASProximity] framework. No code change is required, and no functionality change was made. [US584914] 
+
 # Version 1.9.10
 
 ### Bug fixes
@@ -123,7 +128,7 @@ None.
 
 - .
 
-
+ [MASProximity]: https://github.com/CAAPIM/iOS-MAS-Proximity
  [mag]: https://docops.ca.com/mag
  [mas.ca.com]: http://mas.ca.com/
  [docs]: http://mas.ca.com/docs/
