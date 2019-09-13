@@ -1222,6 +1222,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1252,6 +1253,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};
