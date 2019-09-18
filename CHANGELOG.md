@@ -1,3 +1,11 @@
+# Version 1.9.20
+
+### Bug fixes
+None.
+
+### New features
+None.
+
 # Version 1.9.10
 
 ### Bug fixes
