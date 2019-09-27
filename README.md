@@ -315,11 +315,8 @@ This software may be modified and distributed under the terms
 of the MIT license. See the [LICENSE][license-link] file for details.
 
  [mag]: https://docops.ca.com/mag
- [mas.ca.com]: http://mas.ca.com/
- [get-started]: http://mas.ca.com/get-started/
- [docs]: http://mas.ca.com/docs/
- [blog]: http://mas.ca.com/blog/
- [videos]: https://www.ca.com/us/developers/mas/videos.html
+ [get-started]: http://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/layer7-api-management/mobile-sdk-for-ca-mobile-api-gateway/2-0.html
+ [docs]: http://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-enterprise-software/layer7-api-management/mobile-sdk-for-ca-mobile-api-gateway/2-0.html
  [StackOverflow]: http://stackoverflow.com/questions/tagged/massdk
  [download]: https://github.com/CAAPIM/iOS-MAS-UI/archive/master.zip
  [contributing]: https://github.com/CAAPIM/iOS-MAS-UI/blob/develop/CONTRIBUTING.md
