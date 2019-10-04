@@ -210,6 +210,27 @@
 			remoteGlobalIDString = 104661101C06581500A2A03C;
 			remoteInfo = MASUI;
 		};
+		CBBC7BD1226E780600ABA2BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBBC7BC9226E780600ABA2BA /* MASProximity.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CBA4234122662C9C00B8D617;
+			remoteInfo = MASProximity;
+		};
+		CBBC7BD3226E780600ABA2BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBBC7BC9226E780600ABA2BA /* MASProximity.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CBA4234A22662C9C00B8D617;
+			remoteInfo = MASProximityTests;
+		};
+		CBBC7BD5226E783400ABA2BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBBC7BC9226E780600ABA2BA /* MASProximity.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CBA4234022662C9C00B8D617;
+			remoteInfo = MASProximity;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -322,6 +343,7 @@
 		CB8DDC941E84A22000B25AA9 /* MASLoginQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLoginQRCodeView.h; sourceTree = "<group>"; };
 		CB8DDC951E84A22000B25AA9 /* MASLoginQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLoginQRCodeView.m; sourceTree = "<group>"; };
 		CB8DDC981E84A22E00B25AA9 /* MASLoginQRCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASLoginQRCodeView.xib; sourceTree = "<group>"; };
+		CBBC7BC9226E780600ABA2BA /* MASProximity.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MASProximity.xcodeproj; path = ../MASProximity/MASProximity.xcodeproj; sourceTree = "<group>"; };
 		CBC88F9C1DBE86E2009EE1C6 /* MASBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASBaseLoginViewController.h; sourceTree = "<group>"; };
 		CBC88F9D1DBE86E2009EE1C6 /* MASBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASBaseLoginViewController.m; sourceTree = "<group>"; };
 		CBC88FA11DBFED83009EE1C6 /* MAS+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MAS+UI.h"; sourceTree = "<group>"; };
@@ -372,6 +394,7 @@
 		104661071C06581500A2A03C = {
 			isa = PBXGroup;
 			children = (
+				CBBC7BC9226E780600ABA2BA /* MASProximity.xcodeproj */,
 				10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */,
 				104661131C06581500A2A03C /* MASUI */,
 				1046611F1C06581500A2A03C /* MASUITests */,
@@ -633,6 +656,15 @@
 			path = sociallogin;
 			sourceTree = "<group>";
 		};
+		CBBC7BCA226E780600ABA2BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBBC7BD2226E780600ABA2BA /* MASProximity.framework */,
+				CBBC7BD4226E780600ABA2BA /* MASProximityTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CBC88F9B1DBE7F2B009EE1C6 /* ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +747,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CBBC7BD6226E783400ABA2BA /* PBXTargetDependency */,
 				10246AC41CBAA83C00C0A70A /* PBXTargetDependency */,
 			);
 			name = MASUI;
@@ -769,6 +802,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 104661071C06581500A2A03C;
@@ -778,6 +812,10 @@
 				{
 					ProductGroup = 10246ABA1CBAA82600C0A70A /* Products */;
 					ProjectRef = 10246AB91CBAA82600C0A70A /* MASFoundation.xcodeproj */;
+				},
+				{
+					ProductGroup = CBBC7BCA226E780600ABA2BA /* Products */;
+					ProjectRef = CBBC7BC9226E780600ABA2BA /* MASProximity.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -803,6 +841,20 @@
 			fileType = wrapper.cfbundle;
 			path = MASFoundationTests.xctest;
 			remoteRef = 10246AC11CBAA82600C0A70A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CBBC7BD2226E780600ABA2BA /* MASProximity.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MASProximity.framework;
+			remoteRef = CBBC7BD1226E780600ABA2BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CBBC7BD4226E780600ABA2BA /* MASProximityTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MASProximityTests.xctest;
+			remoteRef = CBBC7BD3226E780600ABA2BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1010,6 +1062,11 @@
 			target = 104661101C06581500A2A03C /* MASUI */;
 			targetProxy = 1046611D1C06581500A2A03C /* PBXContainerItemProxy */;
 		};
+		CBBC7BD6226E783400ABA2BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASProximity;
+			targetProxy = CBBC7BD5226E783400ABA2BA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1028,6 +1085,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1047,6 +1105,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -1144,7 +1203,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1.9.10;
+				CURRENT_PROJECT_VERSION = 2.0.00;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1165,6 +1224,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1174,7 +1234,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1.9.10;
+				CURRENT_PROJECT_VERSION = 2.0.00;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1195,6 +1255,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};
@@ -1210,6 +1271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Debug;
 		};
@@ -1225,6 +1287,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ca.MASUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};
@@ -1232,6 +1295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Debug;
 		};
@@ -1239,6 +1303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};
