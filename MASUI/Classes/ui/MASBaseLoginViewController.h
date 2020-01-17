@@ -107,14 +107,6 @@
 
 
 
-/**
- Login with provided FIDO username.  By invoking this method with FIDO username, this will trigger FIDO login process.
- 
- @param username   NSString of username
- @param completion MASCompletionErrorBlock that will notify the result of the FIDO login
- */
-- (void)loginWithFIDOUsername:(NSString *)userName completion:(MASCompletionErrorBlock)completion;
-
 
 
 /**
