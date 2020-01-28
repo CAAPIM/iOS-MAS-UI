@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,8 +11,6 @@
                 <outlet property="activityIndicator" destination="UNj-CY-8xe" id="Q2g-e4-7MV"/>
                 <outlet property="cancelBtn" destination="tas-dN-zD0" id="Gta-Ga-G0f"/>
                 <outlet property="collectionView" destination="gQ9-8k-Jn3" id="bl2-q9-iKM"/>
-                <outlet property="fidoLoginBtn" destination="JBs-mp-9sl" id="NHi-3H-mfF"/>
-                <outlet property="fidologinBtnHeight" destination="AOw-iU-weU" id="WCl-tE-tOF"/>
                 <outlet property="loginBtn" destination="Ot1-fH-gQ0" id="StL-Dr-uWI"/>
                 <outlet property="passwordField" destination="2L8-SH-gqo" id="qU2-SU-xhl"/>
                 <outlet property="scrollView" destination="O8g-Ku-AfT" id="bgS-hc-VPD"/>
@@ -31,10 +27,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0X-on-tmD">
-                            <rect key="frame" x="32" y="73" width="310" height="520"/>
+                            <rect key="frame" x="32.5" y="73.5" width="310" height="520"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCu-g3-fih">
-                                    <rect key="frame" x="18" y="141" width="275" height="30"/>
+                                    <rect key="frame" x="17.5" y="141" width="275" height="30"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <accessibility key="accessibilityConfiguration" identifier="masui-usernameField"/>
                                     <constraints>
@@ -48,7 +44,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-SH-gqo">
-                                    <rect key="frame" x="18" y="181" width="275" height="30"/>
+                                    <rect key="frame" x="17.5" y="181" width="275" height="30"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <accessibility key="accessibilityConfiguration" identifier="masui-passwordField"/>
                                     <constraints>
@@ -96,7 +92,7 @@
                                     </connections>
                                 </collectionView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or sign in with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkE-7h-Grd">
-                                    <rect key="frame" x="33" y="331" width="245" height="32"/>
+                                    <rect key="frame" x="32.5" y="331" width="245" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="245" id="E3B-Ro-OyY"/>
                                         <constraint firstAttribute="height" constant="32" id="Ihp-JA-TF5"/>
@@ -155,20 +151,6 @@
                                         <constraint firstAttribute="trailing" secondItem="Ot1-fH-gQ0" secondAttribute="trailing" constant="8" id="xHi-mv-XLq"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBs-mp-9sl">
-                                    <rect key="frame" x="18" y="286" width="275" height="35"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="AOw-iU-weU"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <state key="normal" title="Biometric Login" backgroundImage="grey_button.png">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="onFIDOLoginSelected:" destination="-1" eventType="touchUpInside" id="cxr-th-pkT"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -178,14 +160,10 @@
                                 <constraint firstItem="UNj-CY-8xe" firstAttribute="centerY" secondItem="B0X-on-tmD" secondAttribute="centerY" constant="-26.5" id="JJb-qI-g0p"/>
                                 <constraint firstItem="SkE-7h-Grd" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="MVd-4q-Xcd"/>
                                 <constraint firstAttribute="bottom" secondItem="gQ9-8k-Jn3" secondAttribute="bottom" constant="-22" id="OI6-f7-0u4"/>
-                                <constraint firstItem="SkE-7h-Grd" firstAttribute="top" secondItem="JBs-mp-9sl" secondAttribute="bottom" constant="10" id="Wu5-YB-780"/>
                                 <constraint firstItem="CCu-g3-fih" firstAttribute="top" secondItem="phv-hA-oxT" secondAttribute="bottom" constant="40" id="YFN-Uh-Dr5"/>
-                                <constraint firstItem="JBs-mp-9sl" firstAttribute="top" secondItem="icw-sy-V8Y" secondAttribute="bottom" constant="8" id="Yqs-8B-S6T"/>
                                 <constraint firstItem="phv-hA-oxT" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="ajR-0d-IZ0"/>
                                 <constraint firstItem="CCu-g3-fih" firstAttribute="centerX" secondItem="B0X-on-tmD" secondAttribute="centerX" id="c0v-9D-HbX"/>
                                 <constraint firstItem="2L8-SH-gqo" firstAttribute="top" secondItem="CCu-g3-fih" secondAttribute="bottom" constant="10" id="eCN-Y8-awV"/>
-                                <constraint firstItem="JBs-mp-9sl" firstAttribute="trailing" secondItem="2L8-SH-gqo" secondAttribute="trailing" id="lKi-5z-dvn"/>
-                                <constraint firstItem="JBs-mp-9sl" firstAttribute="leading" secondItem="2L8-SH-gqo" secondAttribute="leading" id="ne3-OY-xWc"/>
                                 <constraint firstItem="phv-hA-oxT" firstAttribute="top" secondItem="B0X-on-tmD" secondAttribute="top" constant="30" id="nng-e8-P6E"/>
                                 <constraint firstAttribute="height" constant="520" id="pMh-yr-6HI"/>
                                 <constraint firstItem="gQ9-8k-Jn3" firstAttribute="top" secondItem="SkE-7h-Grd" secondAttribute="bottom" constant="19" id="rNH-Od-fXZ"/>
@@ -212,11 +190,11 @@
                 <constraint firstItem="O8g-Ku-AfT" firstAttribute="top" secondItem="ac0-xI-Gdi" secondAttribute="top" id="gCO-nQ-t2R"/>
                 <constraint firstAttribute="bottom" secondItem="O8g-Ku-AfT" secondAttribute="bottom" id="sd8-So-Lyk"/>
             </constraints>
-            <point key="canvasLocation" x="567.5" y="310.5"/>
+            <point key="canvasLocation" x="822.46376811594212" y="207.92410714285714"/>
         </view>
     </objects>
     <resources>
-        <image name="caLogo.png" width="86" height="71"/>
+        <image name="caLogo.png" width="67.333335876464844" height="50.666667938232422"/>
         <image name="grey_button.png" width="240" height="36"/>
     </resources>
 </document>
