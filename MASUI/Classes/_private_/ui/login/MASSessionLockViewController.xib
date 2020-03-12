@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="NO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MASSessionLockViewController">
@@ -13,7 +14,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo-ca.png" translatesAutoresizingMaskIntoConstraints="NO" id="RDS-Fx-6Pi">
@@ -38,11 +39,11 @@
                         <constraint firstAttribute="height" constant="21" id="nKz-Y4-Ibg"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                    <color key="textColor" red="0.44222003221511841" green="0.51438003778457642" blue="0.55585998296737671" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.44222003221511841" green="0.51438003778457642" blue="0.55585998296737671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="5A9-K1-Msd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5NO-zF-LRb"/>
                 <constraint firstItem="O0e-V3-oWz" firstAttribute="top" secondItem="RDS-Fx-6Pi" secondAttribute="bottom" constant="38" id="7Ph-xG-mAc"/>
@@ -51,16 +52,11 @@
                 <constraint firstItem="5A9-K1-Msd" firstAttribute="top" secondItem="O0e-V3-oWz" secondAttribute="bottom" constant="80" id="lpp-pu-xLS"/>
                 <constraint firstItem="RDS-Fx-6Pi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="91" id="ttR-uT-N6e"/>
             </constraints>
-            <point key="canvasLocation" x="35.5" y="53.5"/>
+            <point key="canvasLocation" x="51.449275362318843" y="35.825892857142854"/>
         </view>
     </objects>
     <resources>
         <image name="icon-fingerprint.png" width="150" height="150"/>
-        <image name="logo-ca.png" width="128" height="107"/>
+        <image name="logo-ca.png" width="190" height="142.66667175292969"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>
