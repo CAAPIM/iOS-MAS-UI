@@ -1,3 +1,8 @@
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
+
+⚠️ | Please note that this repo will be archived in the near future. Please do not submit any new changes as they are no longer being accepted. Please contact Broadcom support https://support.broadcom.com/ to report any defects or make a request for an update. Broadcom is continuing support for the SDK but will no longer maintain the public GitHub community.
+:---: | :---
+
 MASUI is the core UI framework of the iOS Mobile SDK, which is part of CA Mobile API Gateway. It provides resources to implement a user login dialog, Social Login, One-Time Password, and Proximity Login (QR code and BLE) saving developers the time of building those UI as well as providing them with a fast way for prototyping apps. 
 
 ## Features
